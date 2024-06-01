@@ -27,7 +27,7 @@ const SignUp = () => {
                         {/* change the Icon According to your needs */}
                         <h1 className=''><BsMortarboardFill className='h-20 w-auto'/></h1>
                         <p className="pt-4 text-2xl">Welcome to</p>
-                        <p className="">Your Project Name</p>
+                        <p className="">ERP System at NIFS</p>
                     </center>
                     <hr className='my-2'/>
                     <div className="my-4">
