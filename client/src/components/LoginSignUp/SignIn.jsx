@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BsMortarboardFill } from "react-icons/bs";
+import { BsBuildingFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
 const SignIn = () => {
@@ -24,7 +24,7 @@ const SignIn = () => {
                 <div className="bg-white py-16 px-8 rounded shadow-md w-full ">
                     <center className='text-gray-500'>
                         {/* change the Icon According to your needs */}
-                        <h1 className=''><BsMortarboardFill className='h-20 w-auto'/></h1>
+                        <h1 className=''><BsBuildingFill className='h-20 w-auto'/></h1>
                         <p className="pt-4 text-2xl">Welcome Back to</p>
                         <p className="">ERP System</p>
                     </center>
