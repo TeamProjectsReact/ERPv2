@@ -18,12 +18,12 @@ const SignUp = () => {
 
         try{
             // custom created REST API
-            const res = await axios.get(`https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.jsonq=${email}+in:email`)
+            const res = await axios.get(`https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.json?q=${SignUpData.email}+in:email`)
         
-            if (response.data.total_count > 0) {
-               console.log('This email is associated with a GitHub account.');
+            if (res.data.total_count > 0) {
+               alert('You are a NIFS Member');
             } else {
-               console.log('This email is not associated with any GitHub account.');
+               alert('You are not a NIFS Member');
             }
         }   
         catch (err) {
