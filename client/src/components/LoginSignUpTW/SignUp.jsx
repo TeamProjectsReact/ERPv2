@@ -23,8 +23,11 @@ const SignUp = () => {
             const data = res.data;
 
             const emailExists = data.some((item) => item.email === SignUpData.email);
-            SetSignUpData({...SignUpData, Role: item.designation})
+            const foundUser = data.find((item) => item.email === email);
+
+            
             if(emailExists){
+                SetSignUpData({...SignUpData, Role: foundUser.designation })
                 console.log(SignUpData)
             }
             else{
