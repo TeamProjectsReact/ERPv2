@@ -18,12 +18,16 @@ const SignUp = () => {
 
         try{
             // custom created REST API
-            const res = await axios.get(`https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.json?q=${SignUpData.email}+in:email`)
-        
-            if (res.data.total_count > 0) {
-               alert('You are a NIFS Member');
-            } else {
-               alert('You are not a NIFS Member');
+            const res = await axios.get('https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.json')
+            const data = res.data;
+
+            const emailExists = data.some((item) => item.email === SignUpData.email);
+
+            if(emailExists){
+
+            }
+            else{
+                alert("You are not a NIFS Member")
             }
         }   
         catch (err) {
