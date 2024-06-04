@@ -17,7 +17,22 @@ const authController = {
             }
             const hashPass = await bcrypt.hash(password, 10);
 
-            console.log(hashPass)
+            const NewUser = new User({
+                username: username,
+                email: email,
+                password: hashPass,
+                Role: designation
+            })
+
+            const ResultUser = NewUser.save()
+
+            if(ResultUser) {
+                return res.json({ Status: "Success"})
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
+
         }
         catch (err) {
             console.log(err)
