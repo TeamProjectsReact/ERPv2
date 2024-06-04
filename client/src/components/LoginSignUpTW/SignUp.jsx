@@ -28,10 +28,8 @@ const SignUp = () => {
             const foundUser = data.find((item) => item.email === SignUpData.email);
 
             
-            if(emailExists){
-                SetSignUpData({...SignUpData, Role:foundUser.designation })
-                
-                const res = await axios.post('http://localhost:5000/auth/SignUp', SignUpData)
+            if(emailExists){                  
+                const res = await axios.post('http://localhost:5000/auth/SignUp', {SignUpData, foundUser})
                 .then(res => {
                     if(res.data.Status === "Success"){
                         alert("Registation Successfull")
