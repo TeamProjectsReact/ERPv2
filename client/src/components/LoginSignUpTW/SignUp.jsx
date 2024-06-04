@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { BsMortarboardFill } from "react-icons/bs";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import  NIFSLogo  from '../../assets/nifs_logo.png';
 import axios from 'axios';
 
 const SignUp = () => {
+    const navigate = useNavigate()
+
      // for login data
     const [SignUpData, SetSignUpData] = useState({
         username: '',
@@ -23,12 +25,22 @@ const SignUp = () => {
             const data = res.data;
 
             const emailExists = data.some((item) => item.email === SignUpData.email);
-            const foundUser = data.find((item) => item.email === email);
+            const foundUser = data.find((item) => item.email === SignUpData.email);
 
             
             if(emailExists){
-                SetSignUpData({...SignUpData, Role: foundUser.designation })
-                console.log(SignUpData)
+                SetSignUpData({...SignUpData, Role:foundUser.designation })
+                
+                const res = await axios.post('http://localhost:5000/auth/SignUp', SignUpData)
+                .then(res => {
+                    if(res.data.Status === "Success"){
+                        alert("Registation Successfull")
+                        navigate('/')
+                    }
+                    else{
+                        alert(res.data.Error)
+                    }
+                })
             }
             else{
                 alert("You are not a NIFS Member")
