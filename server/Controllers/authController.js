@@ -4,8 +4,9 @@ const User = require('../Models/User')
 
 const authController = {
     SignUp: async (req, res) => {
+        console.log(req.body)
         const {username, email, password} = req.body;
-
+        
         // check user is in database
         const CheckUser = await User.findOne({ email, username })
 
@@ -21,6 +22,15 @@ const authController = {
                 password: HashPass,
                 Role: "User"
             })
+
+            const ResultUser = await NewUser.save()
+
+            if(ResultUser) {
+                return res.json({ Status: "Success" })
+            }
+            else{
+                return res.json({ Error: "Internal Server ERROR" })
+            }
         }
     }
 }
