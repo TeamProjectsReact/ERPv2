@@ -15,7 +15,12 @@ const SignUp = () => {
     const headleSubmit = async (e) => {
         e.preventDefault();
 
-        
+        try{
+            
+        }   
+        catch (err) {
+            console.log(err)
+        }
 
     }
   return (
