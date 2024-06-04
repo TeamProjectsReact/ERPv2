@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BsMortarboardFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import  NIFSLogo  from '../../assets/nifs_logo.png';
+import axios from 'axios';
 
 const SignUp = () => {
      // for login data
@@ -16,7 +17,7 @@ const SignUp = () => {
         e.preventDefault();
 
         try{
-            
+            const res = await axios.get('')
         }   
         catch (err) {
             console.log(err)
