@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { BsBuildingFill } from "react-icons/bs";
+import { BsMortarboardFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-
+import  NIFSLogo  from '../../assets/nifs_logo.png';
+ 
 const SignIn = () => {
     // for login data
     const [LoginData, SetLoginData] = useState({
@@ -24,8 +25,8 @@ const SignIn = () => {
                 <div className="bg-white py-16 px-8 rounded shadow-md w-full ">
                     <center className='text-gray-500'>
                         {/* change the Icon According to your needs */}
-                        <h1 className=''><BsBuildingFill className='h-20 w-auto'/></h1>
-                        <p className="pt-4 text-2xl">Welcome Back to</p>
+                        <h1 className=''><img src={NIFSLogo} alt="" /></h1>
+                        <p className="pt-4 text-2xl">Welcome Back</p>
                         <p className="">ERP System</p>
                     </center>
                     <hr className='my-2'/>
