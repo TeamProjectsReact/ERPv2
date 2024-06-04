@@ -5,33 +5,33 @@ const User = require('../Models/User')
 const authController = {
     SignUp: async (req, res) => {
         console.log(req.body)
-        // const {username, email, password} = req.body;
+        const {username, email, password, Role} = req.body;
         
-        // // check user is in database
-        // const CheckUser = await User.findOne({ email, username })
+        // check user is in database
+        const CheckUser = await User.findOne({ email, username })
 
-        // if(CheckUser) {
-        //     return res.json({ Error: "User Already in database"})
-        // }
-        // else{
-        //     const HashPass = await bcrypt.hash(password, 10);
+        if(CheckUser) {
+            return res.json({ Error: "User Already in database"})
+        }
+        else{
+            const HashPass = await bcrypt.hash(password, 10);
 
-        //     const NewUser = new User({
-        //         username: username,
-        //         email: email,
-        //         password: HashPass,
-        //         Role: "User"
-        //     })
+            const NewUser = new User({
+                username: username,
+                email: email,
+                password: HashPass,
+                Role: Role
+            })
 
-        //     const ResultUser = await NewUser.save()
+            const ResultUser = await NewUser.save()
 
-        //     if(ResultUser) {
-        //         return res.json({ Status: "Success" })
-        //     }
-        //     else{
-        //         return res.json({ Error: "Internal Server ERROR" })
-        //     }
-        // }
+            if(ResultUser) {
+                return res.json({ Status: "Success" })
+            }
+            else{
+                return res.json({ Error: "Internal Server ERROR" })
+            }
+        }
     }
 }
 
