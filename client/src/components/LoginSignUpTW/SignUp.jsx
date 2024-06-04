@@ -17,7 +17,8 @@ const SignUp = () => {
         e.preventDefault();
 
         try{
-            const res = await axios.get('')
+            // custom created REST API
+            const res = await axios.get('https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.json')
         }   
         catch (err) {
             console.log(err)
