@@ -18,7 +18,13 @@ const SignUp = () => {
 
         try{
             // custom created REST API
-            const res = await axios.get('https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.json')
+            const res = await axios.get(`https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.jsonq=${email}+in:email`)
+        
+            if (response.data.total_count > 0) {
+               console.log('This email is associated with a GitHub account.');
+            } else {
+               console.log('This email is not associated with any GitHub account.');
+            }
         }   
         catch (err) {
             console.log(err)
