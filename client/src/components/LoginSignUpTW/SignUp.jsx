@@ -9,7 +9,8 @@ const SignUp = () => {
     const [SignUpData, SetSignUpData] = useState({
         username: '',
         email: '',
-        password: ''
+        password: '',
+        Role: ''
     })
 
     // send data to backend using axios
@@ -22,9 +23,9 @@ const SignUp = () => {
             const data = res.data;
 
             const emailExists = data.some((item) => item.email === SignUpData.email);
-
+            SetSignUpData({...SignUpData, Role: item.designation})
             if(emailExists){
-
+                console.log(SignUpData)
             }
             else{
                 alert("You are not a NIFS Member")
