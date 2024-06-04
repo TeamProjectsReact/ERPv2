@@ -12,7 +12,6 @@ const SignUp = () => {
         username: '',
         email: '',
         password: '',
-        Role: ''
     })
 
     // send data to backend using axios
