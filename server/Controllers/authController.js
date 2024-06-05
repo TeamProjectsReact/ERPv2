@@ -37,6 +37,31 @@ const authController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    SigIn: async (req, res) => {
+        try{
+            const { email, password } = req.body;
+
+            const checUser = await User.findOne({ email })
+
+            if(checUser) {
+                const checkPass = bcrypt.compare(password, checUser.password)
+
+                if(checkPass){
+                    
+                }
+                else{
+                    return res.json({ Error: "Password is not Match..." })
+                }
+            }
+            else{
+                return res.json({ Error: "No user Found..."})
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 
 }
