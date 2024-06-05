@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BsPersonFill, BsCaretDownFill, BsCaretUpFill } from 'react-icons/bs'
+import { BsPersonFill, BsCaretDownFill, BsCaretUpFill, BsPower } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 
@@ -15,7 +15,7 @@ const DashNav = () => {
     const toggleUser = () => {
         SetDropDown(!DropDown)
     }
-    
+
     const headleLogOut = () => {
         localStorage.clear()
         navigate('/')
@@ -41,8 +41,12 @@ const DashNav = () => {
                     </div>
                 </div>
                 <div className={`${!DropDown ? 'hidden' : 'invisble'} absolute md:right-16 right-8 bg-white py-4 px-8 mt-[-20px] duration-500 rounded shadow-md`}>
-                    <p className="md:hidden block">{EmailUser}</p>
-                    <p className=""></p>
+                    <p className="md:hidden block py-1 my-3 border-b border-gray-200">{EmailUser}</p>
+                    <div onClick={headleLogOut} className="flex text-red-500 font-semibold cursor-pointer duration-500 hoveer:text-red-600">
+                        <p className=""><BsPower className='text-2xl'/></p>
+                        <p className="pl-2">Logout</p>
+                    </div>
+                    
                 </div>
             </div>
 
