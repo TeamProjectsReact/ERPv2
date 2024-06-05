@@ -22,17 +22,10 @@ const DashSide = () => {
 
     const SideLink = [
         {id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},      
-        
-          
-
-        {name: "LogOut", icons: <BsPower />}       
+  
     ]
 
-    const headleLogOut = () => {
-        localStorage.clear()
-        navigate('/')
-        window.location.reload()
-    }
+
     
         
     return (

@@ -16,23 +16,36 @@ const DashNav = () => {
         SetDropDown(!DropDown)
     }
     
+    const headleLogOut = () => {
+        localStorage.clear()
+        navigate('/')
+        window.location.reload()
+    }
+    
     if(RoleUser !== null && EmailUser !== null){
         return (
-            <div className='bg-white py-8 px-8 rounded-xl shadow-xl mb-8'>
-                <div className="flex justify-between">
-                    Dashboard
+            <div className="">
+                <div className='bg-white py-8 px-8 rounded-xl shadow-xl mb-8'>
+                    <div className="flex justify-between">
+                        Dashboard
 
-                    <div className="flex text-gray-500">
-                        <p className=""><BsPersonFill className='text-2xl'/></p>
-                        <p className="md:block hidden pl-2 text-xl">{EmailUser}</p>
-                        <p className="pt-1 pl-2 cursor-pointer" onClick={toggleUser}>
-                            {
-                                !DropDown ? <BsCaretDownFill className='text-2xl'/> : <BsCaretUpFill className='text-2xl'/>
-                            }
-                        </p>
+                        <div className="flex text-gray-500">
+                            <p className=""><BsPersonFill className='text-2xl'/></p>
+                            <p className="md:block hidden pl-2 text-xl">{EmailUser}</p>
+                            <p className="pt-1 pl-2 cursor-pointer" onClick={toggleUser}>
+                                {
+                                    !DropDown ? <BsCaretDownFill className='text-2xl'/> : <BsCaretUpFill className='text-2xl'/>
+                                }
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <div className={`${!DropDown ? 'hidden' : 'invisble'} absolute md:right-16 right-8 bg-white py-4 px-8 mt-[-20px] duration-500 rounded shadow-md`}>
+                    <p className="md:hidden block">{EmailUser}</p>
+                    <p className=""></p>
+                </div>
             </div>
+
           )
     }
     else{
