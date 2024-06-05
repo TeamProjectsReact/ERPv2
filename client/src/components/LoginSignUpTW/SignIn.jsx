@@ -11,7 +11,7 @@ const SignIn = () => {
     })
 
     // send data to backend using axios
-    const headleSubmit = (e) => {
+    const headleSubmit = async (e) => {
         e.preventDefault();
 
         // login to system
