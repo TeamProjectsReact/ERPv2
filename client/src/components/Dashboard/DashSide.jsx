@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
-import MyIcons from '@reacticons/ionicons'
-import SuperAdminImg from '../../assets/SuperAdminWhite.png'
 
 import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin } from "react-icons/bs";
 
@@ -28,7 +26,7 @@ const DashSide = () => {
         
           
 
-        {name: "LogOut", icons: <BsPower />},       
+        {name: "LogOut", icons: <BsPower />}       
     ]
 
     const headleLogOut = () => {
@@ -62,32 +60,18 @@ const DashSide = () => {
             </button>
             <div className={`lg:min-h-screen lg:pr-16 md:relative fixed overflow-auto top-0 left-0 h-full px-4 bg-gray-800 text-white w-auto transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
                 <div className="flex whitespace-nowrap lg:py-8">
-                    <p className="text-2xl my-4 "><MyIcons name='school' size='large'></MyIcons></p>                    
+                    <p className="text-2xl my-4 "><BsMortarboard /></p>                    
 
                             <div className="my-4">
                                 <h1 className="lg:text-2xl text-xl my-2 pl-2">ABC Campus</h1>
                                 {
                                     (() => {
-                                        if(RoleUser === "SuperAdmin"){
+                                        if(RoleUser === "TO"){
                                             return (
-                                                <p className='text-sm'>SuperAdmin</p>
+                                                <p className='text-sm'>TO</p>
                                             )
                                         }
-                                        if(RoleUser === "Student"){
-                                            return (
-                                                <p className='text-sm'>Student</p>
-                                            )
-                                        }
-                                        if(RoleUser === "Hod"){
-                                            return (
-                                                <p className='text-sm'>Hend of Dept</p>
-                                            )
-                                        }
-                                        if(RoleUser === "Lec"){
-                                            return (
-                                                <p className='text-sm'>Lecturer</p>
-                                            )
-                                        }
+
                                     })()
                                 }
                                 
@@ -99,78 +83,7 @@ const DashSide = () => {
                 <hr className={` ${DarkMode ? 'border-gray-400' : 'border-white'}`}/>
                 
                 <div className="my-8">
-                    {
-                        SideLink.map((AdminLinks) => {
-                            if(AdminLinks.name === "LogOut"){
-                                return (
-                                    <div onClick={() => headleLogOut()} className="my-8 mx-2 text-red-500 cursor-pointer">
-                                        <div className="flex">
-                                            <p className="lg:text-3xl lg:my-2 text-xl">{AdminLinks.icons}</p>
-                                            <p className={`lg:text-xl lg:pt-2 pl-4 `}>{AdminLinks.name}</p>
-                                        </div>
-                                    </div>
-                                )
-                            }
-                            else{
-                                if(RoleUser === "SuperAdmin"){
-                                    if(AdminLinks.id !== 12 && AdminLinks.id !== 17){
-                                        return (
-                                            <Link to={AdminLinks.link}>
-                                                <div className="my-4 mx-2">
-                                                    <div className="flex">
-                                                        <p className="lg:text-3xl lg:my-2 text-xl">{AdminLinks.icons}</p>
-                                                        <p className={`lg:text-xl lg:pt-2 pl-4 `}>{AdminLinks.name}</p>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        )
-                                    }
-                                }
-                                if(RoleUser === "Student"){
-                                    if(AdminLinks.id === 1 || AdminLinks.id === 6 || AdminLinks.id === 7 || AdminLinks.id === 11 || AdminLinks.id === 12 || AdminLinks.id === 13 || AdminLinks.id === 14 || AdminLinks.id === 17){
-                                        return (
-                                            <Link to={AdminLinks.link}>
-                                                <div className="my-4 mx-2">
-                                                    <div className="flex">
-                                                        <p className="lg:text-3xl lg:my-2 text-xl">{AdminLinks.icons}</p>
-                                                        <p className={`lg:text-xl lg:pt-2 pl-4 `}>{AdminLinks.name}</p>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        )
-                                    }
-                                }
-                                if(RoleUser === "Hod"){
-                                    if(AdminLinks.id !== 5 && AdminLinks.id !== 8 && AdminLinks.id !== 12 && AdminLinks.id !== 17){
-                                        return (
-                                            <Link to={AdminLinks.link}>
-                                                <div className="my-4 mx-2">
-                                                    <div className="flex">
-                                                        <p className="lg:text-3xl lg:my-2 text-xl">{AdminLinks.icons}</p>
-                                                        <p className={`lg:text-xl lg:pt-2 pl-4 `}>{AdminLinks.name}</p>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        )
-                                    }
-                                }
-                                if(RoleUser === "Lec"){
-                                    if(AdminLinks.id === 1 || AdminLinks.id === 2 || AdminLinks.id === 4 || AdminLinks.id === 6 || AdminLinks.id === 7 || AdminLinks.id === 15 || AdminLinks.id === 14 || AdminLinks.id === 16){
-                                        return (
-                                            <Link to={AdminLinks.link}>
-                                                <div className="my-4 mx-2">
-                                                    <div className="flex">
-                                                        <p className="lg:text-3xl lg:my-2 text-xl">{AdminLinks.icons}</p>
-                                                        <p className={`lg:text-xl lg:pt-2 pl-4 `}>{AdminLinks.name}</p>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        )
-                                    }
-                                }
-                            }
-                        })
-                    }
+
                 </div>
 
             </div>
