@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BsPersonFill } from 'react-icons/bs'
+import { BsPersonFill, BsCaretDownFill, BsCaretUpFill } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 
@@ -11,7 +11,10 @@ const DashNav = () => {
     const RoleUser = secureLocalStorage.getItem("Login2");
 
     const [DropDown, SetDropDown] = useState(false)
-    
+
+    const toggleUser = () => {
+        SetDropDown(!DropDown)
+    }
     
     if(RoleUser !== null && EmailUser !== null){
         return (
@@ -22,6 +25,11 @@ const DashNav = () => {
                     <div className="flex text-gray-500">
                         <p className=""><BsPersonFill className='text-2xl'/></p>
                         <p className="md:block hidden pl-2 text-xl">{EmailUser}</p>
+                        <p className="pt-1 pl-2 cursor-pointer" onClick={toggleUser}>
+                            {
+                                !DropDown ? <BsCaretDownFill className='text-2xl'/> : <BsCaretUpFill className='text-2xl'/>
+                            }
+                        </p>
                     </div>
                 </div>
             </div>

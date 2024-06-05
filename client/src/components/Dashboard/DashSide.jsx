@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
 
-import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill } from "react-icons/bs";
+import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill } from "react-icons/bs";
 
 
 
@@ -50,7 +50,7 @@ const DashSide = () => {
                     <p className="text-2xl my-4 pt-1"><BsMortarboardFill className='text-4xl'/></p>     
                         <div className="my-4">
                             <h1 className="lg:text-2xl text-xl my-2 pl-4">ERP System</h1>
-                            <p className="">SuperAdmin</p>  
+                            <p className="">SuperAdmin</p>                              
                         </div>                   
                    
                 </div>
