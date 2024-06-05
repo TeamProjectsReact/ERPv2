@@ -24,24 +24,7 @@ const DashSide = () => {
     };
 
     const SideLink = [
-        {id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},
-        {id: 2, name: "Students", link: "Students", icons: <BsBackpack2Fill />},
-        {id: 3, name: "Lecturers", link: "Teachers", icons: <BsPersonVideo3 />},
-        {id: 4, name: "Subjects", link: "Subjects", icons: <BsFileEarmarkText />}, 
-        {id: 5, name: "Staff", link: "Staff", icons: <BsPeople />},       
-        {id: 6, name: "Library", link: "Library", icons: <BsBook />},   // for labrarian
-        {id: 7, name: "Marks", link: "MyMarks", icons: <BsPatchCheck />},  // student
-        {id: 8, name: "Departments", link: "Departments", icons: <BsBuilding />},  
-        {id: 9, name: "Courses", link: "Courses", icons: <BsMortarboard />},  
-        {id: 10, name: "Batches", link: "Batches", icons: <BsPeople />},
-        {id: 11, name: "Events", link: "Events", icons: <BsCalendarEvent />}, 
-        {id: 12, name: "My Courses", link: "MyCourses", icons: <BsMortarboard />}, 
-        {id: 13, name: "Notifications", link: "Notifications", icons: <BsBell />},         
-        {id: 14, name: "Profile", link: "MyProfile", icons: <BsPersonGear />},
-        {id: 15, name: "Semesters", link: "Semesters", icons: <BsFilesAlt />},
-        {id: 16, name: "Exams", link: "Exams", icons: <BsFileText />},
-        {id: 17, name: "My Payments", link: "Expenses", icons: <BsCashCoin />},
-        
+        {id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},      
         
           
 
