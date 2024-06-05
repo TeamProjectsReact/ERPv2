@@ -21,7 +21,7 @@ const DashNav = () => {
 
                     <div className="flex text-gray-500">
                         <p className=""><BsPersonFill className='text-2xl'/></p>
-                        <p className="pl-2 text-xl">{EmailUser}</p>
+                        <p className="md:block hidden pl-2 text-xl">{EmailUser}</p>
                     </div>
                 </div>
             </div>
