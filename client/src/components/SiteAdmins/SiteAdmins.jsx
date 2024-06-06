@@ -33,7 +33,7 @@ const SiteAdmins = () => {
                             {
                                 SiteAdminData.map((data) => {
                                     return (
-                                        <div onClick={() => HeadleButtonClick(data.btnValue)} className={`bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${data.style}`}>
+                                        <div onClick={() => HeadleButtonClick(data.btnValue)} className={`cursor-pointer bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${data.style}`}>
                                             <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
                                                 <div className="">
                                                     <h1 className={`text-[180%] ${data.style}`}>{data.value}</h1>
