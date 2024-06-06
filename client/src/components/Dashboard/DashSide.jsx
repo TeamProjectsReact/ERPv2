@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
 
 
-import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight } from "react-icons/bs";
+import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight, BsTicketDetailedFill, BsFileTextFill, BsHouseGearFill, BsPassFill, BsCashStack, BsCarFrontFill } from "react-icons/bs";
 
 
 
@@ -24,7 +24,12 @@ const DashSide = () => {
     const SideLink = [
         {id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},    
         {id: 2, name: "Leaves", link: "Leaves", icons: <BsBoxArrowDownRight />},  
-  
+        {id: 3, name: "Reservation", link: "Reservation", icons: <BsTicketDetailedFill />},  
+        {id: 4, name: "SRNs", link: "SRNs", icons: <BsFileTextFill />},  
+        {id: 5, name: "Work Requests", link: "WorkRequests", icons: <BsHouseGearFill />},  
+        {id: 7, name: "GatePass", link: "GatePass", icons: <BsPassFill />},  
+        {id: 8, name: "Increment", link: "Increment", icons: <BsCashStack />},  
+        {id: 9, name: "Vehicle", link: "Vehicle", icons: <BsCarFrontFill />},  
     ]
 
 
