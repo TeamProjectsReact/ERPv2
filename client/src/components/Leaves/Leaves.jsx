@@ -29,28 +29,40 @@ const Leaves = () => {
           <h1 className="text-xl font-semiblod text-gray-500">Leaves</h1>
           <div className="my-4">
           <div className="">
-              <div className="md:grid grid-cols-4 gap-4 mr-4">
-                  {
-                    LeaveData.map((data) => {
-                      return(
-                        <div onClick={() => HeadleButtonClick(data.btnValue)} className={`cursor-pointer bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${data.style}`}>
-                          <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
-                              <div className="">
-                                  <h1 className={`text-[180%] ${data.style}`}>{data.value}</h1>
-                                  <p className="py-2 text-[120%]">{data.name}</p>
-                              </div>
-                              <div className="">
-                                  <p className="text-[200%] text-gray-500">{data.icon}</p>
-                              </div>
+            {
+                (() => {
+                    if(RoleUser !== "SuperAdmin"){
+                        return (
+                            <div className="md:grid grid-cols-4 gap-4 mr-4">
+                            {
+                              LeaveData.map((data) => {
+                                return(
+                                  <div onClick={() => HeadleButtonClick(data.btnValue)} className={`cursor-pointer bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${data.style}`}>
+                                    <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
+                                        <div className="">
+                                            <h1 className={`text-[180%] ${data.style}`}>{data.value}</h1>
+                                            <p className="py-2 text-[120%]">{data.name}</p>
+                                        </div>
+                                        <div className="">
+                                            <p className="text-[200%] text-gray-500">{data.icon}</p>
+                                        </div>
+                                    </div>
+                                    <div className="text-white py-4 px-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded">
+                                        All {data.name} 
+                                    </div>
+                                  </div>
+                                )
+                              })
+                            }                
                           </div>
-                          <div className="text-white py-4 px-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded">
-                              All {data.name} 
-                          </div>
-                        </div>
-                      )
-                    })
-                  }                
-                </div>
+                        )
+                    }
+                    else{
+                        
+                    }
+                })()
+            }
+
               </div>
               {buttonValue}
           </div>
