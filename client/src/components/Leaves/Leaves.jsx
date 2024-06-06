@@ -3,6 +3,7 @@ import { BsBoxArrowDownRight } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage";
 import CountUp from 'react-countup';
+import AddLeaves from './AddLeaves';
 
 const Leaves = () => {
   const LeaveData = [
@@ -31,7 +32,7 @@ const Leaves = () => {
           <div className="">
             {
                 (() => {
-                    if(RoleUser !== "SuperAdmin"){
+                    if(RoleUser === "SuperAdmin"){
                         return (
                             <div className="md:grid grid-cols-4 gap-4 mr-4">
                             {
@@ -58,13 +59,14 @@ const Leaves = () => {
                         )
                     }
                     else{
-                        
+                        return (
+                            <AddLeaves />
+                        )
                     }
                 })()
             }
 
               </div>
-              {buttonValue}
           </div>
         </div>
       </div>
