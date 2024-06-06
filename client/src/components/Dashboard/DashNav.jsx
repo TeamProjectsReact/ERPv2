@@ -27,7 +27,9 @@ const DashNav = () => {
             <div className="">
                 <div className='bg-white py-8 px-8 rounded-xl shadow-xl mb-8'>
                     <div className="flex justify-between">
-                        Dashboard
+                        <div className="">
+                            <p className="font-semibold text-xl text-gray-500">Dashboard</p>
+                        </div>
 
                         <div className="flex text-gray-500">
                             <p className=""><BsPersonFill className='text-2xl'/></p>
