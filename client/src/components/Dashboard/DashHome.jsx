@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
-import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsMortarboard, BsBuilding, BsMortarboardFill, BsPersonCheck, BsCashCoin, BsCalendarEvent } from "react-icons/bs";
+import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsMortarboard, BsBuilding, BsMortarboardFill, BsPersonCheck, BsCashCoin, BsCalendarEvent, BsCashStack, BsCarFrontFill, BsPassFill, BsHouseGearFill, BsFileTextFill, BsTicketDetailedFill, BsBoxArrowDownRight, BsPeopleFill } from "react-icons/bs";
 import CountUp from 'react-countup'
 
 const DashHome = () => {
@@ -13,14 +13,14 @@ const DashHome = () => {
 
     // dashdata
     const DashData = [
-      {id: 1, name: "Employees", icon: <BsBackpack2Fill />, value: <CountUp end={20} />, style: "text-green-500"},
-      {id: 2, name: "Leaves", icon: <BsPersonVideo3 />, value: <CountUp end={20} />, style: "text-blue-500"},
-      {id: 3, name: "Reservation", icon: <BsFileEarmarkText />, value: <CountUp end={20} />, style: "text-yellow-500"},
-      {id: 4, name: "SRNs", icon: <BsPeople />, value: <CountUp end={20} />, style: "text-red-500"},
-      {id: 5, name: "Work Requests", icon: <BsMortarboard />, value: <CountUp end={20} />, style: "text-purple-500"},
-      {id: 6, name: "GatePass", icon: <BsBuilding />, value: <CountUp end={20} />, style: "text-yellow-500"},
-      {id: 7, name: "Increment", icon: <BsCalendarEvent />, value: <CountUp end={20} />, style: "text-yellow-500"},  
-      {id: 8, name: "Vehicle", icon: <BsCalendarEvent />, value: <CountUp end={20} />, style: "text-yellow-500"},              
+      {id: 1, name: "Employees", icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
+      {id: 2, name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-blue-500"},
+      {id: 3, name: "Reservation", icon: <BsTicketDetailedFill />, value: <CountUp end={20} />, style: "text-yellow-500"},
+      {id: 4, name: "SRNs", icon: <BsFileTextFill />, value: <CountUp end={20} />, style: "text-red-500"},
+      {id: 5, name: "Work Requests", icon: <BsHouseGearFill />, value: <CountUp end={20} />, style: "text-purple-500"},
+      {id: 6, name: "GatePass", icon: <BsPassFill />, value: <CountUp end={20} />, style: "text-yellow-500"},
+      {id: 7, name: "Increment", icon: <BsCashStack />, value: <CountUp end={20} />, style: "text-yellow-500"},  
+      {id: 8, name: "Vehicle", icon: <BsCarFrontFill />, value: <CountUp end={20} />, style: "text-yellow-500"},              
     ]
 
 
