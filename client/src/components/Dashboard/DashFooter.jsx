@@ -2,7 +2,7 @@ import React from 'react'
 
 const DashFooter = () => {
   return (
-    <div>DashFooter</div>
+    <div className='bg-gray-500'>DashFooter</div>
   )
 }
 
