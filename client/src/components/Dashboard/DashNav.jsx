@@ -31,10 +31,10 @@ const DashNav = () => {
                             <p className="font-semibold text-xl text-gray-500">Dashboard</p>
                         </div>
 
-                        <div className="flex text-gray-500">
+                        <div className="flex text-gray-500 cursor-pointer" onClick={toggleUser}>
                             <p className=""><BsPersonFill className='text-2xl'/></p>
                             <p className="md:block hidden pl-2 text-xl">{EmailUser}</p>
-                            <p className="pt-1 pl-2 cursor-pointer" onClick={toggleUser}>
+                            <p className="pt-1 pl-2 ">
                                 {
                                     !DropDown ? <BsCaretDownFill className='text-2xl'/> : <BsCaretUpFill className='text-2xl'/>
                                 }
