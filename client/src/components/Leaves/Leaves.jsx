@@ -6,10 +6,10 @@ import CountUp from 'react-countup';
 
 const Leaves = () => {
   const LeaveData = [
-    {id: 1, btnValue: "allLeaves", name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},
-    {id: 2, btnValue: "RequestLeaves", name: "Requested Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},
-    {id: 3, btnValue: "RecommendLeaves", name: "Recommed Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},   
-    {id: 3, btnValue: "RejectLeaves", name: "Reject Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},     
+    {id: 1, btnValue: 0, name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-blue-500"},
+    {id: 2, btnValue: "RequestLeaves", name: "Requested", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-yellow-500"},
+    {id: 3, btnValue: "RecommendLeaves", name: "Recommed", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},   
+    {id: 3, btnValue: "RejectLeaves", name: "Reject", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-red-500"},     
   ]
 
   const navigate = useNavigate()
@@ -29,11 +29,11 @@ const Leaves = () => {
           <h1 className="text-xl font-semiblod text-gray-500">Leaves</h1>
           <div className="my-4">
           <div className="">
-                <div className="md:grid grid-cols-4 gap-4 mr-4">
+              <div className="md:grid grid-cols-4 gap-4 mr-4">
                   {
                     LeaveData.map((data) => {
                       return(
-                        <div className={`bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${data.style}`}>
+                        <div onClick={() => HeadleButtonClick(data.btnValue)} className={`cursor-pointer bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${data.style}`}>
                           <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
                               <div className="">
                                   <h1 className={`text-[180%] ${data.style}`}>{data.value}</h1>
@@ -52,6 +52,7 @@ const Leaves = () => {
                   }                
                 </div>
               </div>
+              {buttonValue}
           </div>
         </div>
       </div>
