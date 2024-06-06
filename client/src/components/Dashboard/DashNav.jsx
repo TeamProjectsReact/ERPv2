@@ -40,7 +40,7 @@ const DashNav = () => {
                         </div>
                     </div>
                 </div>
-                <div className={`${!DropDown ? 'hidden' : 'invisble'} absolute md:right-16 right-8 bg-gray-700 py-4 px-8 mt-[-20px] duration-500 rounded shadow-md`}>
+                <div className={`${!DropDown ? 'hidden' : 'invisble'} absolute md:right-16 right-8 bg-gray-700 py-4 px-8 mt-[-20px] overflow-auto transform translate-x-0 transition-transform duration-500 rounded shadow-md ease-in-out`}>
                     <p className="md:hidden block py-1 my-3 border-b border-gray-200 text-white">{EmailUser}</p>
                     <div onClick={headleLogOut} className="flex text-red-500 font-semibold cursor-pointer duration-500 hoveer:text-red-600">
                         <p className=""><BsPower className='text-2xl'/></p>
