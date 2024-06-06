@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
 
-import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill } from "react-icons/bs";
+import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight } from "react-icons/bs";
 
 
 
@@ -21,7 +21,8 @@ const DashSide = () => {
     };
 
     const SideLink = [
-        {id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},      
+        {id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},    
+        {id: 2, name: "Leaves", link: "Leaves", icons: <BsBoxArrowDownRight />},  
   
     ]
 
@@ -50,7 +51,20 @@ const DashSide = () => {
                 <hr className={`border-white`}/>
                 
                 <div className="my-8">
-
+                    {
+                        SideLink.map((side, indx) => {
+                            return (
+                                <Link to={side.link}>
+                                    <div className="my-4 mx-2">
+                                        <div className="flex">
+                                            <p className="lg:text-3xl lg:my-2 text-xl">{side.icons}</p>
+                                            <p className={`lg:text-xl lg:pt-2 pl-4 `}>{side.name}</p>
+                                        </div>
+                                    </div>
+                                </Link>
+                            )
+                        })
+                    }
                 </div>
 
             </div>
