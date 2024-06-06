@@ -11,6 +11,11 @@ const SiteAdmins = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+    const [buttonValue, SetButtonValue] = useState(0)
+    const HeadleButtonClick = (clickValue) => {
+        SetButtonValue(clickValue)   
+    }
+
     const SiteAdminData = [
         {id: 1, btnValue: "AllAdmin", name:"Admins", value: <CountUp end={20} />, icon: <BsPersonFillLock />, style: "text-blue-500"},
         {id: 2, btnValue: "Addadmin", name:"Add New", value: '#', icon: <BsPersonFillAdd />, style: "text-green-500"},
@@ -28,7 +33,7 @@ const SiteAdmins = () => {
                             {
                                 SiteAdminData.map((data) => {
                                     return (
-                                        <div className={`bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${data.style}`}>
+                                        <div onClick={() => HeadleButtonClick(data.btnValue)} className={`bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${data.style}`}>
                                             <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
                                                 <div className="">
                                                     <h1 className={`text-[180%] ${data.style}`}>{data.value}</h1>
