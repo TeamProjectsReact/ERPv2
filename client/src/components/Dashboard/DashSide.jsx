@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
-import { NifsLogo } from '../../assets/nifs_logo.png'
+
 
 import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight } from "react-icons/bs";
 
@@ -42,7 +42,7 @@ const DashSide = () => {
             </button>
             <div className={`lg:min-h-screen lg:pr-16 md:relative fixed overflow-auto top-0 left-0 h-full px-4 bg-gray-800 text-white w-auto transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
                 <div className="flex whitespace-nowrap lg:py-4">
-                    <p className="text-2xl my-4 pt-1"><img src={NifsLogo} alt="" /></p>     
+                    <p className="text-2xl my-4 pt-1"><BsMortarboardFill className='text-4xl'/></p>     
                         <div className="my-2">
                             <h1 className="lg:text-2xl text-xl my-2 pl-4">ERP System</h1>
                             <p className="">SuperAdmin</p>                              
