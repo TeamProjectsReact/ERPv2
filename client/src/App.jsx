@@ -5,6 +5,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import DashHome from "./components/Dashboard/DashHome";
 import Leaves from "./components/Leaves/Leaves";
+import Reservation from "./components/Reservation/Reservation";
 
 
 export default function App() {
@@ -15,8 +16,9 @@ export default function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Dashboard" element={<PrivateRoute ProtectRoute={<Dashboard /> }/> }/>
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard /> }/> } >
-          <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> }/>
+          <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> } />
           <Route path="Leaves" element={<PrivateRoute ProtectRoute={<Leaves /> } /> } />
+          <Route path="Reservation" element={<PrivateRoute ProtectRoute={<Reservation /> } /> } />
         </Route>
       </Routes>
     </BrowserRouter>
