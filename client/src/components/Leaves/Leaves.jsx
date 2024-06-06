@@ -6,15 +6,21 @@ import CountUp from 'react-countup';
 
 const Leaves = () => {
   const LeaveData = [
-    {id: 1, name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},
-    {id: 2, name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},
-    {id: 3, name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},    
+    {id: 1, btnValue: "allLeaves", name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},
+    {id: 2, btnValue: "RequestLeaves", name: "Requested Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},
+    {id: 3, btnValue: "RecommendLeaves", name: "Recommed Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},   
+    {id: 3, btnValue: "RejectLeaves", name: "Reject Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},     
   ]
 
   const navigate = useNavigate()
   //curent login user
   const EmailUser = secureLocalStorage.getItem("Login1");
   const RoleUser = secureLocalStorage.getItem("Login2");
+
+  const [buttonValue, SetButtonValue] = useState(0)
+  const HeadleButtonClick = (clickValue) => {
+      SetButtonValue(clickValue)   
+  }
 
   if(EmailUser !== null && RoleUser !== null){
     return (
