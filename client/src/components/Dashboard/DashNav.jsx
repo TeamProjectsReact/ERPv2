@@ -47,8 +47,7 @@ const DashNav = () => {
                     <div onClick={headleLogOut} className="flex text-red-500 font-semibold cursor-pointer duration-500 hoveer:text-red-600">
                         <p className=""><BsPower className='text-2xl'/></p>
                         <p className="pl-2">Logout</p>
-                    </div>
-                    
+                    </div>                    
                 </div>
             </div>
 
