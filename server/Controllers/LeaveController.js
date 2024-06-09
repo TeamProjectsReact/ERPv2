@@ -14,3 +14,5 @@ const LeaveController = {
         }
     }
 }
+
+module.exports = LeaveController;
