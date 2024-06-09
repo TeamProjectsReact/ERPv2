@@ -26,7 +26,7 @@ const AddLeaves = () => {
                 </div>
                 <div className="my-4">
                   <label htmlFor="" className="">Email</label>
-                  <input type="email" name="" id="" className="h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Start Time' 
+                  <input type="email" name="" id="" className="h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required disabled placeholder='Enter Start Time' 
                   value={EmailUser}/>
                 </div>
               </div>
