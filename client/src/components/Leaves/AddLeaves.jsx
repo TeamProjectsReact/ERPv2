@@ -41,6 +41,18 @@ const AddLeaves = () => {
                     <option value="hod2@123.com">hod4@123.com</option>
                   </select>
                 </div>
+
+                <div className="my-4">
+                  <label htmlFor="" className="text-gray-500">Start Date</label>
+                  <input type="date" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Start Date' 
+                  />
+                </div>
+
+                <div className="my-4">
+                  <label htmlFor="" className="text-gray-500">End Date</label>
+                  <input type="date" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter End Date' 
+                  />
+                </div>
                 
               </div>
             </form>
