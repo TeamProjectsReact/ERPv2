@@ -18,16 +18,20 @@ const LeaveController = {
     },
 
     AddLeave: async (req, res) => {
-        console.log(req.body)
-        console.log(req.params.id)
+        // console.log(req.body)
+        // console.log(req.params.id)
 
-        // const {
-        //     startTime,
-        //     hodEmail,
-        //     startDate,
-        //     endDate,
-        //     Dutarion
-        // } = req.body
+        const {
+            startTime,
+            hodEmail,
+            startDate,
+            endDate,
+            Dutarion
+        } = req.body
+
+        const id = req.params.id
+
+        
 
 
     }
