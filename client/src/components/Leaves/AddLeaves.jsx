@@ -33,7 +33,7 @@ const AddLeaves = () => {
     // console.log(LeaveData)
 
     try{
-      const res = await axios.post('http://localhost:5000/leave/AddLeave')
+      const res = await axios.post('http://localhost:5000/leave/AddLeave/' + EmailUser, LeaveData)
       .then(res => {
         if(res.data.Status === "Success"){
           alert('Request Leave Successful')
