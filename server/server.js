@@ -20,6 +20,7 @@ app.use(express.json())
 
 app.use('/auth', authRoute)
 
+
 app.listen(PORT, () => {
     console.log(`Server Running on PORT ${PORT}`)
 })
