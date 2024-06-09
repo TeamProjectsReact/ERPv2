@@ -62,7 +62,7 @@ const AddLeaves = () => {
               </div>
 
               <div className="my-4">
-                <button type="submit" className="">Request Leave</button>
+                <button type="submit" className="bg-gradient-to-r from-green-500 via-white-500 to-blue-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
               </div>
             </form>
           </div>
