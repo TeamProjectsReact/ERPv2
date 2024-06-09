@@ -84,16 +84,33 @@ const DashSide = () => {
                 <div className="my-4">
                     {
                         SideLink.map((side, indx) => {
-                            return (
-                                <Link to={side.link}>
-                                    <div className="my-4 mx-2">
-                                        <div className="flex">
-                                            <p className="lg:text-3xl lg:my-2 text-xl">{side.icons}</p>
-                                            <p className={`lg:text-xl lg:pt-2 pl-4 `}>{side.name}</p>
+                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                                return (
+                                    <Link to={side.link}>
+                                        <div className="my-4 mx-2">
+                                            <div className="flex">
+                                                <p className="lg:text-3xl lg:my-2 text-xl">{side.icons}</p>
+                                                <p className={`lg:text-xl lg:pt-2 pl-4 `}>{side.name}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </Link>
-                            )
+                                    </Link>
+                                )
+                            }
+                            else{
+                                if(side.id !== 10){
+                                    return (
+                                        <Link to={side.link}>
+                                            <div className="my-4 mx-2">
+                                                <div className="flex">
+                                                    <p className="lg:text-3xl lg:my-2 text-xl">{side.icons}</p>
+                                                    <p className={`lg:text-xl lg:pt-2 pl-4 `}>{side.name}</p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    )
+                                }
+                            }
+
                         })
                     }
                 </div>
