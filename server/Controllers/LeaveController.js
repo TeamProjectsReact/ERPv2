@@ -15,6 +15,20 @@ const LeaveController = {
         catch (err) {
             console.log(err)
         }
+    },
+
+    AddLeave: async (req, res) => {
+        console.log(req.body)
+
+        // const {
+        //     startTime,
+        //     hodEmail,
+        //     startDate,
+        //     endDate,
+        //     Dutarion
+        // } = req.body
+
+
     }
 }
 
