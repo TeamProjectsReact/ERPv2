@@ -19,10 +19,20 @@ const AddLeaves = () => {
     .catch(err => console.log(err)) 
   }, [])
 
+
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
         <div className="bg-white py-4 px-8 rounded shadow-md">
+          {
+            hodData.map((leave, index) => {
+              return (
+                <div className="">
+                  {leave.email}
+                </div>
+              )
+            })
+          }
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
           <hr />
           <div className="my-4">
