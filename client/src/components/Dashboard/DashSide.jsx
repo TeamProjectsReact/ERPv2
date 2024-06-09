@@ -51,7 +51,26 @@ const DashSide = () => {
                     <p className="text-2xl my-4 pt-1"><BsMortarboardFill className='text-4xl'/></p>     
                         <div className="my-2">
                             <h1 className="lg:text-2xl text-xl my-2 pl-4">ERP System</h1>
-                            <p className="">SuperAdmin</p>                              
+                            {
+                                (() => {
+                                    if(RoleUser === "SuperAdmin"){
+                                        return (
+                                            <p className="">SuperAdmin</p>    
+                                        )
+                                    }
+                                    else if(RoleUser === "Director"){
+                                        return (
+                                            <p className="">Director</p>    
+                                        )
+                                    }
+                                    else if(RoleUser === "Secretary"){
+                                        return (
+                                            <p className="">Secretary</p>    
+                                        )
+                                    }
+                                })()
+                            }
+                                                      
                         </div>                   
                    
                 </div>
