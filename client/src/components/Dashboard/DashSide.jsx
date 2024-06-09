@@ -10,10 +10,10 @@ import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsP
 const DashSide = () => {
     const navigate = useNavigate()
     //curent login user
-    const RoleUser = secureLocalStorage.getItem("Login1");
-    const EmailUser = secureLocalStorage.getItem("Login2");
+    const EmailUser = secureLocalStorage.getItem("Login1");
+    const RoleUser = secureLocalStorage.getItem("Login2");
 
-    // alert(DarkMode)
+    // alert(DarkMode)RoleUser
 
     const [isOpen, setIsOpen] = useState(false);
 
