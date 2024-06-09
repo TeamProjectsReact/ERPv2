@@ -28,9 +28,25 @@ const AddLeaves = () => {
     Dutarion: ''
   })
 
-  const headleSubmit = (e) => {
+  const headleSubmit = async (e) => {
     e.preventDefault();
-    console.log(LeaveData)
+    // console.log(LeaveData)
+
+    try{
+      const res = await axios.post('http://localhost:5000/leave/AddLeave')
+      .then(res => {
+        if(res.data.Status === "Success"){
+          alert('Request Leave Successful')
+          window.location.reload()
+        }
+        else{
+          alert(res.data.Error)
+        }
+      })
+    }
+    catch (err) {
+      console.log(err)
+    }
   } 
 
 
