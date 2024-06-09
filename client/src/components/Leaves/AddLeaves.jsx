@@ -11,7 +11,7 @@ const AddLeaves = () => {
   const RoleUser = secureLocalStorage.getItem("Login2");
 
   // get all hods in database
-  const [hodData, SetHodData] = useState([])
+  const [hodD, SetHodData] = useState([])
 
   useEffect(() => {
     axios.get('http://localhost:5000/leave/hodData')
@@ -25,10 +25,10 @@ const AddLeaves = () => {
       <div>
         <div className="bg-white py-4 px-8 rounded shadow-md">
           {
-            hodData.map((leave, index) => {
+            hodD.map((hod) => {
               return (
-                <div className="">
-                  asd 
+                <div className="" key={hod._id}>
+                  {hod.email} asdasd
                 </div>
               )
             })
