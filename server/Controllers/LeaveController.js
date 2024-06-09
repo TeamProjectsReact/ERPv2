@@ -31,7 +31,7 @@ const LeaveController = {
 
         const id = req.params.id
 
-        
+        // add leves to database 
 
 
     }
