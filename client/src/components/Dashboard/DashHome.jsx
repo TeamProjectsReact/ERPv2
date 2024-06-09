@@ -34,7 +34,7 @@ const DashHome = () => {
               <div className="">
                 {
                   (() => {
-                    if(RoleUser === "SuperAdmin"){
+                    if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
                       return (
                         <div className="md:grid grid-cols-4 gap-4 mr-4">
                         {
