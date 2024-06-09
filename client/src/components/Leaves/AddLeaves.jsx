@@ -28,7 +28,10 @@ const AddLeaves = () => {
     Dutarion: ''
   })
 
-  console.log(LeaveData)
+  const headleSubmit = (e) => {
+    e.preventDefault();
+    console.log(LeaveData)
+  } 
 
 
   if(RoleUser !== null && EmailUser !== null){
@@ -38,7 +41,7 @@ const AddLeaves = () => {
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
           <hr />
           <div className="my-4">
-            <form>
+            <form onSubmit={headleSubmit}>
               <div className="md:grid grid-cols-3 gap-4">
                 <div className="my-4">
                   <label htmlFor="" className="text-gray-500">Start Time</label>
