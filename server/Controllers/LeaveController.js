@@ -19,6 +19,7 @@ const LeaveController = {
 
     AddLeave: async (req, res) => {
         console.log(req.body)
+        console.log(req.params.id)
 
         // const {
         //     startTime,
