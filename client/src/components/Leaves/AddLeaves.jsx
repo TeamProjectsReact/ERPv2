@@ -28,7 +28,7 @@ const AddLeaves = () => {
             hodData.map((leave, index) => {
               return (
                 <div className="">
-                  {leave.email}
+                  asd 
                 </div>
               )
             })
