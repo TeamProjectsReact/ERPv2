@@ -50,6 +50,11 @@ const LeaveController = {
         else{
             return res.json({ Error: "Internal Server Error"})
         }
+    },
+
+    // get all leaves according to current login hod 
+    hodEmailLeaves: async (req, res) => {
+        const hodLeaves = await Leave.find({ hodEmail })
     }
 }
 
