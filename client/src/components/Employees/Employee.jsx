@@ -12,7 +12,11 @@ const Employee = () => {
 
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
         return (
-            <div>Employee</div>
+            <div className='mx-4'>
+                <div className="bg-white py-4 px-6 rounded shadow-md">
+                    
+                </div>
+            </div>
         )
     }
     else{
