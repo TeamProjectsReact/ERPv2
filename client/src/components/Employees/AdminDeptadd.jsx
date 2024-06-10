@@ -17,7 +17,7 @@ const AdminDeptadd = () => {
             <div className='mx-4'>
                 <div className="">
                     <Link to={'../Employee'}>
-                        <button className=''>Back</button>  
+                        <button className='bg-gradient-to-r from-green-500 via-white-500 to-blue-500 text-white py-2 my-4 px-8 rounded font-semibold'>Back</button>  
                     </Link>
                 </div>
             </div>
