@@ -24,6 +24,10 @@ const LeaveSchema = new mongoose.Schema({
     Dutarion: {
         type: String,
         required: true,
+    },
+    Status: {
+        type: String,
+        required: true,
     }
 })
 
