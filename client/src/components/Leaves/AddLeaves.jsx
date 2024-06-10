@@ -61,7 +61,7 @@ const AddLeaves = () => {
               if(RoleUser === "HOD"){
                 return (
                   <div className="">
-                    <Link>
+                    <Link to={'RequestLeaves'}>
                       <button className='bg-gradient-to-r from-green-500 via-white-500 to-blue-500 text-white py-2 my-4 px-8 rounded font-semibold'>leave Requests</button>
                     </Link>                    
                   </div>
