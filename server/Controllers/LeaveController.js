@@ -54,7 +54,16 @@ const LeaveController = {
 
     // get all leaves according to current login hod 
     hodEmailLeaves: async (req, res) => {
-        const hodLeaves = await Leave.find({ hodEmail })
+        const email = req.params.id
+        // console.log(email)
+        const hodLeaves = await Leave.find({ hodEmail: email })
+
+        if(hodLeaves){
+            return res.json({ Result: hodLeaves})
+        }
+        else{
+            return res.json({ Error: "Internal Server Error"})
+        }
     }
 }
 
