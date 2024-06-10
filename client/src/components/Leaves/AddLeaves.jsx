@@ -113,7 +113,7 @@ const AddLeaves = () => {
                 </div>
 
                 <div className="my-4">
-                  <label htmlFor="" className="text-gray-500">Dutarion</label>
+                  <label htmlFor="" className="text-gray-500">Duration</label>
                   <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Dutarion' 
                   onChange={e => SetLeaveData({...LeaveData, Dutarion:e.target.value})}/>
                 </div>                

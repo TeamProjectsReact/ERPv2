@@ -45,7 +45,7 @@ const RequestLeaves = () => {
                                     End Date
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
-                                    Dutarion
+                                    Duration
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
                                     Status
@@ -68,7 +68,7 @@ const RequestLeaves = () => {
                                                         <p className="">{leaves.StartData}</p>
                                                         <p className="">{leaves.EndDate}</p>
                                                         <p className="">{leaves.Dutarion}</p>
-                                                        <p className="">{leaves.Status}</p>
+                                                        <p className="text-yellow-500 font-semibold">{leaves.Status}</p>
                                                     </div>
                                                 </th>
                                                 <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
@@ -84,7 +84,13 @@ const RequestLeaves = () => {
                                                     {leaves.Dutarion}
                                                 </td>
                                                 <td scope="row" class="font-semibold hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    {leaves.Status}
+                                                    <p className="text-yellow-500 font-semibold">{leaves.Status}</p>
+                                                </td>
+                                                <td>
+                                                    <div className="md:flex">
+                                                        <button className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Accept</button>
+                                                        <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         )
