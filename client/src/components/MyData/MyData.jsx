@@ -15,9 +15,10 @@ const MyData = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get('YOUR_API_ENDPOINT_HERE');
+            const response = await axios.get('https://teamprojectsreact.github.io/EMPAPI/EmpRestAPI.employees.json');
             const foundEmployee = response.data.find(emp => emp.email === EmailUser);
-            SetUserData(foundEmployee);
+            console.log(foundEmployee)
+            // SetUserData(foundEmployee);
           } catch (error) {
             console.log(err)
           } 
