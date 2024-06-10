@@ -22,7 +22,7 @@ export default function App() {
           <Route path="Leaves" element={<PrivateRoute ProtectRoute={<Leaves /> } /> } />
           <Route path="Reservation" element={<PrivateRoute ProtectRoute={<Reservation /> } /> } />
           <Route path="SiteAdmins" element={<PrivateRoute ProtectRoute={<SiteAdmins /> } /> } />
-          <Route path="RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
+          <Route path="Leaves/RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
         </Route>
       </Routes>
     </BrowserRouter>
