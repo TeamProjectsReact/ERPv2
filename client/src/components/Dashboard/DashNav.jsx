@@ -48,8 +48,10 @@ const DashNav = () => {
                         <p className="pl-2">Logout</p>
                     </div>                    
                     <div className="flex text-white font-semibold cursor-pointer my-2">
-                        <p><BsPersonFill className='text-2xl'/></p>
-                        <p>Profile</p>
+                        <Link to={'MyData'}>
+                            <p><BsPersonFill className='text-2xl'/></p>
+                            <p>Profile</p>
+                        </Link>
                     </div>
                 </div>
             </div>
