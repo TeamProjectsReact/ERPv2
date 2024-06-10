@@ -47,12 +47,14 @@ const DashNav = () => {
                         <p className=""><BsPower className='text-2xl'/></p>
                         <p className="pl-2">Logout</p>
                     </div>                    
-                    <div className="flex text-white font-semibold cursor-pointer my-2">
-                        <Link to={'MyData'}>
+
+                    <Link to={'MyData'}>
+                        <div className="flex text-white font-semibold cursor-pointer my-2">
                             <p><BsPersonFill className='text-2xl'/></p>
                             <p>Profile</p>
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
+                    
                 </div>
             </div>
 
