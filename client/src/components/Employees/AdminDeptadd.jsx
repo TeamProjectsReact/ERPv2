@@ -16,7 +16,7 @@ const AdminDeptadd = () => {
         return (
             <div className='mx-4'>
                 <div className="">
-                    <Link>
+                    <Link to={'../Employee'}>
                         <button className=''>Back</button>  
                     </Link>
                 </div>
