@@ -20,7 +20,8 @@ const DashHome = () => {
       {id: 5, name: "Work Requests", icon: <BsHouseGearFill />, value: <CountUp end={20} />, style: "text-purple-500"},
       {id: 6, name: "GatePass", icon: <BsPassFill />, value: <CountUp end={20} />, style: "text-blue-500"},
       {id: 7, name: "Increment", icon: <BsCashStack />, value: <CountUp end={20} />, style: "text-green-500"},  
-      {id: 8, name: "Vehicle", icon: <BsCarFrontFill />, value: <CountUp end={20} />, style: "text-yellow-500"},              
+      {id: 8, name: "Vehicle", icon: <BsCarFrontFill />, value: <CountUp end={20} />, style: "text-yellow-500"},   
+      {id: 9, name: "Departments", icon: <BsBuildingFill />, value: <CountUp end={20} />, style: "text-yellow-500"},                         
     ]
 
     const userData = [
