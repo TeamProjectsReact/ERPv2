@@ -1,4 +1,5 @@
 const User = require('../Models/User')
+const Leave = require('../Models/Leave')
 
 const LeaveController = {
     HodData: async (req, res) => {
@@ -29,11 +30,25 @@ const LeaveController = {
             Dutarion
         } = req.body
 
-        const id = req.params.id
+        const Emailid = req.params.id
 
-        // add leves to database 
+        const leaveAdd = new Leave({
+            StartTime: startTime,
+            reqEmail: Emailid,
+            hodEmail: hodEmail,
+            StartData: startDate,
+            EndDate: endDate,
+            Dutarion: Dutarion
+        })
 
+        const ResultLeave = leaveAdd.save()
 
+        if(ResultLeave){
+            return res.json({ Status: "Success"})
+        }
+        else{
+            return res.json({ Error: "Internal Server Error"})
+        }
     }
 }
 
