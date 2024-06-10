@@ -53,7 +53,7 @@ const AddLeaves = () => {
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
-        <div className="bg-white py-4 px-8 rounded shadow-md">
+        <div className="bg-white py-4 px-8 rounded shadow-md mr-4">
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
           <hr />
           <div className="my-4">
