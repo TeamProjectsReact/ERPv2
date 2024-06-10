@@ -11,6 +11,12 @@ const Employee = () => {
     const RoleUser = secureLocalStorage.getItem("Login2");
 
     // get all Employees
+    const [UserData, SetUserData] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:5000/DeptUsers/UsertoDept')
+        .then(res => SetUserData(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
 
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
         return (
