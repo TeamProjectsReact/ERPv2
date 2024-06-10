@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
 
 
-import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight, BsTicketDetailedFill, BsFileTextFill, BsHouseGearFill, BsPassFill, BsCashStack, BsCarFrontFill, BsPersonArmsUp, BsPersonFillLock } from "react-icons/bs";
+import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight, BsTicketDetailedFill, BsFileTextFill, BsHouseGearFill, BsPassFill, BsCashStack, BsCarFrontFill, BsPersonArmsUp, BsPersonFillLock, BsBuildingFill } from "react-icons/bs";
 
 
 
@@ -31,7 +31,9 @@ const DashSide = () => {
         {id: 8, name: "Increment", link: "Increment", icons: <BsCashStack />},  
         {id: 9, name: "Vehicle", link: "Vehicle", icons: <BsCarFrontFill />},  
         {id: 10, name: "SiteAdmin", link: "SiteAdmins", icons: <BsPersonFillLock />},  
+        {id: 11, name: "Departments", link: "Departments", icons: <BsBuildingFill />},  
     ]
+
 
 
     
@@ -102,7 +104,7 @@ const DashSide = () => {
                                 )
                             }
                             else{
-                                if(side.id !== 10){
+                                if(side.id !== 10 && side.id !== 11){
                                     return (
                                         <Link to={side.link}>
                                             <div className="my-4 mx-2">
