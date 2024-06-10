@@ -54,6 +54,43 @@ const RequestLeaves = () => {
                                     Action
                                 </td>
                             </thead>
+                            <tbody>
+                                {
+                                    LeaveHod.map((leaves, index) => {
+                                        return (
+                                            <tr key={index} className='border-b border-gray-200'>
+                                                <th scope="row" class="px-2 py-4 font-medium text-gray-500 whitespace-nowrap dark:text-white">
+                                                    <p className="hidden md:table-cell">{leaves.reqEmail}</p>
+                                                    <div className="md:hidden">
+                                                        <p className="font-semibold">{leaves.reqEmail}</p>
+                                                        <p className="">{leaves.email}</p>
+                                                        <p className="">{leaves.StartTime}</p>
+                                                        <p className="">{leaves.StartData}</p>
+                                                        <p className="">{leaves.EndDate}</p>
+                                                        <p className="">{leaves.Dutarion}</p>
+                                                        <p className="">{leaves.Status}</p>
+                                                    </div>
+                                                </th>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {leaves.StartTime}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {leaves.StartData}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {leaves.EndDate}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {leaves.Dutarion}
+                                                </td>
+                                                <td scope="row" class="font-semibold hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {leaves.Status}
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
                         </table>
                     </div>
                 </div>
