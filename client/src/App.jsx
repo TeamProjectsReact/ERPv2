@@ -11,6 +11,7 @@ import RequestLeaves from "./components/Leaves/RequestLeaves";
 import MyData from "./components/MyData/MyData";
 import Employee from "./components/Employees/Employee";
 import AdminDeptadd from "./components/Employees/AdminDeptadd";
+import Departments from "./components/Department/Departments";
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path='MyData' element={<PrivateRoute ProtectRoute={<MyData /> } /> } />
           <Route path='Employee' element={<PrivateRoute ProtectRoute={<Employee /> } /> } />
           <Route path="Employee/AdminDeptadd" element={<PrivateRoute ProtectRoute={<AdminDeptadd />} /> } />
+          <Route path="Departments" element={<PrivateRoute ProtectRoute={<Departments /> } /> } />
         </Route>
       </Routes>
     </BrowserRouter>
