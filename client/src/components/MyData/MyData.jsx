@@ -32,93 +32,93 @@ const MyData = () => {
             <div className='md:mx-8 mx-2 my-4'>
                 <h1 className="text-gray-500 font-semibold text-xl">My Profile</h1>
 
-                <div className="bg-white py-4 md:px-8 px-4 my-4 mx-2 rounded shadow-md">
+                <div className="bg-white py-4 md:px-8 px-4 my-4 mx-2 rounded shadow-md flex">
                     <table border={0}>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12 w-full'>
                             <td>
                                 <p className="text-gray-500">Employee ID</p>
                             </td>
-                            <td>
-                                {UserData.EmpID}
+                            <td className='pl-4'>
+                                <p className="text-blue-500 font-semibold">{UserData.EmpID}</p>
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Initial</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.initial} {UserData.surname}
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Address</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.address} 
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Phone</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.phone} 
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Email</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.email} 
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Designation</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.designation} 
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">NIC</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.nic} 
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Contact</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.emgcontact}
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Employee type</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.type}
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Civil Status</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.civilstatus}
                             </td>
                         </tr>
-                        <tr>
+                        <tr className='border-b border-gray-200 h-12'>
                             <td>
                                 <p className="text-gray-500">Gender</p>
                             </td>
-                            <td>
+                            <td className='pl-4'>
                                 {UserData.gender}
                             </td>
                         </tr>
