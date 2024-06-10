@@ -22,6 +22,8 @@ app.use(express.json())
 app.use('/auth', authRoute)
 app.use('/leave', LeaveRoute)
 
+
+
 app.listen(PORT, () => {
     console.log(`Server Running on PORT ${PORT}`)
 })
