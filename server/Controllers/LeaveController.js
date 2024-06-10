@@ -38,7 +38,8 @@ const LeaveController = {
             hodEmail: hodEmail,
             StartData: startDate,
             EndDate: endDate,
-            Dutarion: Dutarion
+            Dutarion: Dutarion,
+            Status: "Requested"
         })
 
         const ResultLeave = leaveAdd.save()
