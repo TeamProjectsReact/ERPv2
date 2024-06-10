@@ -68,6 +68,11 @@ const DashSide = () => {
                                             <p className="">Secretary</p>    
                                         )
                                     }
+                                    else if(RoleUser === "HOD"){
+                                        return (
+                                            <p className="">Head of Dept</p>    
+                                        )
+                                    }
                                     else if(RoleUser === "RA"){
                                         return (
                                             <p className="">Research Assistant</p>    
