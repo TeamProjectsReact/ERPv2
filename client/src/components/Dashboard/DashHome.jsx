@@ -25,12 +25,12 @@ const DashHome = () => {
 
     const userData = [
       {id: 1, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 2, name: 'Reservation', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 3, name: 'SRNs', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 4, name: 'Work Requests', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 5, name: 'GatePass', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 6, name: 'Increment', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 6, name: 'Vehicle', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 2, name: 'Reservation', value: <CountUp end={20} />, icon: <BsTicketDetailedFill />, style: "text-red-500"},
+      {id: 3, name: 'SRNs', value: <CountUp end={20} />, icon: <BsFileTextFill />, style: "text-blue-500"},
+      {id: 4, name: 'Work Requests', value: <CountUp end={20} />, icon: <BsHouseGearFill />, style: "text-yellow-500"},
+      {id: 5, name: 'GatePass', value: <CountUp end={20} />, icon: <BsPassFill />, style: "text-purple-500"},
+      {id: 6, name: 'Increment', value: <CountUp end={20} />, icon: <BsCashStack />, style: "text-blue-500"},
+      {id: 7, name: 'Vehicle', value: <CountUp end={20} />, icon: <BsCarFrontFill />, style: "text-green-500"},
     ]
 
     if(EmailUser !== null & RoleUser !== null){
@@ -67,6 +67,32 @@ const DashHome = () => {
                           })
                         }                
                       </div>
+                      )
+                    }
+                    if(RoleUser === "RA"){
+                      return (
+                        <div className="md:grid grid-cols-4 gap-4 mr-4">
+                          {
+                            userData.map((user) => {
+                              return (
+                                <div className={`bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md ${user.style}`}>
+                                <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
+                                    <div className="">
+                                        <h1 className={`text-[180%] ${user.style}`}>{user.value}</h1>
+                                        <p className="py-2 text-[120%]">{user.name}</p>
+                                    </div>
+                                    <div className="">
+                                        <p className="text-[200%] text-gray-500">{user.icon}</p>
+                                    </div>
+                                </div>
+                                <div className="text-white py-4 px-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded">
+                                    My {user.name} 
+                                </div>
+                              </div>
+                              )
+                            })
+                          }
+                        </div>
                       )
                     }
                   })()
