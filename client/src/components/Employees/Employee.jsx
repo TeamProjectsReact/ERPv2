@@ -10,6 +10,8 @@ const Employee = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+    // get all Employees
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
         return (
             <div className='mx-4'>
@@ -17,23 +19,17 @@ const Employee = () => {
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <th scope="col" class=" table-cell">
-                                    <p className="md:block hidden">Email</p>
-                                    <p className="md:hidden block">Leave Data</p>                                                                        
+                                    <p className="md:block hidden">Employee ID</p>
+                                    <p className="md:hidden block">Employee Data</p>                                                                        
                                 </th>
                                 <td scope="col" class=" hidden md:table-cell">
-                                    Start Time
+                                    Email
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
-                                    Start Date
+                                    Username
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
-                                    End Date
-                                </td>
-                                <td scope="col" class=" hidden md:table-cell">
-                                    Duration
-                                </td>
-                                <td scope="col" class=" hidden md:table-cell">
-                                    Status
+                                    Designation
                                 </td>
                                 <td scope="col" class="table-cell">
                                     Action
