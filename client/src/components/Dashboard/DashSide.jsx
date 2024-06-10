@@ -92,7 +92,7 @@ const DashSide = () => {
                 <div className="my-4">
                     {
                         SideLink.map((side, indx) => {
-                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
                                 return (
                                     <Link to={side.link}>
                                         <div className="my-4 mx-2">
