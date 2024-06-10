@@ -14,6 +14,10 @@ const MyData = () => {
         return (
             <div className='mx-8 my-4'>
                 <h1 className="text-gray-500 font-semibold text-xl">My Profile</h1>
+
+                <div className="bg-white py-4 px-8 my-4 mx-2 rounded shadow-md">
+                    
+                </div>
             </div>
         )
     }
