@@ -23,6 +23,15 @@ const DashHome = () => {
       {id: 8, name: "Vehicle", icon: <BsCarFrontFill />, value: <CountUp end={20} />, style: "text-yellow-500"},              
     ]
 
+    const userData = [
+      {id: 1, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 2, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 3, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 4, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 5, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 6, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      
+    ]
 
     if(EmailUser !== null & RoleUser !== null){
       return (
