@@ -24,7 +24,7 @@ const Employee = () => {
             alert("add to my Dept")
         }
         else if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-            navigate('')
+            navigate('AdminDeptadd')
         }
     }
 
