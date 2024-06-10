@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup'
 import axios from 'axios'
+
 
 const AddLeaves = () => {
   const navigate = useNavigate()
@@ -55,6 +56,19 @@ const AddLeaves = () => {
       <div>
         <div className="bg-white py-4 px-8 rounded shadow-md mr-4">
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
+          {
+            (() => {
+              if(RoleUser === "HOD"){
+                return (
+                  <div className="">
+                    <Link>
+                      <button className='bg-gradient-to-r from-green-500 via-white-500 to-blue-500 text-white py-2 my-4 px-8 rounded font-semibold'>leave Requests</button>
+                    </Link>                    
+                  </div>
+                )
+              }
+            })()
+          }
           <hr />
           <div className="my-4">
             <form onSubmit={headleSubmit}>
