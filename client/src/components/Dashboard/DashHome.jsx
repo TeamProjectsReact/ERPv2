@@ -25,12 +25,12 @@ const DashHome = () => {
 
     const userData = [
       {id: 1, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 2, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 3, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 4, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 5, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      {id: 6, name: 'Leaves', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
-      
+      {id: 2, name: 'Reservation', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 3, name: 'SRNs', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 4, name: 'Work Requests', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 5, name: 'GatePass', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 6, name: 'Increment', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
+      {id: 6, name: 'Vehicle', value: <CountUp end={20} />, icon: <BsBoxArrowDownRight />, style: "text-green-500"},
     ]
 
     if(EmailUser !== null & RoleUser !== null){
