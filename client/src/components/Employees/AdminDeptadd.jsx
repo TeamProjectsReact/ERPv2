@@ -14,7 +14,13 @@ const AdminDeptadd = () => {
 
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
         return (
-            <div>AdminDeptadd</div>
+            <div className='mx-4'>
+                <div className="">
+                    <Link>
+                        <button className=''>Back</button>  
+                    </Link>
+                </div>
+            </div>
         )
     }
     else{
