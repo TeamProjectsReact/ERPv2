@@ -32,8 +32,8 @@ const MyData = () => {
             <div className='md:mx-8 mx-2 my-4'>
                 <h1 className="text-gray-500 font-semibold text-xl">My Profile</h1>
 
-                <div className="bg-white py-4 md:px-8 px-4 my-4 mx-2 rounded shadow-md flex">
-                    <table border={0}>
+                <div className="bg-white py-4 md:px-8 px-4 my-4 mx-2 rounded shadow-md">
+                    <table border={0} className='w-full'>
                         <tr className='border-b border-gray-200 h-12 w-full'>
                             <td>
                                 <p className="text-gray-500">Employee ID</p>
@@ -123,6 +123,27 @@ const MyData = () => {
                             </td>
                         </tr>
                     </table>
+
+                    <div className="mt-6">
+                        <table border={0} className='w-full'>
+                            <tr className='border-b border-gray-200 h-12'>
+                                <td>
+                                    <p className="text-gray-500">Department</p>
+                                </td>
+                                <td className='pl-4'>
+                                    Computer Science
+                                </td>
+                            </tr>
+                            <tr className='border-b border-gray-200 h-12'>
+                                <td>
+                                    <p className="text-gray-500">Department Head</p>
+                                </td>
+                                <td className='pl-4'>
+                                    hod@123.com
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         )
