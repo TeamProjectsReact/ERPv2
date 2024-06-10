@@ -7,6 +7,7 @@ import DashHome from "./components/Dashboard/DashHome";
 import Leaves from "./components/Leaves/Leaves";
 import Reservation from "./components/Reservation/Reservation";
 import SiteAdmins from "./components/SiteAdmins/SiteAdmins";
+import RequestLeaves from "./components/Leaves/RequestLeaves";
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="Leaves" element={<PrivateRoute ProtectRoute={<Leaves /> } /> } />
           <Route path="Reservation" element={<PrivateRoute ProtectRoute={<Reservation /> } /> } />
           <Route path="SiteAdmins" element={<PrivateRoute ProtectRoute={<SiteAdmins /> } /> } />
+          <Route path="RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
         </Route>
       </Routes>
     </BrowserRouter>
