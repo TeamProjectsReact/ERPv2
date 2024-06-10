@@ -13,7 +13,7 @@ const Employee = () => {
     // get all Employees
     const [UserData, SetUserData] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/DeptUsers/UsertoDept')
+        axios.get('http://localhost:5000/Dept/UsertoDept')
         .then(res => SetUserData(res.data.Result))
         .catch(err => console.log(err))
     }, [])

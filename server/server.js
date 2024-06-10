@@ -6,6 +6,7 @@ const path = require('path');
 
 const authRoute = require('./Routes/UserRoute')
 const LeaveRoute = require('./Routes/LeaveRoute')
+const DeptRoute = require('./Routes/DeptRoute')
 
 // app
 
@@ -21,7 +22,7 @@ app.use(express.json())
 
 app.use('/auth', authRoute)
 app.use('/leave', LeaveRoute)
-
+app.use('/Dept', DeptRoute)
 
 
 app.listen(PORT, () => {
