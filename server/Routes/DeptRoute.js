@@ -5,4 +5,4 @@ const router = express.Router()
 
 router.get('/UsertoDept', DeptController.SeeUsers)
 
-module.export = router;
+module.exports = router;
