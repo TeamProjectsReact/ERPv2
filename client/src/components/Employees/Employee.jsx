@@ -43,8 +43,19 @@ const Employee = () => {
                                     UserData.map((deptUser, index) => {
                                         return (
                                             <tr key={index}>
-                                                <td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
                                                     {deptUser.email}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {deptUser.username}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {deptUser.Role}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    <div className="md:flex">
+                                                        <button className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to Dept</button>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         )
