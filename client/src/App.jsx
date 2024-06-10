@@ -28,7 +28,7 @@ export default function App() {
           <Route path="Leaves/RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
           <Route path='MyData' element={<PrivateRoute ProtectRoute={<MyData /> } /> } />
           <Route path='Employee' element={<PrivateRoute ProtectRoute={<Employee /> } /> } />
-          <Route path="AdminDeptadd" element={<PrivateRoute ProtectRoute={<AdminDeptadd />} /> } />
+          <Route path="Employee/AdminDeptadd" element={<PrivateRoute ProtectRoute={<AdminDeptadd />} /> } />
         </Route>
       </Routes>
     </BrowserRouter>
