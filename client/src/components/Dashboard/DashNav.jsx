@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BsPersonFill, BsCaretDownFill, BsCaretUpFill, BsPower } from 'react-icons/bs'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
-
 
 const DashNav = () => {
     const navigate = useNavigate()
@@ -48,6 +47,10 @@ const DashNav = () => {
                         <p className=""><BsPower className='text-2xl'/></p>
                         <p className="pl-2">Logout</p>
                     </div>                    
+                    <div className="flex text-white font-semibold cursor-pointer my-2">
+                        <p><BsPersonFill className='text-2xl'/></p>
+                        <p>Profile</p>
+                    </div>
                 </div>
             </div>
 
