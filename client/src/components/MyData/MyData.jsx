@@ -114,6 +114,14 @@ const MyData = () => {
                                 {UserData.civilstatus}
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <p className="text-gray-500">Gender</p>
+                            </td>
+                            <td>
+                                {UserData.gender}
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
