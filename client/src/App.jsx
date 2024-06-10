@@ -8,6 +8,7 @@ import Leaves from "./components/Leaves/Leaves";
 import Reservation from "./components/Reservation/Reservation";
 import SiteAdmins from "./components/SiteAdmins/SiteAdmins";
 import RequestLeaves from "./components/Leaves/RequestLeaves";
+import MyData from "./components/MyData/MyData";
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="Reservation" element={<PrivateRoute ProtectRoute={<Reservation /> } /> } />
           <Route path="SiteAdmins" element={<PrivateRoute ProtectRoute={<SiteAdmins /> } /> } />
           <Route path="Leaves/RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
+          <Route path='MyData' element={<PrivateRoute ProtectRoute={<MyData /> } /> } />
         </Route>
       </Routes>
     </BrowserRouter>
