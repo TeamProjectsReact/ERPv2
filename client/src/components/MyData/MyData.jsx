@@ -10,13 +10,29 @@ const MyData = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+    const [UserData, SetUserData] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get('YOUR_API_ENDPOINT_HERE');
+            const foundEmployee = response.data.find(emp => emp.email === EmailUser);
+            SetUserData(foundEmployee);
+          } catch (error) {
+            console.log(err)
+          } 
+        };
+    
+        fetchData();
+      }, []);
+
     if(EmailUser !== null && RoleUser !== null){
         return (
             <div className='mx-8 my-4'>
                 <h1 className="text-gray-500 font-semibold text-xl">My Profile</h1>
 
                 <div className="bg-white py-4 px-8 my-4 mx-2 rounded shadow-md">
-                    
+
                 </div>
             </div>
         )
