@@ -41,6 +41,11 @@ const DeptController = {
                 return res.json({ Error: "Internal Server Error"})
             }
         }
+    },
+
+    // get all departs
+    AllDepts: async (req, res) => {
+        
     }
 }
 
