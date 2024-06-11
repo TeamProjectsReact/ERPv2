@@ -10,6 +10,10 @@ const DeptController = {
         else{
             return res.json({ Error: "Internal Server Error"})
         }
+    },
+
+    AddDept: async (req, res) => {
+        console.log(req.body)
     }
 }
 
