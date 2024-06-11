@@ -21,6 +21,10 @@ const Departments = () => {
                             <button className='bg-green-600 text-white py-2 px-4 rounded duration-500 hover:bg-green-700'>Add Department</button>
                         </Link>
                     </div>
+
+                    <div className="my-4 bg-white py-4 md:px-8 px-4 rounded shadow-md">
+                        hi all
+                    </div>
                 </div>
             </div>
           )
