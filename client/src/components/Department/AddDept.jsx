@@ -10,6 +10,16 @@ const AddDept = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+      // get all hods in database
+    const [hodD, SetHodData] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/leave/hodData')
+        .then(res => SetHodData(res.data.Result))
+        .catch(err => console.log(err)) 
+    }, [])
+
+    
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
         return (
             <div className='mx-4'>
@@ -27,6 +37,25 @@ const AddDept = () => {
                                     <label htmlFor="" className="">Department Name</label>
                                     <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Department Name'
                                     />
+                                </div>
+                                <div className="">
+                                    <label htmlFor="" className="">Department Location</label>
+                                    <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Department Location'
+                                    />
+                                </div>
+                                <div className="my-4">
+                                    <label htmlFor="" className="text-gray-500">HOD Email</label>
+                                    <select name="" id="" className='text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2'
+                                    >
+                                        <option value="">Select One</option>
+                                        {
+                                            hodD.map((hod) => {
+                                                return (
+                                                <option value={hod.email}>{hod.email} - {hod.username}</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
                                 </div>
                             </div>
                         </form>
