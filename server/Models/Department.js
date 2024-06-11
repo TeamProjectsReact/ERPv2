@@ -16,6 +16,10 @@ const DepartmentSchema = new mongoose.Schema({
     deptHod: {
         type: String,
         required: true,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 })
 
