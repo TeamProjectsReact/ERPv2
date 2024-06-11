@@ -27,10 +27,26 @@ const AddDept = () => {
         hodEmail: ''
     })
 
-    const headleSubmit = (e) => {
+    const headleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(DeptData)
+        // console.log(DeptData)
+
+        try{
+            const res = await axios.post('http://localhost:5000/Dept/AddDept', DeptData)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Department Added Successful")
+                    navigate('Departments')
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
     
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
