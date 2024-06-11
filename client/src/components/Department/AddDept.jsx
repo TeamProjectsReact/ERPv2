@@ -53,6 +53,11 @@ const AddDept = () => {
         return (
             <div className='mx-4'>
                 <h1 className="text-gray-500 text-xl font-semibold mb-4">New Department</h1>
+                <div className="my-4">
+                        <Link to={'../Departments'}>
+                            <button className='bg-blue-600 text-white py-2 px-4 rounded duration-500 hover:bg-green-700'>Back</button>
+                        </Link>
+                </div>
                 <div className="bg-white py-4 px-8 rounded shadow-md">
                     <div className="my-2">
                         <form onSubmit={headleSubmit}>
