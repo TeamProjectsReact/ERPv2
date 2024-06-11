@@ -22,8 +22,38 @@ const Departments = () => {
                         </Link>
                     </div>
 
-                    <div className="my-4 bg-white py-4 md:px-8 px-4 rounded shadow-md">
-                        hi all
+                    <div className="my-4">
+                    <div class="py-2 px-4 rounded shadow-md overflow-x-auto my-8 bg-white">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <th scope="col" class=" table-cell">
+                                    <p className="md:block hidden">Email</p>
+                                    <p className="md:hidden block">Leave Data</p>                                                                        
+                                </th>
+                                <td scope="col" class=" hidden md:table-cell">
+                                    Start Time
+                                </td>
+                                <td scope="col" class=" hidden md:table-cell">
+                                    Start Date
+                                </td>
+                                <td scope="col" class=" hidden md:table-cell">
+                                    End Date
+                                </td>
+                                <td scope="col" class=" hidden md:table-cell">
+                                    Duration
+                                </td>
+                                <td scope="col" class=" hidden md:table-cell">
+                                    Status
+                                </td>
+                                <td scope="col" class="table-cell">
+                                    Action
+                                </td>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
                     </div>
                 </div>
             </div>
