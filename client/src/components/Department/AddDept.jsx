@@ -58,6 +58,9 @@ const AddDept = () => {
                                     </select>
                                 </div>
                             </div>
+                            <div className="my-4">
+                                
+                            </div>
                         </form>
                     </div>
                 </div>
