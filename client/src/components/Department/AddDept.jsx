@@ -19,6 +19,19 @@ const AddDept = () => {
         .catch(err => console.log(err)) 
     }, [])
 
+    // add department
+    const [DeptData, SetDeptData] = useState({
+        deptID: '',
+        deptName: '',
+        deptLocation: '',
+        hodEmail: ''
+    })
+
+    const headleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(DeptData)
+    }
     
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
         return (
@@ -26,27 +39,27 @@ const AddDept = () => {
                 <h1 className="text-gray-500 text-xl font-semibold mb-4">New Department</h1>
                 <div className="bg-white py-4 px-8 rounded shadow-md">
                     <div className="my-2">
-                        <form>
+                        <form onSubmit={headleSubmit}>
                             <div className="md:grid grid-cols-3 gap-4">
                                 <div className="">
                                     <label htmlFor="" className="">Department ID</label>
                                     <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Department ID'
-                                    />
+                                    onChange={e => SetDeptData({...DeptData, deptID:e.target.value})}/>
                                 </div>
                                 <div className="">
                                     <label htmlFor="" className="">Department Name</label>
                                     <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Department Name'
-                                    />
+                                    onChange={e => SetDeptData({...DeptData, deptName:e.target.value})}/>
                                 </div>
                                 <div className="">
                                     <label htmlFor="" className="">Department Location</label>
                                     <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Department Location'
-                                    />
+                                    onChange={e => SetDeptData({...DeptData, deptLocation:e.target.value})}/>
                                 </div>
                                 <div className="my-4">
                                     <label htmlFor="" className="text-gray-500">HOD Email</label>
                                     <select name="" id="" className='text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2'
-                                    >
+                                    onChange={e => SetDeptData({...DeptData, hodEmail:e.target.value})}>
                                         <option value="">Select One</option>
                                         {
                                             hodD.map((hod) => {
