@@ -56,7 +56,15 @@ const Departments = () => {
                                 </td>
                             </thead>
                             <tbody>
-
+                                {
+                                    AllDepartments.map((depts, index) => {
+                                        return (
+                                            <tr key={index}>
+                                                
+                                            </tr>
+                                        )
+                                    })
+                                }
                             </tbody>
                         </table>
                     </div>
