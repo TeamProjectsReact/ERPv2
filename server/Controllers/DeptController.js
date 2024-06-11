@@ -1,3 +1,4 @@
+const Department = require('../Models/Department')
 const User = require('../Models/User')
 
 const DeptController = {
@@ -13,7 +14,33 @@ const DeptController = {
     },
 
     AddDept: async (req, res) => {
-        console.log(req.body)
+        // console.log(req.body)
+
+        const { deptID, deptName, deptLocation, hodEmail } = req.body
+
+        const checkDept = await Department.findOne({ deptID })
+
+        if(checkDept){
+            return res.json({ Error: "Department Alredy in Database"})
+        }
+        else{
+            // add department
+            const AddDeprt = new Department({
+                deptID: deptID,
+                deptName: deptName,
+                deptLocation: deptLocation,
+                deptHod: hodEmail,
+            })
+
+            const resultDept = AddDeprt.save()
+
+            if(resultDept) {
+                return res.json({ Status: "Success"})
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
+        }
     }
 }
 
