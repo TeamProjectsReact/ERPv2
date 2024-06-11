@@ -17,7 +17,7 @@ const Departments = () => {
                 <div className="">
                     <h1 className="text-gray-500 text-xl font-semibold">Departments</h1>
                     <div className="my-4">
-                        <Link>
+                        <Link to={'AddDept'}>
                             <button className='bg-green-600 text-white py-2 px-4 rounded duration-500 hover:bg-green-700'>Add Department</button>
                         </Link>
                     </div>
