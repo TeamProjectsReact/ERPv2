@@ -34,7 +34,7 @@ const Departments = () => {
                                     Department Name
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
-                                    Start Date
+                                    Department Location
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
                                     End Date
