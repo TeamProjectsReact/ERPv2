@@ -59,7 +59,7 @@ const AddDept = () => {
                                 </div>
                             </div>
                             <div className="my-4">
-                                
+                                <button type="submit" className="bg-gradient-to-r from-green-500 via-white-500 to-blue-500 text-white py-4 px-8 rounded font-semibold">Add Department</button>
                             </div>
                         </form>
                     </div>
