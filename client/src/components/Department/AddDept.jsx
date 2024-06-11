@@ -23,6 +23,11 @@ const AddDept = () => {
                                     <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Department ID'
                                     />
                                 </div>
+                                <div className="">
+                                    <label htmlFor="" className="">Department Name</label>
+                                    <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Department Name'
+                                    />
+                                </div>
                             </div>
                         </form>
                     </div>
