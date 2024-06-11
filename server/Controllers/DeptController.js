@@ -45,6 +45,8 @@ const DeptController = {
 
     // get all departs
     AllDepts: async (req, res) => {
+        const depts = await Department.find();
+
         
     }
 }
