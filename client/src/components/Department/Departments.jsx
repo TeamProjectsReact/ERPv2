@@ -15,7 +15,9 @@ const Departments = () => {
     const [AllDepartments, SetAllDepartments] = useState([])
 
     useEffect(() => {
-        
+        axios.get('http://localhost:5000/Dept/allDepats')
+        .then(res => SetAllDepartments(res.data.Result))
+        .catch(err => console.log(err))
     }, [])
 
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
