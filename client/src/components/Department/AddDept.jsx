@@ -12,7 +12,22 @@ const AddDept = () => {
 
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
         return (
-            <div>AddDept</div>
+            <div className='mx-4'>
+                <h1 className="text-gray-500 text-xl font-semibold mb-4">New Department</h1>
+                <div className="bg-white py-4 px-8 rounded shadow-md">
+                    <div className="my-2">
+                        <form>
+                            <div className="md:grid grid-cols-3 gap-4">
+                                <div className="">
+                                    <label htmlFor="" className="">Department ID</label>
+                                    <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Department ID'
+                                    />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
           )
     }
     else{
