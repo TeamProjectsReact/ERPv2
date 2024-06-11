@@ -47,7 +47,12 @@ const DeptController = {
     AllDepts: async (req, res) => {
         const depts = await Department.find();
 
-        
+        if(depts){
+            return res.json({ Result: depts })
+        }
+        else{
+            return res.json({ Error: "Internal Server Error" })
+        }
     }
 }
 
