@@ -59,8 +59,10 @@ const Departments = () => {
                                 {
                                     AllDepartments.map((depts, index) => {
                                         return (
-                                            <tr key={index}>
-                                                <p>{depts.deptName}</p>
+                                            <tr key={index} className='border-b border-gray-200'>
+                                                <td>
+                                                    {depts.deptName}
+                                                </td>
                                             </tr>
                                         )
                                     })
