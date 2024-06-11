@@ -11,6 +11,13 @@ const Departments = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+    // get all departments
+    const [AllDepartments, SetAllDepartments] = useState([])
+
+    useEffect(() => {
+        
+    }, [])
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
         return (
             <div className='mx-4'>
