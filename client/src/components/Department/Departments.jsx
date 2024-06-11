@@ -37,10 +37,7 @@ const Departments = () => {
                                     Department Location
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
-                                    End Date
-                                </td>
-                                <td scope="col" class=" hidden md:table-cell">
-                                    Duration
+                                    Hod Email
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
                                     Status
