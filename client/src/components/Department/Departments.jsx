@@ -27,11 +27,11 @@ const Departments = () => {
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <th scope="col" class=" table-cell">
-                                    <p className="md:block hidden">Email</p>
+                                    <p className="md:block hidden">Department ID</p>
                                     <p className="md:hidden block">Leave Data</p>                                                                        
                                 </th>
                                 <td scope="col" class=" hidden md:table-cell">
-                                    Start Time
+                                    Department Name
                                 </td>
                                 <td scope="col" class=" hidden md:table-cell">
                                     Start Date
