@@ -37,7 +37,7 @@ const AddDept = () => {
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Department Added Successful")
-                    navigate('Departments')
+                    navigate('../Departments')
                 }
                 else{
                     alert(res.data.Error)
