@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsMortarboard, BsBuilding, BsMortarboardFill, BsPersonCheck, BsCashCoin, BsCalendarEvent, BsCashStack, BsCarFrontFill, BsPassFill, BsHouseGearFill, BsFileTextFill, BsTicketDetailedFill, BsBoxArrowDownRight, BsPeopleFill, BsBuildingFill } from "react-icons/bs";
 import CountUp from 'react-countup'
+import axios from 'axios';
 
 const DashHome = () => {
 
@@ -34,6 +35,14 @@ const DashHome = () => {
       {id: 7, name: 'Vehicle', value: <CountUp end={20} />, icon: <BsCarFrontFill />, style: "text-green-500"},
     ]
 
+    const [UserData, SetUserData] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:5000/Dept/MyDept')
+        .then(res => SetUserData(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
+
+
     if(EmailUser !== null & RoleUser !== null){
       return (
           <div className="">
@@ -51,7 +60,7 @@ const DashHome = () => {
                         <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
                             <div className="">
                                 <h1 className={`text-[180%] text-blue-500 font-semilbold`}>#</h1>
-                                <p className="py-2 text-[120%]">Computer Science</p>
+                                <p className="py-2 text-[120%]">{UserData.Department}</p>
                             </div>
                             <div className="">
                                 <p className="text-[200%] text-gray-500"><BsBuildingFill /></p>
