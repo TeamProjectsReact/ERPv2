@@ -37,7 +37,7 @@ const DashHome = () => {
 
     const [UserData, SetUserData] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/Dept/MyDept')
+        axios.get('http://localhost:5000/Dept/MyDept/' + EmailUser)
         .then(res => SetUserData(res.data.Result))
         .catch(err => console.log(err))
     }, [])
