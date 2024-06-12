@@ -35,10 +35,13 @@ const DeptController = {
                 })
 
                 const resultDept = AddDeprt.save()
+                const UpdateData = {
+                    Department: req.body.deptName,
+                }
 
+                const Hoduser = await User.findOneAndUpdate({ deptHod: req.body.hodEmail }, UpdateData, { new: true });
 
-       
-                if(ResultUser){
+                if(Hoduser){
                     return res.json({ Status: "Success"})
                 }
                 else{
