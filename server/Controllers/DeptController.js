@@ -71,7 +71,14 @@ const DeptController = {
         const emailHod = req.params.id
 
         const HodDept = await User.findOne({ emailHod })
-        
+
+        if(HodDept){
+
+        }
+        else{
+            return res.json({ Error: "Internal Server Error" })
+        }
+
     }
 }
 
