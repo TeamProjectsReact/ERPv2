@@ -46,7 +46,7 @@ const authController = {
             const checUser = await User.findOne({ email })
 
             if(checUser) {
-                const checkPass = bcrypt.compare(password, checUser.password)
+                const checkPass = await bcrypt.compare(password, checUser.password)
 
                 if(checkPass){
                     // create a token for login

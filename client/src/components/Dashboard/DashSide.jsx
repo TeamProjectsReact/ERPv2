@@ -104,18 +104,6 @@ const DashSide = () => {
                                     </Link>
                                 )
                             }
-                            else if(RoleUser === "HOD"){
-                                return (
-                                    <Link to={side.link}>
-                                        <div className="my-4 mx-2">
-                                            <div className="flex">
-                                                <p className="lg:text-3xl lg:my-2 text-xl">{side.icons}</p>
-                                                <p className={`lg:text-xl lg:pt-2 pl-4 `}>{side.name}</p>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                )
-                            }
                             else{
                                 if(side.id !== 10 && side.id !== 11 && side.id !== 12){
                                     return (
