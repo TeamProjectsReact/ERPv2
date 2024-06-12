@@ -70,9 +70,18 @@ const Employee = () => {
                                                     {deptUser.Department}
                                                 </td>
                                                 <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    <div className="md:flex">
-                                                        <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to Dept</button>
-                                                    </div>
+                                                    {
+                                                        (() => {
+                                                            if(deptUser.Department === ""){
+                                                                <div className="md:flex">
+                                                                    <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to Dept</button>
+                                                                </div>
+                                                            }
+                                                            else{
+
+                                                            }
+                                                        })()
+                                                    }
                                                 </td>
                                             </tr>
                                         )
