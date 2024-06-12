@@ -14,40 +14,42 @@ const DeptController = {
     },
 
     AddDept: async (req, res) => {
+        try{
         // console.log(req.body)
 
-        const { deptID, deptName, deptLocation, hodEmail } = req.body
+            const { deptID, deptName, deptLocation, hodEmail } = req.body
 
-        const checkDept = await Department.findOne({ deptID })
+            const checkDept = await Department.findOne({ deptID })
 
-        if(checkDept){
-            return res.json({ Error: "Department Alredy in Database"})
-        }
-        else{
-            // add department
-            const AddDeprt = new Department({
-                deptID: deptID,
-                deptName: deptName,
-                deptLocation: deptLocation,
-                deptHod: hodEmail,
-                Status: "Active"
-            })
-
-            const resultDept = AddDeprt.save()
-            const UpdateData = {
-                Department: req.body.deptName,
-            }
-
-            const Hoduser = await User.findOneAndUpdate({ deptHod: req.body.hodEmail }, UpdateData, { new: true });
-
-            if(Hoduser){
-                return res.json({ Status: "Success"})
-                console.log(UpdateDeptHod)
+            if(checkDept){
+                return res.json({ Error: "Department Alredy in Database"})
             }
             else{
-                return res.json({ Error: "Internal Server Error 1"})
-            }
+                // add department
+                const AddDeprt = new Department({
+                    deptID: deptID,
+                    deptName: deptName,
+                    deptLocation: deptLocation,
+                    deptHod: hodEmail,
+                    Status: "Active"
+                })
+
+                const resultDept = AddDeprt.save()
+
+
+       
+                if(ResultUser){
+                    return res.json({ Status: "Success"})
+                }
+                else{
+                    return res.json({ Error: "Internal Server Error 1"})
+                }
+            }            
         }
+        catch (err) {
+            console.log(err)
+        }
+
     },
 
     // get all departs

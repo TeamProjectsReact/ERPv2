@@ -21,7 +21,8 @@ const authController = {
                 username: username,
                 email: email,
                 password: hashPass,
-                Role: designation
+                Role: designation,
+                Department: ''
             })
 
             const ResultUser = NewUser.save()
