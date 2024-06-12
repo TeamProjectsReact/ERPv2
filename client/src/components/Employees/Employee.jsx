@@ -25,6 +25,7 @@ const Employee = () => {
         }
         else if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
             navigate('AdminDeptadd')
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 
