@@ -30,7 +30,7 @@ const DeptController = {
                 deptName: deptName,
                 deptLocation: deptLocation,
                 deptHod: hodEmail,
-                
+                Status: "Active"
             })
 
             const resultDept = AddDeprt.save()
