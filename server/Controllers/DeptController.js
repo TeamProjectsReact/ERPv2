@@ -65,6 +65,10 @@ const DeptController = {
         else{
             return res.json({ Error: "Internal Server Error" })
         }
+    },
+
+    MyDept: async (req, res) => {
+
     }
 }
 
