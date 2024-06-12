@@ -66,7 +66,7 @@ const Employee = () => {
                                                     {deptUser.Role}
                                                 </td>
                                                 <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    
+                                                    {deptUser.Department}
                                                 </td>
                                                 <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
                                                     <div className="md:flex">
