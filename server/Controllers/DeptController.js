@@ -73,7 +73,7 @@ const DeptController = {
         const HodDept = await User.findOne({ emailHod })
 
         if(HodDept){
-
+            return res.json({ Result: HodDept.Department })
         }
         else{
             return res.json({ Error: "Internal Server Error" })
