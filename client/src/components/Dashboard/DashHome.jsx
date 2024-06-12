@@ -39,7 +39,7 @@ const DashHome = () => {
     useEffect(() => {
         axios.get('http://localhost:5000/Dept/MyDept/' + EmailUser)
         .then(res => SetUserData(res.data.Result))
-        .catch(err => console.log(err))
+        .catch(err => console.log(err)) 
     }, [])
 
 
