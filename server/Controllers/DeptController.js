@@ -68,7 +68,10 @@ const DeptController = {
     },
 
     MyDept: async (req, res) => {
+        const emailHod = req.params.id
 
+        const HodDept = await User.findOne({ emailHod })
+        
     }
 }
 
