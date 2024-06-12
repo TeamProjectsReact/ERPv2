@@ -60,8 +60,17 @@ const Departments = () => {
                                     AllDepartments.map((depts, index) => {
                                         return (
                                             <tr key={index} className='border-b border-gray-200'>
-                                                <td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {depts.deptID}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
                                                     {depts.deptName}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {depts.deptLocation}
+                                                </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {depts.deptHod}
                                                 </td>
                                             </tr>
                                         )
