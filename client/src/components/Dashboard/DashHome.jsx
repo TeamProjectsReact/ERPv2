@@ -60,7 +60,7 @@ const DashHome = () => {
                         <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
                             <div className="">
                                 <h1 className={`text-[180%] text-blue-500 font-semilbold`}>#</h1>
-                                <p className="py-2 text-[120%]">{UserData.Department}</p>
+                                <p className="py-2 text-[120%]">{UserData}</p>
                             </div>
                             <div className="">
                                 <p className="text-[200%] text-gray-500"><BsBuildingFill /></p>
