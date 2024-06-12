@@ -39,7 +39,7 @@ const DeptController = {
                     Department: req.body.deptName,
                 }
 
-                const Hoduser = await User.findOneAndUpdate({ deptHod: req.body.hodEmail }, UpdateData, { new: true });
+                const Hoduser = await User.findOneAndUpdate({ email: req.body.hodEmail }, UpdateData, { new: true });
 
                 if(Hoduser){
                     return res.json({ Status: "Success"})
