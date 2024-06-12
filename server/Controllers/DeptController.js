@@ -34,24 +34,18 @@ const DeptController = {
             })
 
             const resultDept = AddDeprt.save()
+            const UpdateData = {
+                Department: req.body.deptName,
+            }
 
-            if(resultDept) {
-                const UpdateData = {
-                    Department: deptName
-                }
+            const Hoduser = await User.findOneAndUpdate({ deptHod: req.body.hodEmail }, UpdateData, { new: true });
 
-                const UpdateDeptHod = User.findOneAndUpdate({ hodEmail, UpdateData })
-                
-                if(UpdateDeptHod){
-                    return res.json({ Status: "Success"})
-                }
-                else{
-                    return res.json({ Error: "Internal Server Error"})
-                }
-
+            if(Hoduser){
+                return res.json({ Status: "Success"})
+                console.log(UpdateDeptHod)
             }
             else{
-                return res.json({ Error: "Internal Server Error"})
+                return res.json({ Error: "Internal Server Error 1"})
             }
         }
     },
