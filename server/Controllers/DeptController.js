@@ -36,7 +36,19 @@ const DeptController = {
             const resultDept = AddDeprt.save()
 
             if(resultDept) {
-                return res.json({ Status: "Success"})
+                const UpdateData = {
+                    Department: deptName
+                }
+
+                const UpdateDeptHod = User.findOneAndUpdate({ hodEmail, UpdateData })
+                
+                if(UpdateDeptHod){
+                    return res.json({ Status: "Success"})
+                }
+                else{
+                    return res.json({ Error: "Internal Server Error"})
+                }
+
             }
             else{
                 return res.json({ Error: "Internal Server Error"})
