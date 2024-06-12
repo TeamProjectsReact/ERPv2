@@ -72,6 +72,17 @@ const Departments = () => {
                                                 <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
                                                     {depts.deptHod}
                                                 </td>
+                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    {
+                                                        (() => {
+                                                            if(depts.Status){
+                                                                return (
+                                                                    <p className="text-green-700 font-semibold">Active</p>
+                                                                )
+                                                            }
+                                                        })()
+                                                    }
+                                                </td>
                                             </tr>
                                         )
                                     })
