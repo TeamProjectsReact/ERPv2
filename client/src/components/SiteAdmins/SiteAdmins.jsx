@@ -29,7 +29,7 @@ const SiteAdmins = () => {
                     <hr />
 
                     <div className="my-4 mr-4">
-                        <div className="md:grid grid-cols-4 gap-4">
+                        <div className="md:grid grid-cols-4 gap-4">     
                             {
                                 SiteAdminData.map((data) => {
                                     return (
