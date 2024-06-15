@@ -24,7 +24,7 @@ const Employee = () => {
             alert("add to my Dept")
         }
         else if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-            navigate('AdminDeptadd')
+            navigate('AdminDeptadd/'+ email)
         }
     }
 
@@ -72,15 +72,21 @@ const Employee = () => {
                                                     <div className="md:flex">
                                                         {
                                                             (() => {
-                                                                if(deptUser.Department !== null){
+                                                                if(deptUser.Department !== ""){
                                                                     return (
-                                                                        <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to Dept</button>
-                                                                    )
+                                                                        <p className='py-1 px-3 font-semibold rounded bg-blue-500 shadow-md text-white'>Alredy Added</p>                                                                    )
                                                                 }
                                                                 else{
-                                                                    return (
-                                                                        <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to Depttttttttt</button>
-                                                                    )
+                                                                    if(RoleUser === "HOD"){
+                                                                        return (
+                                                                            <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to My Dept</button>
+                                                                        )
+                                                                    }
+                                                                    else if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
+                                                                        return (
+                                                                            <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to Dept</button>
+                                                                        )
+                                                                    }
                                                                 }
                                                             })()
                                                         }
