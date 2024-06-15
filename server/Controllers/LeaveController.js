@@ -59,14 +59,15 @@ const LeaveController = {
                 from: process.env.EMAIL_USER,
                 to: hodEmail,
                 subject: "Notifications from ERP",
-                text: "There is a new Leave to Approve from" + reqEmail,
+                text: "There is a new Leave to Approve from : " + Emailid,
             };
             try {
                 await transporter.sendMail(mailOptions);
-                const email = new Email({ to, subject, body });
+                const email = new Email({ to:hodEmail, subject:mailOptions.subject, body:mailOptions.text });
                 await email.save();
                 return res.json({ Status: "Success"})
             } catch (error) {
+                console.log(error)
                 return res.json({ Error: "Error While Sending Emails"})
             }
 
