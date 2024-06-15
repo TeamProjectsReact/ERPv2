@@ -1,5 +1,6 @@
 const User = require('../Models/User')
 const Leave = require('../Models/Leave')
+const nodemailer = require('nodemailer');
 
 const LeaveController = {
     HodData: async (req, res) => {
