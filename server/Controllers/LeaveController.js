@@ -54,7 +54,12 @@ const LeaveController = {
         const ResultLeave = leaveAdd.save()
 
         if(ResultLeave){
-
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: hodEmail,
+                subject: "Notifications from ERP",
+                text: "There is a new Leave to Approve from" + reqEmail,
+            };
             // return res.json({ Status: "Success"})
 
         }
