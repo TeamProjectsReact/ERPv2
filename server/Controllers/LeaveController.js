@@ -1,6 +1,7 @@
 const User = require('../Models/User')
 const Leave = require('../Models/Leave')
 const nodemailer = require('nodemailer');
+const Email = require('../Models/Email')
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -60,7 +61,14 @@ const LeaveController = {
                 subject: "Notifications from ERP",
                 text: "There is a new Leave to Approve from" + reqEmail,
             };
-            // return res.json({ Status: "Success"})
+            try {
+                await transporter.sendMail(mailOptions);
+                const email = new Email({ to, subject, body });
+                await email.save();
+                return res.json({ Status: "Success"})
+            } catch (error) {
+                return res.json({ Error: "Error While Sending Emails"})
+            }
 
         }
         else{
