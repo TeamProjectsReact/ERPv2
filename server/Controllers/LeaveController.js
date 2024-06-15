@@ -2,6 +2,14 @@ const User = require('../Models/User')
 const Leave = require('../Models/Leave')
 const nodemailer = require('nodemailer');
 
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
+    },
+});
+
 const LeaveController = {
     HodData: async (req, res) => {
         try{
@@ -46,7 +54,9 @@ const LeaveController = {
         const ResultLeave = leaveAdd.save()
 
         if(ResultLeave){
-            return res.json({ Status: "Success"})
+
+            // return res.json({ Status: "Success"})
+
         }
         else{
             return res.json({ Error: "Internal Server Error"})
