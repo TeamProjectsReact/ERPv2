@@ -84,7 +84,7 @@ const SignUp = () => {
                         </form>
                     </div>
                     <hr className='my-2'/>
-                    <p className="my-4">Already have an Account ? <Link to={'/'}><span className="text-blue-500">SignUp</span></Link></p>
+                    <p className="my-4">Already have an Account ? <Link to={'/'}><span className="text-blue-500">SignIn</span></Link></p>
                 </div>  
             </div>
             <div className=""></div>
