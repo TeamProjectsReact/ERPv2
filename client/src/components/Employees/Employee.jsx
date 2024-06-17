@@ -54,46 +54,48 @@ const Employee = () => {
                             <tbody>
                                 {
                                     UserData.map((deptUser, index) => {
-                                        return (
-                                            <tr key={index}>
-                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    {deptUser.email}
-                                                </td>
-                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    {deptUser.username}
-                                                </td>
-                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    {deptUser.Role}
-                                                </td>
-                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    {deptUser.Department}
-                                                </td>
-                                                <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    <div className="md:flex">
-                                                        {
-                                                            (() => {
-                                                                if(deptUser.Department !== ""){
-                                                                    return (
-                                                                        <p className='py-1 px-3 font-semibold rounded bg-blue-500 shadow-md text-white'>Alredy Added</p>                                                                    )
-                                                                }
-                                                                else{
-                                                                    if(RoleUser === "HOD"){
+                                        if(deptUser.Role !== "Director" && deptUser.Role !== "Secretary"){
+                                            return (
+                                                <tr key={index}>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {deptUser.email}
+                                                    </td>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {deptUser.username}
+                                                    </td>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {deptUser.Role}
+                                                    </td>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {deptUser.Department}
+                                                    </td>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        <div className="md:flex">
+                                                            {
+                                                                (() => {
+                                                                    if(deptUser.Department !== ""){
                                                                         return (
-                                                                            <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to My Dept</button>
-                                                                        )
+                                                                            <p className='py-1 px-3 font-semibold rounded bg-blue-500 shadow-md text-white'>Alredy Added</p>                                                                    )
                                                                     }
-                                                                    else if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
-                                                                        return (
-                                                                            <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to Dept</button>
-                                                                        )
+                                                                    else{
+                                                                        if(RoleUser === "HOD"){
+                                                                            return (
+                                                                                <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to My Dept</button>
+                                                                            )
+                                                                        }
+                                                                        else if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" ){
+                                                                            return (
+                                                                                <button onClick={() => headleAddDept(deptUser.email)} className='py-1 px-3 bg-none text-blue-500 font-semibold rounded duration-500 hover:bg-blue-500 hover:shadow-md hover:text-white'>+ Add to Dept</button>
+                                                                            )
+                                                                        }
                                                                     }
-                                                                }
-                                                            })()
-                                                        }
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        )
+                                                                })()
+                                                            }
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        }
                                     })
                                 }
                             </tbody>
