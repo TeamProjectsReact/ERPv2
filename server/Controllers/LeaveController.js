@@ -89,6 +89,10 @@ const LeaveController = {
         else{
             return res.json({ Error: "Internal Server Error"})
         }
+    },
+
+    acceptLeave: async (req, res) => {
+        
     }
 }
 
