@@ -98,6 +98,7 @@ const LeaveController = {
 
         const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Accepted" }, { new: true })
         if(updateLeave){
+
             return res.json({ Status: "Success" })  
         }
         else{
@@ -111,7 +112,17 @@ const LeaveController = {
 
         const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Requested" }, { new: true })
         if(updateLeave){
-            return res.json({ Status: "Success" })  
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: hodEmail,
+                subject: "Notifications from ERP",
+                text: "Your Leave has been Accepted",
+            };
+
+            await transporter.sendMail(mailOptions);
+            const email = new Email({ to:hodEmail, subject:mailOptions.subject, body:mailOptions.text });
+            await email.save();
+            return res.json({ Status: "Success"})
         }
         else{
             return res.json({ Error: "Internal Server Error"})
