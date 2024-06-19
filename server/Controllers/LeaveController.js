@@ -94,7 +94,16 @@ const LeaveController = {
     acceptLeave: async (req, res) => {
         const leaveID = req.params.id
         
-        console.log(leaveID)
+        // console.log(leaveID)
+
+        const updateLeave = Leave.findOneAndUpdate({ _id: leaveID })
+
+        if(updateLeave){
+            
+        }
+        else{
+            return res.json({ Error: "Internal Server Error"})
+        }
     }
 }
 
