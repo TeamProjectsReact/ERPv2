@@ -121,8 +121,6 @@ const LeaveController = {
         // console.log(leaveID)
 
         const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Requested" }, { new: true })
-        const userData = await Leave.findOne({ _id: leaveID })
-
         if(updateLeave){
             return res.json({ Status: "Success"})
         }
@@ -135,6 +133,7 @@ const LeaveController = {
         const leaveID = req.params.id
 
         const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Rejected" }, { new: true })
+        const userData = await Leave.findOne({ _id: leaveID })
         if(updateLeave){
             const mailOptions = {
                 from: process.env.EMAIL_USER,
