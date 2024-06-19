@@ -26,7 +26,7 @@ const AdminDeptadd = () => {
                             <div className="md:grid grid-cols-2 gap-4">
                                 <div className="my-2">
                                     <label htmlFor="" className="">Email : </label>
-                                    <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" disabled value={}/>
+                                    <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" disabled value={EmailUser}/>
                                 </div>
                             </div>
                         </form>
