@@ -122,7 +122,7 @@ const LeaveController = {
             };
 
             await transporter.sendMail(mailOptions);
-            const email = new Email({ to:hodEmail, subject:mailOptions.subject, body:mailOptions.text });
+            const email = new Email({ to:userData.reqEmail, subject:mailOptions.subject, body:mailOptions.text });
             await email.save();
             return res.json({ Status: "Success"})
         }
