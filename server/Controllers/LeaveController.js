@@ -96,8 +96,7 @@ const LeaveController = {
         
         // console.log(leaveID)
 
-        const updateLeave = Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Accepted" }, { new: true })
-
+        const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Accepted" }, { new: true })
         if(updateLeave){
             return res.json({ Status: "Success" })  
         }
