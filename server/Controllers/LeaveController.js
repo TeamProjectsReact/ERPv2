@@ -97,22 +97,7 @@ const LeaveController = {
         // console.log(leaveID)
 
         const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Accepted" }, { new: true })
-        if(updateLeave){
-
-            return res.json({ Status: "Success" })  
-        }
-        else{
-            return res.json({ Error: "Internal Server Error"})
-        }
-    },
-    LeaveRollback: async(req, res) => {
-        const leaveID = req.params.id
-        
-        // console.log(leaveID)
-
-        const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Requested" }, { new: true })
         const userData = await Leave.findOne({ _id: leaveID })
-
         if(updateLeave){
             const mailOptions = {
                 from: process.env.EMAIL_USER,
@@ -129,6 +114,25 @@ const LeaveController = {
         else{
             return res.json({ Error: "Internal Server Error"})
         }
+    },
+    LeaveRollback: async(req, res) => {
+        const leaveID = req.params.id
+        
+        // console.log(leaveID)
+
+        const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Requested" }, { new: true })
+        const userData = await Leave.findOne({ _id: leaveID })
+
+        if(updateLeave){
+            return res.json({ Status: "Success"})
+        }
+        else{
+            return res.json({ Error: "Internal Server Error"})
+        }
+    },
+
+    RejectLeave: async (req, res) => {
+        const leaveID = req.params.id
     }
 }
 
