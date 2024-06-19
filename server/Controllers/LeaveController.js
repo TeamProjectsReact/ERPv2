@@ -150,6 +150,20 @@ const LeaveController = {
         else{
             return res.json({ Error: "Internal Server Error"})
         }
+    },
+
+    DeleteLeave: async (req, res) => {
+        const leaveID = req.params.id
+        
+        // console.log(leaveID)
+
+        const updateLeave = await Leave.findOneAndDelete({ _id: leaveID })
+        if(updateLeave){
+            return res.json({ Status: "Success"})
+        }
+        else{
+            return res.json({ Error: "Internal Server Error"})
+        }
     }
 }
 
