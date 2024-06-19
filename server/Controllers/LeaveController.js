@@ -96,10 +96,10 @@ const LeaveController = {
         
         // console.log(leaveID)
 
-        const updateLeave = Leave.findOneAndUpdate({ _id: leaveID })
+        const updateLeave = Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Accepted" }, { new: true })
 
         if(updateLeave){
-            
+            return res.json({ Status: "Success" })  
         }
         else{
             return res.json({ Error: "Internal Server Error"})
