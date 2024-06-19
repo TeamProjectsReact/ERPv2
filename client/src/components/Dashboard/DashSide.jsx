@@ -31,8 +31,7 @@ const DashSide = () => {
         {id: 8, name: "Increment", link: "Increment", icons: <BsCashStack />},  
         {id: 9, name: "Vehicle", link: "Vehicle", icons: <BsCarFrontFill />},  
         {id: 10, name: "SiteAdmin", link: "SiteAdmins", icons: <BsPersonFillLock />},  
-        {id: 11, name: "Departments", link: "Departments", icons: <BsBuildingFill />}, 
-        {id: 12, name: "Employee", link: "Employee", icons: <BsPeopleFill />},          
+        {id: 11, name: "Employee", link: "Employee", icons: <BsPeopleFill />},          
     ]
 
 
@@ -105,7 +104,7 @@ const DashSide = () => {
                                 )
                             }
                             else if(RoleUser === "HOD"){
-                                if(side.id !== 10 && side.id !== 11){
+                                if(side.id !== 10){
                                     return (
                                         <Link to={side.link}>
                                             <div className="my-4 mx-2">
@@ -119,7 +118,7 @@ const DashSide = () => {
                                 }
                             }
                             else{
-                                if(side.id !== 10 && side.id !== 11 && side.id !== 12){
+                                if(side.id !== 10 && side.id !== 11){
                                     return (
                                         <Link to={side.link}>
                                             <div className="my-4 mx-2">

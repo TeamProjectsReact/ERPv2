@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup'
 import axios from 'axios'
@@ -8,6 +8,7 @@ import axios from 'axios'
 // when superadmin director or secetry add employee to department 
 
 const AdminDeptadd = () => {
+    const { id } = useParams()
     const navigate = useNavigate()
     //curent login user
     const EmailUser = secureLocalStorage.getItem("Login1");
@@ -26,7 +27,7 @@ const AdminDeptadd = () => {
                             <div className="md:grid grid-cols-2 gap-4">
                                 <div className="my-2">
                                     <label htmlFor="" className="">Email : </label>
-                                    <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" disabled value={EmailUser}/>
+                                    <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" disabled value={id}/>
                                 </div>
                             </div>
                         </form>
