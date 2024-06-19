@@ -93,8 +93,9 @@ const LeaveController = {
 
     acceptLeave: async (req, res) => {
         const email = req.params.id
+        
 
-        console.log(email)
+
     }
 }
 

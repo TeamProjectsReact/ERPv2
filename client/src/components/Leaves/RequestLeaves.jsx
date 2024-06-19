@@ -26,7 +26,7 @@ const RequestLeaves = () => {
     // accept Leave
     const headleAccept = async (email) => {
         try{
-            const res = await axios.post('http://localhost:5000/leave/AcceptLeaves/' + email)
+            const res = await axios.post('http://localhost:5000/leave/AcceptLeave/' + email)
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Leave successfully Approved")
@@ -110,7 +110,7 @@ const RequestLeaves = () => {
                                                             if(leaves.Status === "Requested"){
                                                                 return (
                                                                     <div className="md:flex">
-                                                                        <button onClick={() => headleAccept("123@123.com")} className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Accept</button>
+                                                                        <button onClick={() => headleAccept(leaves.reqEmail)} className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Accept</button>
                                                                         <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
                                                                     </div>
                                                                 )
