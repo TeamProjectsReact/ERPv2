@@ -26,7 +26,7 @@ const RequestLeaves = () => {
     // accept Leave
     const headleAccept = async (email) => {
         try{
-            const res = await axios.post('http://localhost:5000/leave/AcceptLeaves/' + Email)
+            const res = await axios.post('http://localhost:5000/leave/AcceptLeaves/' + email)
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Leave successfully Approved")
