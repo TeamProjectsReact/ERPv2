@@ -80,6 +80,25 @@ const RequestLeaves = () => {
         }
     }
 
+    // detele leave
+    const headleDelete = async (leaveID) => {
+        try{
+            const res = await axios.delete('http://localhost:5000/leave/LeaveRejected/' + leaveID)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("leave Deleted Successfull")
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
         return (
             <div className='mx-4 my-8'>
@@ -184,7 +203,7 @@ const RequestLeaves = () => {
                                                             else if(leaves.Status === "Rejected"){
                                                                 return (
                                                                     <div className="md:flex">
-                                                                        <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Delete</button>
+                                                                        <button onClick={() => headleDelete(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Delete</button>
                                                                     </div>
                                                                 )
                                                             }
