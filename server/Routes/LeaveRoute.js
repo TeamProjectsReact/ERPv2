@@ -8,5 +8,6 @@ router.post('/AddLeave/:id', LeaveController.AddLeave);
 router.get('/LeavesForHOD/:id', LeaveController.hodEmailLeaves);
 router.post('/AcceptLeave/:id', LeaveController.acceptLeave);
 router.post('/LeaveRollback/:id', LeaveController.LeaveRollback);
+router.post('/LeaveRejected/:id');
 
 module.exports = router;
