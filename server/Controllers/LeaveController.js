@@ -111,10 +111,12 @@ const LeaveController = {
         // console.log(leaveID)
 
         const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Requested" }, { new: true })
+        const userData = await Leave.findOne({ _id: leaveID })
+
         if(updateLeave){
             const mailOptions = {
                 from: process.env.EMAIL_USER,
-                to: hodEmail,
+                to: userData.reqEmail,
                 subject: "Notifications from ERP",
                 text: "Your Leave has been Accepted",
             };
