@@ -103,6 +103,19 @@ const LeaveController = {
         else{
             return res.json({ Error: "Internal Server Error"})
         }
+    },
+    LeaveRollback: async(req, res) => {
+        const leaveID = req.params.id
+        
+        // console.log(leaveID)
+
+        const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Requested" }, { new: true })
+        if(updateLeave){
+            return res.json({ Status: "Success" })  
+        }
+        else{
+            return res.json({ Error: "Internal Server Error"})
+        }
     }
 }
 

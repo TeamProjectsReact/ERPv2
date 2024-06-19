@@ -44,7 +44,7 @@ const RequestLeaves = () => {
     // rollBack
     const headleRollBack = async (leaveID) => {
         try{
-            const res = await axios.post('http://localhost:5000/leave/AcceptLeave/' + leaveID)
+            const res = await axios.post('http://localhost:5000/leave/LeaveRollback/' + leaveID)
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Rollback Successfull")
