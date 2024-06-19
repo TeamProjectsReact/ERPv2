@@ -23,6 +23,11 @@ const RequestLeaves = () => {
         .catch(err => console.log(err))
     }, [])
 
+    // accept Leave
+    const headleAccept = (id) => {
+        alert(id)
+    }
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
         return (
             <div className='mx-4 my-8'>
@@ -87,10 +92,18 @@ const RequestLeaves = () => {
                                                     <p className="text-yellow-500 font-semibold">{leaves.Status}</p>
                                                 </td>
                                                 <td>
-                                                    <div className="md:flex">
-                                                        <button className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Accept</button>
-                                                        <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
-                                                    </div>
+                                                    {
+                                                        (() => {
+                                                            if(leaves.Status === "Requested"){
+                                                                return (
+                                                                    <div className="md:flex">
+                                                                        <button onClick={() => headleAccept(leaves.email) } className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Accept</button>
+                                                                        <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        })()
+                                                    }
                                                 </td>
                                             </tr>
                                         )
