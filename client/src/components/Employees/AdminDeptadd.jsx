@@ -4,6 +4,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup'
 import axios from 'axios'
 
+
 // when superadmin director or secetry add employee to department 
 
 const AdminDeptadd = () => {
@@ -19,6 +20,17 @@ const AdminDeptadd = () => {
                     <Link to={'../Employee'}>
                         <button className='bg-gradient-to-r from-green-500 via-white-500 to-blue-500 text-white py-2 my-4 px-8 rounded font-semibold'>Back</button>  
                     </Link>
+
+                    <div className="bg-white py-4 px-6 rounded shadow-md">
+                        <form>
+                            <div className="md:grid grid-cols-2 gap-4">
+                                <div className="my-2">
+                                    <label htmlFor="" className="">Email : </label>
+                                    <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" disabled value={}/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         )
