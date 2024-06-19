@@ -83,7 +83,7 @@ const RequestLeaves = () => {
     // detele leave
     const headleDelete = async (leaveID) => {
         try{
-            const res = await axios.delete('http://localhost:5000/leave/LeaveRejected/' + leaveID)
+            const res = await axios.delete('http://localhost:5000/leave/LeaveDelete/' + leaveID)
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("leave Deleted Successfull")
