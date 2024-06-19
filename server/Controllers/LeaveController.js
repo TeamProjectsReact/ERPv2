@@ -133,6 +133,14 @@ const LeaveController = {
 
     RejectLeave: async (req, res) => {
         const leaveID = req.params.id
+
+        const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Rejected" }, { new: true })
+        if(updateLeave){
+            return res.json({ Status: "Success"})
+        }
+        else{
+            return res.json({ Error: "Internal Server Error"})
+        }
     }
 }
 
