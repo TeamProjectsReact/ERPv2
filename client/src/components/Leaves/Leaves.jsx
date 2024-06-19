@@ -8,8 +8,8 @@ import AddLeaves from './AddLeaves';
 const Leaves = () => {
   const LeaveData = [
     {id: 1, btnValue: 0, name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-blue-500"},
-    {id: 2, btnValue: "RequestLeaves", name: "Requested", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-yellow-500"},
-    {id: 3, btnValue: "RecommendLeaves", name: "Recommed", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},   
+    {id: 2, btnValue: "RequestLeaves", name: "Accepted", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-yellow-500"},
+    {id: 3, btnValue: "RecommendLeaves", name: "Approved", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},   
     {id: 3, btnValue: "RejectLeaves", name: "Reject", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-red-500"},     
   ]
 
