@@ -84,9 +84,11 @@ const AddDept = () => {
                                         <option value="">Select One</option>
                                         {
                                             hodD.map((hod) => {
-                                                return (
-                                                <option value={hod.email}>{hod.email} - {hod.username}</option>
-                                                )
+                                                if(hod.Department === ""){
+                                                    return (
+                                                        <option value={hod.email}>{hod.email} - {hod.username}</option>
+                                                    )
+                                                }
                                             })
                                         }
                                     </select>
