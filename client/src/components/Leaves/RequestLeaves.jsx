@@ -153,6 +153,11 @@ const RequestLeaves = () => {
                                                                     <p className="text-yellow-500 font-semibold">{leaves.Status}</p>
                                                                 )
                                                             }
+                                                            else if(leaves.Status === "Rejected"){
+                                                                return (
+                                                                    <p className="text-red-500 font-semibold">{leaves.Status}</p>
+                                                                )
+                                                            }
                                                         })()
                                                     }
                                                     
@@ -173,6 +178,13 @@ const RequestLeaves = () => {
                                                                     <div className="md:flex">
                                                                         <button onClick={() => headleRollBack(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-blue-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-blue-600'>RollBack</button>
                                                                         <button onClick={() => headleReject(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
+                                                                    </div>
+                                                                )
+                                                            }
+                                                            else if(leaves.Status === "Rejected"){
+                                                                return (
+                                                                    <div className="md:flex">
+                                                                        <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Delete</button>
                                                                     </div>
                                                                 )
                                                             }
