@@ -24,12 +24,30 @@ const RequestLeaves = () => {
     }, [])
 
     // accept Leave
-    const headleAccept = async (email) => {
+    const headleAccept = async (leaveID) => {
         try{
-            const res = await axios.post('http://localhost:5000/leave/AcceptLeave/' + email)
+            const res = await axios.post('http://localhost:5000/leave/AcceptLeave/' + leaveID)
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Leave successfully Approved")
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    // rollBack
+    const headleRollBack = async (leaveID) => {
+        try{
+            const res = await axios.post('http://localhost:5000/leave/AcceptLeave/' + leaveID)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Rollback Successfull")
                 }
                 else{
                     alert(res.data.Error)
@@ -102,7 +120,21 @@ const RequestLeaves = () => {
                                                     {leaves.Dutarion}
                                                 </td>
                                                 <td scope="row" class="font-semibold hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
-                                                    <p className="text-yellow-500 font-semibold">{leaves.Status}</p>
+                                                    {
+                                                        (() => {
+                                                            if(leaves.Status === "Accepted"){
+                                                                return (
+                                                                    <p className="text-green-500 font-semibold">{leaves.Status}</p>
+                                                                )
+                                                            }
+                                                            else if(leaves.Status === "Requested"){
+                                                                return (
+                                                                    <p className="text-yellow-500 font-semibold">{leaves.Status}</p>
+                                                                )
+                                                            }
+                                                        })()
+                                                    }
+                                                    
                                                 </td>
                                                 <td>
                                                     {
@@ -111,6 +143,14 @@ const RequestLeaves = () => {
                                                                 return (
                                                                     <div className="md:flex">
                                                                         <button onClick={() => headleAccept(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Accept</button>
+                                                                        <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
+                                                                    </div>
+                                                                )
+                                                            }
+                                                            else if(leaves.Status === "Accepted"){
+                                                                return (
+                                                                    <div className="md:flex">
+                                                                        <button onClick={() => headleRollBack(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-blue-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-blue-600'>RollBack</button>
                                                                         <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
                                                                     </div>
                                                                 )
