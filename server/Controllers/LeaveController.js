@@ -136,6 +136,16 @@ const LeaveController = {
 
         const updateLeave = await Leave.findOneAndUpdate({ _id: leaveID }, { Status: "Rejected" }, { new: true })
         if(updateLeave){
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: userData.reqEmail,
+                subject: "Notifications from ERP",
+                text: "Your Leave has been Accepted",
+            };
+            
+            await transporter.sendMail(mailOptions);
+            const email = new Email({ to:userData.reqEmail, subject:mailOptions.subject, body:mailOptions.text });
+            await email.save();
             return res.json({ Status: "Success"})
         }
         else{
