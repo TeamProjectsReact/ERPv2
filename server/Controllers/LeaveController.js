@@ -140,7 +140,7 @@ const LeaveController = {
                 from: process.env.EMAIL_USER,
                 to: userData.reqEmail,
                 subject: "Notifications from ERP",
-                text: "Your Leave has been Accepted",
+                text: "Your Leave has been Rejected",
             };
             
             await transporter.sendMail(mailOptions);
