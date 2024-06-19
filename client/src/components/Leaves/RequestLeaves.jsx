@@ -61,6 +61,25 @@ const RequestLeaves = () => {
         }
     }
 
+    // Reject Leave
+    const headleReject = async (leaveID) => {
+        try{
+            const res = await axios.post('http://localhost:5000/leave/LeaveRejected/' + leaveID)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("leave Rejected Successfull")
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
         return (
             <div className='mx-4 my-8'>
@@ -145,7 +164,7 @@ const RequestLeaves = () => {
                                                                 return (
                                                                     <div className="md:flex">
                                                                         <button onClick={() => headleAccept(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Accept</button>
-                                                                        <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
+                                                                        <button onClick={() => headleReject(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
                                                                     </div>
                                                                 )
                                                             }
@@ -153,7 +172,7 @@ const RequestLeaves = () => {
                                                                 return (
                                                                     <div className="md:flex">
                                                                         <button onClick={() => headleRollBack(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-blue-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-blue-600'>RollBack</button>
-                                                                        <button className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
+                                                                        <button onClick={() => headleReject(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
                                                                     </div>
                                                                 )
                                                             }
