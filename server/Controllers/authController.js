@@ -9,30 +9,30 @@ const authController = {
             const {username, email, password} = req.body.SignUpData
             const designation = req.body.foundUser.designation;
             
-            // check user is in database
-            const CheckUser = await User.findOne({ email, username })
+            // // check user is in database
+            // const CheckUser = await User.findOne({ email, username })
     
-            if(CheckUser) {
-                return res.json({ Error: "User Already in database"})
-            }
-            const hashPass = await bcrypt.hash(password, 10);
+            // if(CheckUser) {
+            //     return res.json({ Error: "User Already in database"})
+            // }
+            // const hashPass = await bcrypt.hash(password, 10);
 
-            const NewUser = new User({
-                username: username,
-                email: email,
-                password: hashPass,
-                Role: designation,
-                Department: ''
-            })
+            // const NewUser = new User({
+            //     username: username,
+            //     email: email,
+            //     password: hashPass,
+            //     Role: designation,
+            //     Department: ''
+            // })
 
-            const ResultUser = NewUser.save()
+            // const ResultUser = NewUser.save()
 
-            if(ResultUser) {
-                return res.json({ Status: "Success"})
-            }
-            else{
-                return res.json({ Error: "Internal Server Error"})
-            }
+            // if(ResultUser) {
+            //     return res.json({ Status: "Success"})
+            // }
+            // else{
+            //     return res.json({ Error: "Internal Server Error"})
+            // }
 
         }
         catch (err) {
