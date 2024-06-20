@@ -134,14 +134,6 @@ const MyData = () => {
                                     {UserData.Department}
                                 </td>
                             </tr>
-                            <tr className='border-b border-gray-200 h-12'>
-                                <td>
-                                    <p className="text-gray-500">Department Head</p>
-                                </td>
-                                <td className='pl-4'>
-                                    hod@123.com
-                                </td>
-                            </tr>
                         </table>
                     </div>
                 </div>
