@@ -9,10 +9,18 @@ const Vehicles = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
-    if(RoleUser === "SuperAdmin")
-  return (
-    <div>Vehicles</div>
-  )
+    if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+        return (
+            <div>Vehicles</div>
+        )
+    }
+    else{
+        useEffect(() => {
+            localStorage.clear()
+            navigate('/')
+        }, [])
+    }
+
 }
 
 export default Vehicles
