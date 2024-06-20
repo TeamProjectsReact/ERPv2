@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddReservation = () => {
   return (
-    <div>AddReservation</div>
+    <div className='bg-white py-2 px-4'>AddReservation</div>
   )
 }
 
