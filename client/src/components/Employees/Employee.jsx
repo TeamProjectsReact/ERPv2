@@ -57,8 +57,13 @@ const Employee = () => {
                                         if(deptUser.Role !== "Director" && deptUser.Role !== "Secretary"){
                                             return (
                                                 <tr key={index}>
-                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    <td scope="row" class="px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
                                                         {deptUser.email}
+                                                        <div className="md:hidden max-w-20 md:w-auto">
+                                                            <p className="">{deptUser.username}</p>
+                                                            <p className="">{deptUser.Role}</p>
+                                                            <p className="">{deptUser.Department}</p>
+                                                        </div>
                                                     </td>
                                                     <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
                                                         {deptUser.username}
@@ -69,7 +74,7 @@ const Employee = () => {
                                                     <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
                                                         {deptUser.Department}
                                                     </td>
-                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                    <td scope="row" class=" px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
                                                         <div className="md:flex">
                                                             {
                                                                 (() => {
