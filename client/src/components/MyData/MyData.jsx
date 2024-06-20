@@ -131,7 +131,7 @@ const MyData = () => {
                                     <p className="text-gray-500">Department</p>
                                 </td>
                                 <td className='pl-4'>
-                                    Computer Science
+                                    {UserData.Department}
                                 </td>
                             </tr>
                             <tr className='border-b border-gray-200 h-12'>
