@@ -118,7 +118,7 @@ const DashSide = () => {
                                 }
                             }
                             else{
-                                if(side.id !== 10 && side.id !== 11){
+                                if(side.id !== 9 && side.id !== 10 && side.id !== 11){
                                     return (
                                         <Link to={side.link}>
                                             <div className="my-4 mx-2">
