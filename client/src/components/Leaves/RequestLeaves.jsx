@@ -102,7 +102,6 @@ const RequestLeaves = () => {
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
         return (
             <div className='mx-4 my-8'>
-                <h1 className="text-gray-500 text-xl font-semibold">Requested Leaves</h1>
                 <div className="my-4">
                     <div className="py-2 px-4 rounded shadow-md overflow-x-auto my-8 bg-white">
                         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
