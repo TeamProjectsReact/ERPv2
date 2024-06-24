@@ -41,8 +41,8 @@ const DashNav = () => {
                 </div>
                 <div className="flex justify-end">
                     <div className={`${!UserDropDown ? 'hidden' : 'visibale'} py-4 bg-gray-800/95 mt-5 overflow-auto absolute px-4 border-b border-red-500 rounded-b`}>
-                        <p className="py-2 px-4 flex"><BsPersonGear className='text-xl'/> <p className="pl-2">My Profile</p></p>
-                        <p className="py-2 px-4 flex text-red-500"><BsPower className='text-xl'/> <p className="pl-2">LogOut</p></p>
+                        <p className="py-2 px-4 flex cursor-pointer"><BsPersonGear className='text-xl'/> <p className="pl-2">My Profile</p></p>
+                        <p className="py-2 px-4 flex text-red-500 cursor-pointer"><BsPower className='text-xl' onClick={headleLogOut}/> <p className="pl-2">LogOut</p></p>
                     </div>
                 </div>
             </div>
