@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage";
 import CountUp from 'react-countup';
 import AddLeaves from './AddLeaves';
+import RequestLeaves from './RequestLeaves';
 
 const Leaves = () => {
   const LeaveData = [
@@ -38,7 +39,7 @@ const Leaves = () => {
                             {
                               LeaveData.map((data) => {
                                 return(
-                                  <div onClick={HeadleButtonClick(data.btnValue)} className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
+                                  <div onClick={() => HeadleButtonClick(data.btnValue)} className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
                                     <div className="flex justify-between">
                                         <div className="">
                                             <h1 className={`text-3xl font-semibold ${data.style}`}>{data.value}</h1>
@@ -64,10 +65,26 @@ const Leaves = () => {
             }
               </div>
 
+            {
+              (() => {
+                if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                  return (
+                    <div className="">
+                        {
+                          (() => {
+                            if(buttonValue === 0){
+                              return(
+                                <RequestLeaves />
+                              )
+                            }
+                          })()
+                        }
+                    </div>
+                  )
+                }
+              })()
+            }
 
-            <div className="">
-                {buttonValue}
-            </div>
           </div>
         </div>
       </div>
