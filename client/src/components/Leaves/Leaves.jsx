@@ -22,6 +22,7 @@ const Leaves = () => {
   const [buttonValue, SetButtonValue] = useState(0)
   const HeadleButtonClick = (clickValue) => {
       SetButtonValue(clickValue)   
+      local
   }
 
   if(EmailUser !== null && RoleUser !== null){
