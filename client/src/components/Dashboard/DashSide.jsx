@@ -74,24 +74,58 @@ const DashSide = () => {
                         
                 </div>
                 <hr className='border border-[#242423]'/>
-                <div className="my-4 pr-16 px-4">
-                        {
-                            SideLink.map((side) => {
-                                return (
-                                    <a href={side.link}>
-                                        <div className="">
-                                            <div className={`w-full my-2 py-3 px-2 rounded cursor-pointer duration-500 hover:backdrop-blur-sm hover:bg-white/10`}>
-                                                <div className="flex">
-                                                    <p className={`text-2xl ${side.style}`}>{side.icons}</p>
-                                                    <p className="pl-2">{side.name}</p>
+                    <div className="my-4 pr-16 px-4">
+                            {
+                                SideLink.map((side) => {
+                                    if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                                        return (
+                                            <a href={side.link}>
+                                                <div className="">
+                                                    <div className={`w-full my-2 py-3 px-2 rounded cursor-pointer duration-500 hover:backdrop-blur-sm hover:bg-white/10`}>
+                                                        <div className="flex">
+                                                            <p className={`text-2xl ${side.style}`}>{side.icons}</p>
+                                                            <p className="pl-2">{side.name}</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                )
-                            })
-                        }
-                </div>
+                                            </a>
+                                        )
+                                    }
+                                    if(RoleUser === "HOD"){
+                                        if(side.id !== 10){
+                                            return (
+                                                <a href={side.link}>
+                                                    <div className="">
+                                                        <div className={`w-full my-2 py-3 px-2 rounded cursor-pointer duration-500 hover:backdrop-blur-sm hover:bg-white/10`}>
+                                                            <div className="flex">
+                                                                <p className={`text-2xl ${side.style}`}>{side.icons}</p>
+                                                                <p className="pl-2">{side.name}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            )
+                                        }
+                                    }
+                                    else{
+                                        if(side.id !== 10 && side.id !== 11){
+                                            return (
+                                                <a href={side.link}>
+                                                    <div className="">
+                                                        <div className={`w-full my-2 py-3 px-2 rounded cursor-pointer duration-500 hover:backdrop-blur-sm hover:bg-white/10`}>
+                                                            <div className="flex">
+                                                                <p className={`text-2xl ${side.style}`}>{side.icons}</p>
+                                                                <p className="pl-2">{side.name}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            )
+                                        }
+                                    }
+                                })
+                            }
+                    </div>
                 </div>
             </div>
         )
