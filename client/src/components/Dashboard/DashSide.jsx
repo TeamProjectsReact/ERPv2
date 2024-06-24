@@ -36,6 +36,13 @@ const DashSide = () => {
     const toggleUserDropDown = () => {
         SetUserNameDropDown(!UserNameDropDown);
     };
+
+    const headleLogOut = () => {
+        localStorage.clear()
+        navigate('/')
+        window.location.reload()
+    }
+    
      
     if(RoleUser !== null && EmailUser !== null){
         return (
@@ -55,7 +62,7 @@ const DashSide = () => {
                                 <div className="cursor-pointer mt-2 md:hidden block" >
                                     <div className="flex" onClick={toggleUserDropDown}>
                                         <BsPersonCircle className='text-xl'/>
-                                        <p className="ml-2">jehankandy</p>
+                                        <p className="ml-2">{EmailUser}</p>
                                         <p className="duration-500" >
                                             {
                                                 !UserNameDropDown ? <BsCaretDownFill className='mt-1 ml-2'/> : <BsCaretUpFill className='mt-1 ml-2'/>
@@ -64,7 +71,10 @@ const DashSide = () => {
                                     </div>
                                     <div className={`${!UserNameDropDown ? 'hidden' : 'block'} w-full bg-none py-4 px-8 transform transition-transform duration-500 rounded ease-in-out`}>
                                         <p className="text-white flex"><BsPersonGear className='text-xl'/> <p className="pl-2">My Profile</p></p>
-                                        <p className="text-red-500 py-2 flex"><BsPower className='text-xl'/> <p className="pl-2">Logout</p></p>
+                                        <div className="text-red-500 py-2 flex" onClick={headleLogOut}>
+                                            <p className=" "><BsPower className='text-xl'/> </p>
+                                            <p className="pl-2">Logout</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
