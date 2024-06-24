@@ -34,7 +34,7 @@ const AddLeaves = () => {
     // console.log(LeaveData)
 
     try{
-      if(startDate >= endDate){
+      if(LeaveData.startDate >= LeaveData.endDate){
         alert("End Data Must be After Data in Start Data")
       }
       else{
