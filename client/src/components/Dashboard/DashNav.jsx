@@ -20,17 +20,8 @@ const DashNav = () => {
         window.location.reload()
     }
 
-    // go to my data via dashboard
-    // reson to use this
-
-    /*
-    when user in anther route the mydata sometime not viewing 
-    */
     const headletoMyData = () => {
-        navigate('home')
-        setTimeout(() => {
-            navigate('MyData')
-        }, 0)
+        navigate('MyData')
     }
     
     if(RoleUser !== null && EmailUser !== null){
