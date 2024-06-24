@@ -25,7 +25,35 @@ const DashNav = () => {
             <div className='bg-gray-800 text-white py-5'>
                 <div className="flex justify-between">
                     <div className="px-4">
-                    ABC Campus
+                        {
+                            (() => {
+                                if(RoleUser === "SuperAdmin"){
+                                    return (
+                                        <p className="">SuperAdmin</p>
+                                    )
+                                }
+                                if(RoleUser === "Director"){
+                                    return (
+                                        <p className="">Director</p>
+                                    )
+                                }
+                                if(RoleUser === "Secretary"){
+                                    return (
+                                        <p className="">Secretary</p>
+                                    )
+                                }
+                                if(RoleUser === "HOD"){
+                                    return (
+                                        <p className="">Head Of Department </p>
+                                    )
+                                }
+                                if(RoleUser === "RA"){
+                                    return (
+                                        <p className="">Research Assistant</p>
+                                    )
+                                }
+                            })()
+                        }
                     </div>
                     <div className="md:block hidden">
                         <div className="flex cursor-pointer px-4" onClick={toggleDropDown}>
