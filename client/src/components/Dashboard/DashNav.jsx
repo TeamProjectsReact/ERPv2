@@ -74,7 +74,7 @@ const DashNav = () => {
                             <p className="pl-2">My Profile</p>
                         </div>                         
                         <div className="flex text-red-500 cursor-pointer py-4 px-4" onClick={headleLogOut}>
-                            <p className=""><BsPower className='text-xl' /></p>
+                            <a href={'MyData'}></a><p className=""><BsPower className='text-xl' /></p>
                             <p className="pl-2">LogOut</p>
                         </div>
                     </div>
