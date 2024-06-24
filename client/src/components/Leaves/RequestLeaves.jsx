@@ -18,7 +18,7 @@ const RequestLeaves = () => {
     const [LeaveHod, SetLeaveHod] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/leave/LeavesForHOD/' + EmailUser)
+        axios.get('http://localhost:5000/leave/AllLeaves')
         .then(res => SetLeaveHod(res.data.Result))
         .catch(err => console.log(err))
     }, [])
