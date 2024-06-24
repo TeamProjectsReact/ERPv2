@@ -10,9 +10,11 @@ const Dashboard = () => {
     <div className="flex">
       <DashSide />
       {/* <DashSideTest /> */}
-      <div className="flex-1 px-2 py-4 bg-gray-200">
+      <div className="flex-1 bg-white">
         <DashNav />
-        <Outlet />
+        <div className="py-4 px-4">
+            <Outlet />
+        </div>
         <DashFooter />
       </div>
     </div>
