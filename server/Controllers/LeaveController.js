@@ -12,6 +12,10 @@ const transporter = nodemailer.createTransport({
 });
 
 const LeaveController = {
+    AllLeaves: async (req, res) => {
+
+    },
+    
     HodData: async (req, res) => {
         try{
             const hodData = await User.find({ Role: 'HOD' })
@@ -165,6 +169,8 @@ const LeaveController = {
             return res.json({ Error: "Internal Server Error"})
         }
     }
+
+
 }
 
 module.exports = LeaveController;
