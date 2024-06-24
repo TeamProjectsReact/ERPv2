@@ -54,7 +54,7 @@ const AddLeaves = () => {
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
-        <div className="bg-white py-4 px-8 rounded shadow-md mr-4">
+        <div className="bg-green-500/10 border-l-2 border-green-500 py-4 px-8 rounded shadow-md mr-4 ">
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
           {
             (() => {
@@ -62,7 +62,7 @@ const AddLeaves = () => {
                 return (
                   <div className="">
                     <Link to={'RequestLeaves'}>
-                      <button className='bg-gradient-to-r from-green-500 via-white-500 to-blue-500 text-white py-2 my-4 px-8 rounded font-semibold'>leave Requests</button>
+                      <button className='bg-blue-600/95 text-white py-2 my-4 px-8 rounded font-semibold'>leave Requests</button>
                     </Link>                    
                   </div>
                 )
@@ -75,19 +75,19 @@ const AddLeaves = () => {
               <div className="md:grid grid-cols-3 gap-4">
                 <div className="my-4">
                   <label htmlFor="" className="text-gray-500">Start Time</label>
-                  <input type="time" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Start Time' 
+                  <input type="time" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-white shadow-md pl-2" required placeholder='Enter Start Time' 
                   onChange={e => SetLeaveData({...LeaveData, startTime:e.target.value})}/>
                 </div>
 
                 <div className="my-4">
                   <label htmlFor="" className="text-gray-500">Email</label>
-                  <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required disabled placeholder='Enter Start Time' 
+                  <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-white shadow-md pl-2" required disabled placeholder='Enter Start Time' 
                   value={EmailUser} />
                 </div>
 
                 <div className="my-4">
                   <label htmlFor="" className="text-gray-500">HOD Email</label>
-                  <select name="" id="" className='text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2'
+                  <select name="" id="" className='text-gray-700 h-12 w-full my-2 rounded bg-white shadow-md pl-2'
                    onChange={e => SetLeaveData({...LeaveData, hodEmail:e.target.value})}>
                     <option value="">Select One</option>
                     {
@@ -102,25 +102,25 @@ const AddLeaves = () => {
 
                 <div className="my-4">
                   <label htmlFor="" className="text-gray-500">Start Date</label>
-                  <input type="date" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Start Date' 
+                  <input type="date" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-white shadow-md pl-2" required placeholder='Enter Start Date' 
                    onChange={e => SetLeaveData({...LeaveData, startDate:e.target.value})}/>
                 </div>
 
                 <div className="my-4">
                   <label htmlFor="" className="text-gray-500">End Date</label>
-                  <input type="date" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter End Date' 
+                  <input type="date" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-white shadow-md pl-2" required placeholder='Enter End Date' 
                   onChange={e => SetLeaveData({...LeaveData, endDate:e.target.value})}/>
                 </div>
 
                 <div className="my-4">
                   <label htmlFor="" className="text-gray-500">Duration</label>
-                  <input type="text" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Enter Dutarion' 
+                  <input type="text" name="" id="" className="text-green-700 h-12 w-full my-2 rounded bg-white shadow-md pl-2" required placeholder='Enter Dutarion' 
                   onChange={e => SetLeaveData({...LeaveData, Dutarion:e.target.value})}/>
                 </div>                
               </div>
 
               <div className="my-4">
-                <button type="submit" className="bg-gradient-to-r from-green-500 via-white-500 to-blue-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
+                <button type="submit" className="bg-green-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
               </div>
             </form>
           </div>
