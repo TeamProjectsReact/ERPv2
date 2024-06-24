@@ -22,6 +22,7 @@ const DashNav = () => {
 
     const headletoMyData = () => {
         navigate('MyData')
+        window.location.reload();
     }
     
     if(RoleUser !== null && EmailUser !== null){
