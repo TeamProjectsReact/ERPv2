@@ -49,11 +49,11 @@ const DashHome = () => {
                         <div className={`md:my-0 my-2 bg-green-400/20 text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red border-green-500`}>
                           <div className="flex justify-between">
                               <div className="">
-                                  <h1 className={`text-3xl font-semibold text-green-500`}>20</h1>
-                                  <p className={`text-green-500`}></p> 
+                                  <h1 className={`text-3xl font-semibold text-green-500`}>#</h1>
+                                  <p className={`text-green-500`}>CS</p> 
                               </div>
                               <div className="">
-                                  <p className={`text-4xl text-green-500 pt-2`}>{data.icon}</p>
+                                  <p className={`text-4xl text-green-500 pt-2`}><BsBuilding /></p>
                               </div>
                           </div>
                       </div>
