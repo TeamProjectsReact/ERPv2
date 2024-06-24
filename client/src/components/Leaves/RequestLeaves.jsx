@@ -277,7 +277,10 @@ const RequestLeaves = () => {
                                                                 else if(leaves.Status === "Accepted"){
                                                                     return (
                                                                         <div className="md:flex">
-                                                                            <button onClick={() => headleRollBack(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-blue-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-blue-600'>RollBack</button>
+                                                                            <div className="">
+                                                                                <button onClick={() => headleRollBack(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-blue-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-blue-600'>RollBack</button>
+                                                                                <button onClick={() => headleApprove(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Approve</button>
+                                                                            </div>
                                                                             <button onClick={() => headleReject(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
                                                                         </div>
                                                                     )
