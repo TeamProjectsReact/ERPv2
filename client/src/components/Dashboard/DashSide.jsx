@@ -44,7 +44,7 @@ const DashSide = () => {
                 !isOpen ? <BsList /> : <BsX />
             }
         </button>
-        <div className={`w-full md:w-auto md:min-h-screen bg-gray-700 text-white md:relative fixed overflow-auto top-0 left-0 h-full  bg-gray-800 text-white w-auto transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
+        <div className={`w-full md:w-auto md:min-h-screen bg-gray-800 text-white md:relative fixed overflow-auto top-0 left-0 h-full  bg-gray-800 text-white w-auto transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
            <div className="py-4 px-2">                
                 <div className="flex">
                     <p className="text-blue-600 pl-4 pt-2"><BsMortarboard className='h-10 w-auto'/></p>
