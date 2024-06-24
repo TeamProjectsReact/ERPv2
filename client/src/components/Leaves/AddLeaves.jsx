@@ -37,6 +37,9 @@ const AddLeaves = () => {
       if(LeaveData.startDate >= LeaveData.endDate){
         alert("End Data Must be After Data in Start Data")
       }
+      else if(LeaveData.startDate === LeaveData.endDate){
+        alert("Start Date and End Date cannot be Same")
+      }
       else{
         const res = await axios.post('http://localhost:5000/leave/AddLeave/' + EmailUser, LeaveData)
         .then(res => {
