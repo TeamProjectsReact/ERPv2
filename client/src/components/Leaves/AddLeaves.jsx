@@ -34,16 +34,21 @@ const AddLeaves = () => {
     // console.log(LeaveData)
 
     try{
-      const res = await axios.post('http://localhost:5000/leave/AddLeave/' + EmailUser, LeaveData)
-      .then(res => {
-        if(res.data.Status === "Success"){
-          alert('Request Leave Successful')
-          window.location.reload()
-        }
-        else{
-          alert(res.data.Error)
-        }
-      })
+      if(startDate >= endDate){
+        alert("End Data Must be After Data in Start Data")
+      }
+      else{
+        const res = await axios.post('http://localhost:5000/leave/AddLeave/' + EmailUser, LeaveData)
+        .then(res => {
+          if(res.data.Status === "Success"){
+            alert('Request Leave Successful')
+            window.location.reload()
+          }
+          else{
+            alert(res.data.Error)
+          }
+        })
+      }
     }
     catch (err) {
       console.log(err)
