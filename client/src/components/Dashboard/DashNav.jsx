@@ -58,7 +58,7 @@ const DashNav = () => {
                     <div className="md:block hidden">
                         <div className="flex cursor-pointer px-4" onClick={toggleDropDown}>
                             <BsPersonCircle className='text-2xl'/> 
-                            <p className="pl-2">JehanKandy</p>
+                            <p className="pl-2">{EmailUser}</p>
                             <p className="">
                             {
                                 !UserDropDown ? <BsChevronDown className='pl-2 text-xl font-bold'/> : <BsChevronUp className='pl-2 text-xl font-bold'/>
