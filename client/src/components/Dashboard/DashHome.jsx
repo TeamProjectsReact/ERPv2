@@ -46,19 +46,16 @@ const DashHome = () => {
                   (() => {
                     if(RoleUser === "HOD"){
                       return (
-                        <div className={`bg-white w-full mx-2 md:my-0 my-2 duration-500 rounded shadow-md`}>
-                        <div className="flex py-6 px-8 w-full justify-between border border-gray-200 rounded">
-                            <div className="">
-                                <h1 className={`text-[180%] text-blue-500 font-semilbold`}>#</h1>
-                                <p className="py-2 text-[120%]">{UserData}</p>
-                            </div>
-                            <div className="">
-                                <p className="text-[200%] text-gray-500"><BsBuildingFill /></p>
-                            </div>
-                        </div>
-                        <div className="text-white py-4 px-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded">
-                            My Department
-                        </div>
+                        <div className={`md:my-0 my-2 bg-green-400/20 text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red border-green-500`}>
+                          <div className="flex justify-between">
+                              <div className="">
+                                  <h1 className={`text-3xl font-semibold text-green-500`}>20</h1>
+                                  <p className={`text-green-500`}></p> 
+                              </div>
+                              <div className="">
+                                  <p className={`text-4xl text-green-500 pt-2`}>{data.icon}</p>
+                              </div>
+                          </div>
                       </div>
                       )
                     }
