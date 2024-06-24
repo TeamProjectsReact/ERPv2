@@ -12,22 +12,6 @@ const transporter = nodemailer.createTransport({
 });
 
 const LeaveController = {
-    AllLeaves: async (req, res) => {
-        try{
-            const LeavesAll = await Leave.find();
-
-            if(LeavesAll){
-                return res.json({Result: LeavesAll})
-            }
-            else{
-                return res.json({Error: "Internal Server Error"})
-            }
-        }
-        catch(err) {
-            console.log(err)
-        }
-    },
-
     HodData: async (req, res) => {
         try{
             const hodData = await User.find({ Role: 'HOD' })
