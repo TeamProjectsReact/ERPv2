@@ -74,7 +74,11 @@ const Leaves = () => {
                           (() => {
                             if(buttonValue === 0){
                               return(
-                                <RequestLeaves />
+                                <div className="mt-4">
+                                  <h1 className="text-gray-500 text-xl font-semibold">Leave Requests</h1>
+                                  <RequestLeaves />
+                                </div>
+                                
                               )
                             }
                           })()
