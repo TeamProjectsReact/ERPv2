@@ -133,6 +133,87 @@ const RequestLeaves = () => {
                             <tbody>
                                 {
                                     LeaveHod.map((leaves, index) => {
+                                        if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
+                                            return (
+                                                <tr key={index} className='border-b border-gray-200'>
+                                                    <th scope="row" class="px-2 py-4 font-medium text-gray-500 whitespace-nowrap dark:text-white">
+                                                        <p className="hidden md:table-cell">{leaves.reqEmail}</p>
+                                                        <div className="md:hidden">
+                                                            <p className="font-semibold">{leaves.reqEmail}</p>
+                                                            <p className="">{leaves.email}</p>
+                                                            <p className="">{leaves.StartTime}</p>
+                                                            <p className="">{leaves.StartData}</p>
+                                                            <p className="">{leaves.EndDate}</p>
+                                                            <p className="">{leaves.Dutarion}</p>
+                                                            <p className="text-yellow-500 font-semibold">{leaves.Status}</p>
+                                                        </div>
+                                                    </th>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {leaves.StartTime}
+                                                    </td>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {leaves.StartData}
+                                                    </td>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {leaves.EndDate}
+                                                    </td>
+                                                    <td scope="row" class="hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {leaves.Dutarion}
+                                                    </td>
+                                                    <td scope="row" class="font-semibold hidden md:table-cell px-2 py-4 text-gray-500 whitespace-nowrap dark:text-white">
+                                                        {
+                                                            (() => {
+                                                                if(leaves.Status === "Accepted"){
+                                                                    return (
+                                                                        <p className="text-green-500 font-semibold">{leaves.Status}</p>
+                                                                    )
+                                                                }
+                                                                else if(leaves.Status === "Requested"){
+                                                                    return (
+                                                                        <p className="text-yellow-500 font-semibold">{leaves.Status}</p>
+                                                                    )
+                                                                }
+                                                                else if(leaves.Status === "Rejected"){
+                                                                    return (
+                                                                        <p className="text-red-500 font-semibold">{leaves.Status}</p>
+                                                                    )
+                                                                }
+                                                            })()
+                                                        }
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        {
+                                                            (() => {
+                                                                if(leaves.Status === "Requested"){
+                                                                    return (
+                                                                        <div className="md:flex">
+                                                                            <button onClick={() => headleAccept(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-green-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-green-600'>Accept</button>
+                                                                            <button onClick={() => headleReject(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
+                                                                        </div>
+                                                                    )
+                                                                }
+                                                                else if(leaves.Status === "Accepted"){
+                                                                    return (
+                                                                        <div className="md:flex">
+                                                                            <button onClick={() => headleRollBack(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-blue-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-blue-600'>RollBack</button>
+                                                                            <button onClick={() => headleReject(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Reject</button>
+                                                                        </div>
+                                                                    )
+                                                                }
+                                                                else if(leaves.Status === "Rejected"){
+                                                                    return (
+                                                                        <div className="md:flex">
+                                                                            <button onClick={() => headleDelete(leaves._id)} className='mx-1 w-full md:my-0 my-1 bg-red-500 text-white py-1 px-3 rounded shadow-md duration-500 hover:bg-red-600'>Delete</button>
+                                                                        </div>
+                                                                    )
+                                                                }
+                                                            })()
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            )
+                                        }
                                         if(leaves.hodEmail === EmailUser){
                                             return (
                                                 <tr key={index} className='border-b border-gray-200'>
