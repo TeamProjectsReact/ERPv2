@@ -28,15 +28,15 @@ const DashNav = () => {
                     ABC Campus
                     </div>
                     <div className="md:block hidden">
-                    <div className="flex cursor-pointer px-4" onClick={toggleDropDown}>
-                        <BsPersonCircle className='text-2xl'/> 
-                        <p className="pl-2">JehanKandy</p>
-                        <p className="">
-                        {
-                            !UserDropDown ? <BsChevronDown className='pl-2 text-xl font-bold'/> : <BsChevronUp className='pl-2 text-xl font-bold'/>
-                        }
-                        </p>
-                    </div>
+                        <div className="flex cursor-pointer px-4" onClick={toggleDropDown}>
+                            <BsPersonCircle className='text-2xl'/> 
+                            <p className="pl-2">JehanKandy</p>
+                            <p className="">
+                            {
+                                !UserDropDown ? <BsChevronDown className='pl-2 text-xl font-bold'/> : <BsChevronUp className='pl-2 text-xl font-bold'/>
+                            }
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div className="flex justify-end">
