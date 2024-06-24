@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
-
-
-import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight, BsTicketDetailedFill, BsFileTextFill, BsHouseGearFill, BsPassFill, BsCashStack, BsCarFrontFill, BsPersonArmsUp, BsPersonFillLock, BsBuildingFill, BsPeopleFill } from "react-icons/bs";
+import { BsBackpack2Fill, BsSpeedometer2, BsPersonVideo3, BsFileEarmarkText, BsPeople, BsPersonGear, BsPower, BsBook, BsPatchCheck, BsBuilding, BsFile, BsMortarboard, BsList, BsX, BsCalendarEvent, BsBell, BsFilesAlt, BsFileText, BsCashCoin, BsMortarboardFill, BsCaretDownFill, BsBoxArrowDownRight, BsTicketDetailedFill, BsFileTextFill, BsHouseGearFill, BsPassFill, BsCashStack, BsCarFrontFill, BsPersonArmsUp, BsPersonFillLock, BsBuildingFill, BsPeopleFill, BsPerson, BsPersonFill, BsPersonCircle, BsCaretUpFill, BsPersonWorkspace } from "react-icons/bs";
 
 
 
@@ -34,108 +32,67 @@ const DashSide = () => {
         {id: 11, name: "Employee", link: "Employee", icons: <BsPeopleFill />},          
     ]
 
- 
+    const [UserNameDropDown, SetUserNameDropDown] = useState(false);
+    const toggleUserDropDown = () => {
+        SetUserNameDropDown(!UserNameDropDown);
+    };
         
     return (
-        <div className="min-h-screen">
-            <button
-                className="md:hidden fixed top-4 right-4 z-50 bg-gray-600 text-white p-2 rounded font-semibold"
-                onClick={toggleSidebar}
-            >
-                {
-                    !isOpen ? <BsList /> : <BsX />
-                }
-            </button>
-            <div className={`lg:min-h-screen lg:pr-16 md:relative fixed overflow-auto top-0 left-0 h-full px-4 bg-gray-800 text-white w-auto transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
-                <div className="flex whitespace-nowrap lg:py-4">
-                    <p className="text-2xl my-4 pt-1"><BsMortarboardFill className='text-4xl'/></p>     
-                        <div className="my-2">
-                            <h1 className="lg:text-2xl text-xl my-2 pl-4">ERP System</h1>
-                            {
-                                (() => {
-                                    if(RoleUser === "SuperAdmin"){
-                                        return (
-                                            <p className="">SuperAdmin</p>    
-                                        )
-                                    }
-                                    else if(RoleUser === "Director"){
-                                        return (
-                                            <p className="">Director</p>    
-                                        )
-                                    }
-                                    else if(RoleUser === "Secretary"){
-                                        return (
-                                            <p className="">Secretary</p>    
-                                        )
-                                    }
-                                    else if(RoleUser === "HOD"){
-                                        return (
-                                            <p className="">Head of Dept</p>    
-                                        )
-                                    }
-                                    else if(RoleUser === "RA"){
-                                        return (
-                                            <p className="">Research Assistant</p>    
-                                        )
-                                    }
-                                })()
-                            }
-                                                      
-                        </div>                   
-                   
+        <div className="">
+        <button className="md:hidden fixed top-4 right-4 z-50 bg-gray-600 text-white p-2 rounded font-semibold" onClick={toggleSidebar}>
+            {
+                !isOpen ? <BsList /> : <BsX />
+            }
+        </button>
+        <div className={`w-full md:w-auto md:min-h-screen bg-gray-700 text-white md:relative fixed overflow-auto top-0 left-0 h-full  bg-gray-800 text-white w-auto transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
+           <div className="py-4 px-2">                
+                <div className="flex">
+                    <p className="text-blue-600 pl-4 pt-2"><BsMortarboard className='h-10 w-auto'/></p>
+                    <div className="pl-4">
+                        <h1 className="mt-1 uppercase text-xl font-semibold tracking-[0.3em]">Campus</h1>
+                        <p className="py-2 md:block hidden">J.Weerasuriya</p>
+                        <div className="cursor-pointer mt-2 md:hidden block" >
+                            <div className="flex" onClick={toggleUserDropDown}>
+                                <BsPersonCircle className='text-xl'/>
+                                <p className="ml-2">jehankandy</p>
+                                <p className="duration-500" >
+                                    {
+                                        !UserNameDropDown ? <BsCaretDownFill className='mt-1 ml-2'/> : <BsCaretUpFill className='mt-1 ml-2'/>
+                                    }                            
+                                </p>
+                            </div>
+                            <div className={`${!UserNameDropDown ? 'hidden' : 'block'} w-full bg-none py-4 px-8 transform transition-transform duration-500 rounded ease-in-out`}>
+                                <p className="text-white flex"><BsPersonGear className='text-xl'/> <p className="pl-2">My Profile</p></p>
+                                <p className="text-red-500 py-2 flex"><BsPower className='text-xl'/> <p className="pl-2">Logout</p></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <hr className={`border-white`}/>
+
+
                 
-                <div className="my-4">
-                    {
-                        SideLink.map((side, indx) => {
-                            if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                                return (
-                                    <Link to={side.link}>
-                                        <div className="my-4 mx-2">
-                                            <div className="flex">
-                                                <p className="lg:text-3xl lg:my-2 text-xl">{side.icons}</p>
-                                                <p className={`lg:text-xl lg:pt-2 pl-4 `}>{side.name}</p>
-                                            </div>
+           </div>
+           <hr className='border border-[#242423]'/>
+           <div className="my-4 pr-16 px-4">
+                {
+                    SideLink.map((side) => {
+                        return (
+                            <a href={side.link}>
+                                <div className="">
+                                    <div className={`w-full my-2 py-3 px-2 rounded cursor-pointer duration-500 hover:backdrop-blur-sm hover:bg-white/10`}>
+                                        <div className="flex">
+                                            <p className={`text-2xl ${side.style}`}>{side.icons}</p>
+                                            <p className="pl-2">{side.name}</p>
                                         </div>
-                                    </Link>
-                                )
-                            }
-                            else if(RoleUser === "HOD"){
-                                if(side.id !== 10){
-                                    return (
-                                        <Link to={side.link}>
-                                            <div className="my-4 mx-2">
-                                                <div className="flex">
-                                                    <p className="lg:text-3xl lg:my-2 text-xl">{side.icons}</p>
-                                                    <p className={`lg:text-xl lg:pt-2 pl-4 `}>{side.name}</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    )
-                                }
-                            }
-                            else{
-                                if(side.id !== 9 && side.id !== 10 && side.id !== 11){
-                                    return (
-                                        <Link to={side.link}>
-                                            <div className="my-4 mx-2">
-                                                <div className="flex">
-                                                    <p className="lg:text-3xl lg:my-2 text-xl">{side.icons}</p>
-                                                    <p className={`lg:text-xl lg:pt-2 pl-4 `}>{side.name}</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    )
-                                }
-                            }
-
-                        })
-                    }
-                </div>
-
-            </div>
+                                    </div>
+                                </div>
+                            </a>
+                        )
+                    })
+                }
+           </div>
         </div>
+    </div>
     )
     
 }
