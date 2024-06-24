@@ -70,7 +70,10 @@ const DashSide = () => {
                                         </p>
                                     </div>
                                     <div className={`${!UserNameDropDown ? 'hidden' : 'block'} w-full bg-none py-4 px-8 transform transition-transform duration-500 rounded ease-in-out`}>
-                                        <p className="text-white flex"><BsPersonGear className='text-xl'/> <p className="pl-2">My Profile</p></p>
+                                        <div className="text-white py-2 flex">
+                                            <p className=" "><BsPersonGear className='text-xl'/> </p>
+                                            <p className="pl-2">My Profile</p>
+                                        </div>
                                         <div className="text-red-500 py-2 flex" onClick={headleLogOut}>
                                             <p className=" "><BsPower className='text-xl'/> </p>
                                             <p className="pl-2">Logout</p>
