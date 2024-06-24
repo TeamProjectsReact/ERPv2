@@ -14,7 +14,7 @@ const DashHome = () => {
 
     // dashdata
     const DashData = [
-      {id: 1, name: "Employees", icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
+      {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
       {id: 2, name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-blue-500"},
       {id: 3, name: "Reservation", icon: <BsTicketDetailedFill />, value: <CountUp end={20} />, style: "text-yellow-500"},
       {id: 4, name: "SRNs", icon: <BsFileTextFill />, value: <CountUp end={20} />, style: "text-red-500"},

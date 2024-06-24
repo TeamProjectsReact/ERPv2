@@ -2,8 +2,9 @@ import React from 'react'
 
 const DashFooter = () => {
   return (
-    <div className='bg-gray-500 text-white py-8 px-4 rounded my-4 text-center font-semibold'>
-        &copy; The ERP System v2 at NIFS || Designed and Developed By NIFS
+    <div className='text-gray-400 pb-4 px-4 text-sm'>
+        Copyright &copy; 2024 | The National Institute of Fundamental Studies | All Right Reserved <br />
+        Designed and Developed By : <a href=""><span className="text-blue-500">NIFS</span></a>
     </div>
   )
 }
