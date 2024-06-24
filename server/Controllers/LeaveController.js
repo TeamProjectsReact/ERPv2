@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 const LeaveController = {
     HodData: async (req, res) => {
         try{
-            const hodData = await User.find()
+            const hodData = await User.find({ Role: 'HOD' })
             if(hodData){
                 return res.json({ Result: hodData })
                 // console.log("HOD", hodData)
@@ -81,7 +81,7 @@ const LeaveController = {
     hodEmailLeaves: async (req, res) => {
         const email = req.params.id
         // console.log(email)
-        const hodLeaves = await Leave.find({ hodEmail: email })
+        const hodLeaves = await Leave.find()
 
         if(hodLeaves){
             return res.json({ Result: hodLeaves})

@@ -104,29 +104,29 @@ const RequestLeaves = () => {
             <div className='mx-4 my-8'>
                 <h1 className="text-gray-500 text-xl font-semibold">Requested Leaves</h1>
                 <div className="my-4">
-                    <div class="py-2 px-4 rounded shadow-md overflow-x-auto my-8 bg-white">
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-green-500/50 text-green-800 h-12 dark:bg-gray-700 dark:text-green-400">
-                                <th scope="col" class=" table-cell">
+                    <div className="py-2 px-4 rounded shadow-md overflow-x-auto my-8 bg-white">
+                        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead className="text-xs text-gray-700 uppercase bg-green-500/50 text-green-800 h-12 dark:bg-gray-700 dark:text-green-400">
+                                <th scope="col" className=" table-cell">
                                     <p className="md:block hidden">Email</p>
                                     <p className="md:hidden block">Leave Data</p>                                                                        
                                 </th>
-                                <td scope="col" class=" hidden md:table-cell">
+                                <td scope="col" className=" hidden md:table-cell">
                                     Start Time
                                 </td>
-                                <td scope="col" class=" hidden md:table-cell">
+                                <td scope="col" className=" hidden md:table-cell">
                                     Start Date
                                 </td>
-                                <td scope="col" class=" hidden md:table-cell">
+                                <td scope="col" className=" hidden md:table-cell">
                                     End Date
                                 </td>
-                                <td scope="col" class=" hidden md:table-cell">
+                                <td scope="col" className=" hidden md:table-cell">
                                     Duration
                                 </td>
-                                <td scope="col" class=" hidden md:table-cell">
+                                <td scope="col" className=" hidden md:table-cell">
                                     Status
                                 </td>
-                                <td scope="col" class="table-cell">
+                                <td scope="col" className="table-cell">
                                     Action
                                 </td>
                             </thead>
