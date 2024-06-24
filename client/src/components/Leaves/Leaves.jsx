@@ -39,7 +39,7 @@ const Leaves = () => {
                             {
                               LeaveData.map((data) => {
                                 return(
-                                  <div onClick={() => HeadleButtonClick(data.btnValue)} className={`md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
+                                  <div onClick={() => HeadleButtonClick(data.btnValue)} className={`cursor-pointer md:my-0 my-2 ${data.bgstyle} text-white px-4 py-8 rounded border-l-4 shadow-lg shadow-red ${data.borderStyle}`}>
                                     <div className="flex justify-between">
                                         <div className="">
                                             <h1 className={`text-3xl font-semibold ${data.style}`}>{data.value}</h1>
@@ -77,8 +77,7 @@ const Leaves = () => {
                                 <div className="mt-4">
                                   <h1 className="text-gray-500 text-xl font-semibold">Leave Requests</h1>
                                   <RequestLeaves />
-                                </div>
-                                
+                                </div>                                
                               )
                             }
                           })()
