@@ -106,7 +106,7 @@ const RequestLeaves = () => {
                 <div className="my-4">
                     <div class="py-2 px-4 rounded shadow-md overflow-x-auto my-8 bg-white">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-green-500/50 text-green-800 h-12 dark:bg-gray-700 dark:text-green-400">
                                 <th scope="col" class=" table-cell">
                                     <p className="md:block hidden">Email</p>
                                     <p className="md:hidden block">Leave Data</p>                                                                        
