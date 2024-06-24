@@ -16,7 +16,7 @@ const LeaveController = {
         try{
             const LeavesAll = await Leave.find();
 
-            if(leavesAll){
+            if(LeavesAll){
                 return res.json({Result: LeavesAll})
             }
             else{
