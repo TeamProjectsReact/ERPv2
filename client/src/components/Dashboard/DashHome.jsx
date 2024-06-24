@@ -50,7 +50,7 @@ const DashHome = () => {
                           <div className="flex justify-between">
                               <div className="">
                                   <h1 className={`text-3xl font-semibold text-green-500`}>#</h1>
-                                  <p className={`text-green-500`}>CS</p> 
+                                  <p className={`text-green-500`}>{UserData}</p> 
                               </div>
                               <div className="">
                                   <p className={`text-4xl text-green-500 pt-2`}><BsBuilding /></p>
