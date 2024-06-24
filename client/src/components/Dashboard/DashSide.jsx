@@ -34,9 +34,7 @@ const DashSide = () => {
         {id: 11, name: "Employee", link: "Employee", icons: <BsPeopleFill />},          
     ]
 
-
-
-    
+ 
         
     return (
         <div className="min-h-screen">

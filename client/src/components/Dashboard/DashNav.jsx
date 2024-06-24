@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BsPersonFill, BsCaretDownFill, BsCaretUpFill, BsPower } from 'react-icons/bs'
+import { BsChevronDown, BsChevronUp, BsPersonCircle, BsPersonGear, BsPower } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 
@@ -9,10 +9,9 @@ const DashNav = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
-    const [DropDown, SetDropDown] = useState(false)
-
-    const toggleUser = () => {
-        SetDropDown(!DropDown)
+    const [UserDropDown, SetUserDropDown] = useState(false)
+    const toggleDropDown = () => {
+      SetUserDropDown(!UserDropDown)
     }
 
     const headleLogOut = () => {
@@ -23,38 +22,28 @@ const DashNav = () => {
     
     if(RoleUser !== null && EmailUser !== null){
         return (
-            <div className="">
-                <div className='bg-white py-8 px-8 rounded-xl shadow-xl mb-8'>
-                    <div className="flex justify-between">
-                        <div className="">
-                            <p className="font-semibold text-xl text-gray-500">Dashboard</p>
-                        </div>
-
-                        <div className="flex text-gray-500 cursor-pointer" onClick={toggleUser}>
-                            <p className=""><BsPersonFill className='text-2xl'/></p>
-                            <p className="md:block hidden pl-2 text-xl">{EmailUser}</p>
-                            <p className="pt-1 pl-2 ">
-                                {
-                                    !DropDown ? <BsCaretDownFill className='text-2xl'/> : <BsCaretUpFill className='text-2xl'/>
-                                }
-                            </p>
-                        </div>
+            <div className='bg-gray-800 text-white py-5'>
+                <div className="flex justify-between">
+                    <div className="px-4">
+                    ABC Campus
+                    </div>
+                    <div className="md:block hidden">
+                    <div className="flex cursor-pointer px-4" onClick={toggleDropDown}>
+                        <BsPersonCircle className='text-2xl'/> 
+                        <p className="pl-2">JehanKandy</p>
+                        <p className="">
+                        {
+                            !UserDropDown ? <BsChevronDown className='pl-2 text-xl font-bold'/> : <BsChevronUp className='pl-2 text-xl font-bold'/>
+                        }
+                        </p>
+                    </div>
                     </div>
                 </div>
-                <div className={`${!DropDown ? 'hidden' : 'invisble'} absolute md:right-16 right-8 bg-gray-700 py-4 px-8 mt-[-20px] overflow-auto transform translate-x-0 transition-transform duration-500 rounded shadow-md ease-in-out`}>
-                    <p className="md:hidden block py-1 my-3 border-b border-gray-200 text-white">{EmailUser}</p>
-                    <div onClick={headleLogOut} className="flex text-red-500 font-semibold cursor-pointer duration-500 hoveer:text-red-600">
-                        <p className=""><BsPower className='text-2xl'/></p>
-                        <p className="pl-2">Logout</p>
-                    </div>                    
-
-                    <a href='MyData'>
-                        <div className="flex text-white font-semibold cursor-pointer my-2">
-                            <p><BsPersonFill className='text-2xl'/></p>
-                            <p>Profile</p>
-                        </div>
-                    </a>
-                    
+                <div className="flex justify-end">
+                    <div className={`${!UserDropDown ? 'hidden' : 'visibale'} py-4 bg-gray-800/95 mt-5 overflow-auto absolute px-4 border-b border-red-500 rounded-b`}>
+                        <p className="py-2 px-4 flex"><BsPersonGear className='text-xl'/> <p className="pl-2">My Profile</p></p>
+                        <p className="py-2 px-4 flex text-red-500"><BsPower className='text-xl'/> <p className="pl-2">LogOut</p></p>
+                    </div>
                 </div>
             </div>
 
