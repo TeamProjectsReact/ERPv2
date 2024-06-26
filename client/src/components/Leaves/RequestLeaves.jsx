@@ -10,7 +10,7 @@ const RequestLeaves = () => {
     const RoleUser = secureLocalStorage.getItem("Login2");
 
     const [buttonValue, SetButtonValue] = useState(0)
-    const HeadleButtonClick = (clickValue) => {
+    const HeadleButtonClick = (clickValue) => {        
         SetButtonValue(clickValue)   
     }
 
