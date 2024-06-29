@@ -31,7 +31,7 @@ const AdminDeptadd = () => {
                                 </div>
                                 <div className="my-2">
                                     <label htmlFor="" className="">Department : </label>
-                                    <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required/>
+                                    <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" required placeholder='Department'/>
                                 </div>
                             </div>
                             <div className="">
