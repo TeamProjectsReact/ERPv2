@@ -29,6 +29,10 @@ const AdminDeptadd = () => {
                                     <label htmlFor="" className="">Email : </label>
                                     <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2" disabled value={id}/>
                                 </div>
+                                <div className="my-2">
+                                    <label htmlFor="" className="">Department : </label>
+                                    <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2"/>
+                                </div>
                             </div>
                         </form>
                     </div>
