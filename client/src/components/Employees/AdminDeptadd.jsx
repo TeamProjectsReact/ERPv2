@@ -35,7 +35,7 @@ const AdminDeptadd = () => {
                                 </div>
                             </div>
                             <div className="">
-                                <button type="submit" className="bg-green-500 text-white py-2 px-4 duration-500 hover:bg-green-500">Add Employee to Dept</button>
+                                <button type="submit" className="bg-green-500 text-white py-2 px-4 rounded duration-500 hover:bg-green-500">Add Employee to Dept</button>
                             </div>
                         </form>
                     </div>
