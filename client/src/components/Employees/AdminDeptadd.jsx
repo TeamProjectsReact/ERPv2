@@ -34,6 +34,9 @@ const AdminDeptadd = () => {
                                     <input type="email" name="" id="" className="text-gray-700 h-12 w-full my-2 rounded bg-gray-200 shadow-md pl-2"/>
                                 </div>
                             </div>
+                            <div className="">
+                                <button type="submit" className="bg-green-500 text-white py-2 px-4 duration-500 hover:bg-green-500">Add Employee to Dept</button>
+                            </div>
                         </form>
                     </div>
                 </div>
