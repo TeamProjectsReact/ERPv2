@@ -21,7 +21,7 @@ const SiteAdmins = () => {
         {id: 2, btnValue: "Addadmin", name:"Add New", value: '#', icon: <BsPersonFillAdd />, style: "text-green-500"},
     ]
 
-    if(EmailUser !== null && RoleUser !== null && RoleUser === "SuperAdmin"){
+    if(EmailUser !== null && RoleUser !== null && RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
         return (
             <div className='ml-4'>
                 <div className="">
