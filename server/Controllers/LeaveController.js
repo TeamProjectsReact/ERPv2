@@ -164,9 +164,11 @@ const LeaveController = {
         else{
             return res.json({ Error: "Internal Server Error"})
         }
+    },
+    CountLeavs: async(req, res) => {
+        const email = req.params.id;
+        console.log(email)
     }
-
-
 }
 
 module.exports = LeaveController;
