@@ -10,5 +10,6 @@ router.post('/AcceptLeave/:id', LeaveController.acceptLeave);
 router.post('/LeaveRollback/:id', LeaveController.LeaveRollback);
 router.post('/LeaveRejected/:id', LeaveController.RejectLeave);
 router.delete('/LeaveDelete/:id', LeaveController.DeleteLeave);
+router.get('/getUserLeave/:id', LeaveController.CountLeavs);
 
 module.exports = router;
