@@ -179,8 +179,6 @@ const LeaveController = {
         else{
             res.json({ Error: "Internal Server Error"})
         }
-
-
     }
 }
 
