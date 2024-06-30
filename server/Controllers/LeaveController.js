@@ -167,7 +167,20 @@ const LeaveController = {
     },
     CountLeavs: async(req, res) => {
         const email = req.params.id;
-        console.log(email)
+
+        const UserLeaves = await Leave.countDocuments({
+            reqEmail: email,
+            Status: 'Requested'
+        })
+
+        if(UserLeaves){
+            res.json({ Result: UserLeaves })
+        }
+        else{
+            res.json({ Error: "Internal Server Error"})
+        }
+
+
     }
 }
 
