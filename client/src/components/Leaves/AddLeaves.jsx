@@ -20,6 +20,14 @@ const AddLeaves = () => {
     .catch(err => console.log(err)) 
   }, [])
 
+  // count leaves accroding to the current login user
+  const [UserLeaveData, SetUserLeaveData] = useState([])
+  useEffect(() => {
+    axios.get('http://localhost:8081/leave/getUserLeave/' + EmailUser)
+    .then(res => SetUserLeaveData(res.data))
+    .catch(err => console.log(err))
+  }, [])
+
   // send leave data to backend
   const [LeaveData, SetLeaveData] = useState({
     startTime: '',
