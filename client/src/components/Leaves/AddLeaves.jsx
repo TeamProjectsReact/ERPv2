@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import CountUp from 'react-countup'
 import axios from 'axios'
+import { BsBoxArrowDownRight, BsCarFront, BsExclamationTriangleFill, BsXCircleFill } from 'react-icons/bs'
 
 
 const AddLeaves = () => {
@@ -70,7 +71,51 @@ const AddLeaves = () => {
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
-        Leaves : {UserLeaveData}
+        {
+          (() => {
+            if(UserLeaveData === 1 || UserLeaveData === 0 ){
+              return (
+                <div className="flex mb-4">
+                  <div className="text-white rounded-l bg-green-500 p-3">
+                    <BsBoxArrowDownRight />
+                  </div>
+                  <div className="bg-green-400 rounded-r py-2 px-4 text-white">
+                    <span className='font-bold'>Leave Request Quota: </span>You can only request 3 Leaves
+                  </div>
+                </div>
+              )
+            }
+            if(UserLeaveData === 2){
+              return (
+                <div className="flex mb-4">
+                  <div className="text-white rounded-l bg-yellow-500 p-3">
+                    <BsExclamationTriangleFill />
+                  </div>
+                  <div className="bg-yellow-400 rounded-r py-2 px-4 text-black">
+                    <span className='font-bold'>Leave Request Quota: </span>You already reqeust 2 out of 3 leaves
+                  </div>
+                </div>
+              )
+            }
+            if(UserLeaveData === 3){
+              return (
+                <div className="">
+                  <div className="flex mb-2">
+                    <div className="text-white rounded-l bg-red-500 p-3">
+                      <BsXCircleFill />
+                    </div>
+                    <div className="bg-red-400 rounded-r py-2 px-4 text-white">
+                      <span className='font-bold'>Sorry.., </span>You already Reach the Maximum leave Request Quota
+                    </div>
+                  </div>
+                  <p className="text-red-500 mb-4">
+                    Please wait for Approve leaves or, go to your Leaves and delete some leaves
+                  </p>
+                </div>
+              )
+            }
+          })()
+        }
         <div className="bg-green-500/10 border-l-2 border-green-500 py-4 px-8 rounded shadow-md mr-4 ">        
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
           {
