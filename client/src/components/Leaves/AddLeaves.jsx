@@ -181,9 +181,24 @@ const AddLeaves = () => {
                 </div>                
               </div>
 
-              <div className="my-4">
-                <button type="submit" className="bg-green-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
-              </div>
+              {
+                (() => {
+                  if(UserLeaveData <= 3){
+                    return (
+                      <div className="my-4">
+                        <button type="submit" className="bg-green-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
+                      </div>
+                    )
+                  }
+                  else{
+                    return (
+                      <div className="my-4">
+                        <button type="submit" disabled className="bg-green-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
+                      </div>
+                    )
+                  }
+                })
+              }
             </form>
           </div>
         </div>
