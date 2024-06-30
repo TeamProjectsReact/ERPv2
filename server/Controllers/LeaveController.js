@@ -31,7 +31,6 @@ const LeaveController = {
     AddLeave: async (req, res) => {
         // console.log(req.body)
         // console.log(req.params.id)
-
         const {
             startTime,
             hodEmail,
@@ -42,39 +41,50 @@ const LeaveController = {
 
         const Emailid = req.params.id
 
-        const leaveAdd = new Leave({
-            StartTime: startTime,
+        countLeavesmax = await Leave.countDocuments({
             reqEmail: Emailid,
-            hodEmail: hodEmail,
-            StartData: startDate,
-            EndDate: endDate,
-            Dutarion: Dutarion,
-            Status: "Requested"
         })
 
-        const ResultLeave = leaveAdd.save()
+        if(countLeavesmax >= 3){
+            res.json({ Error: "You cannot Request Leaves"})
+        }
+        else{        
+            const leaveAdd = new Leave({
+                StartTime: startTime,
+                reqEmail: Emailid,
+                hodEmail: hodEmail,
+                StartData: startDate,
+                EndDate: endDate,
+                Dutarion: Dutarion,
+                Status: "Requested"
+            })
 
-        if(ResultLeave){
-            const mailOptions = {
-                from: process.env.EMAIL_USER,
-                to: hodEmail,
-                subject: "Notifications from ERP",
-                text: "There is a new Leave to Approve from : " + Emailid,
-            };
-            try {
-                await transporter.sendMail(mailOptions);
-                const email = new Email({ to:hodEmail, subject:mailOptions.subject, body:mailOptions.text });
-                await email.save();
-                return res.json({ Status: "Success"})
-            } catch (error) {
-                console.log(error)
-                return res.json({ Error: "Error While Sending Emails"})
+            const ResultLeave = leaveAdd.save()
+
+            if(ResultLeave){
+                const mailOptions = {
+                    from: process.env.EMAIL_USER,
+                    to: hodEmail,
+                    subject: "Notifications from ERP",
+                    text: "There is a new Leave to Approve from : " + Emailid,
+                };
+                try {
+                    await transporter.sendMail(mailOptions);
+                    const email = new Email({ to:hodEmail, subject:mailOptions.subject, body:mailOptions.text });
+                    await email.save();
+                    return res.json({ Status: "Success"})
+                } catch (error) {
+                    console.log(error)
+                    return res.json({ Error: "Error While Sending Emails"})
+                }
+
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
             }
 
         }
-        else{
-            return res.json({ Error: "Internal Server Error"})
-        }
+
     },
 
     // get all leaves according to current login hod 
