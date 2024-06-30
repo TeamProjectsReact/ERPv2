@@ -29,6 +29,8 @@ const AddLeaves = () => {
     .catch(err => console.log(err))
   }, [])
 
+  console.log(UserLeaveData)
+
   // send leave data to backend
   const [LeaveData, SetLeaveData] = useState({
     startTime: '',
@@ -180,25 +182,9 @@ const AddLeaves = () => {
                   onChange={e => SetLeaveData({...LeaveData, Dutarion:e.target.value})}/>
                 </div>                
               </div>
-
-              {
-                (() => {
-                  if(UserLeaveData < 3){
-                    return (
-                      <div className="my-4">
-                        <button type="submit" className="bg-green-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
-                      </div>
-                    )
-                  }
-                  else{
-                    return (
-                      <div className="my-4">
-                        <button type="submit" disabled className="bg-red-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
-                      </div>
-                    )
-                  }
-                })()
-              }
+              <div className="my-4">
+                <button type="submit" className="bg-green-500 text-white py-4 px-8 rounded font-semibold">Request Leave</button>
+              </div>
             </form>
           </div>
         </div>
