@@ -172,8 +172,6 @@ const LeaveController = {
             reqEmail: email,
             Status: 'Requested'
         })
-        console.log("ssssss" )
-
         if(UserLeaves){
             res.json({ Result: UserLeaves })
         }
