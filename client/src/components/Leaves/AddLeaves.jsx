@@ -24,7 +24,7 @@ const AddLeaves = () => {
   const [UserLeaveData, SetUserLeaveData] = useState([])
   useEffect(() => {
     axios.get('http://localhost:8081/leave/getUserLeave/' + EmailUser)
-    .then(res => SetUserLeaveData(res.data))
+    .then(res => SetUserLeaveData(res.data.Result))
     .catch(err => console.log(err))
   }, [])
 
@@ -70,7 +70,7 @@ const AddLeaves = () => {
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
-        Leaves
+        Leaves : {UserLeaveData}
         <div className="bg-green-500/10 border-l-2 border-green-500 py-4 px-8 rounded shadow-md mr-4 ">        
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
           {
