@@ -62,7 +62,8 @@ const AddLeaves = () => {
   if(RoleUser !== null && EmailUser !== null){
     return (
       <div>
-        <div className="bg-green-500/10 border-l-2 border-green-500 py-4 px-8 rounded shadow-md mr-4 ">
+        Leaves
+        <div className="bg-green-500/10 border-l-2 border-green-500 py-4 px-8 rounded shadow-md mr-4 ">        
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
           {
             (() => {
@@ -78,7 +79,7 @@ const AddLeaves = () => {
             })()
           }
           <hr />
-          <div className="my-4">
+          <div className="my-4">            
             <form onSubmit={headleSubmit}>
               <div className="md:grid grid-cols-3 gap-4">
                 <div className="my-4">
