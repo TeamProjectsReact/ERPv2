@@ -87,7 +87,7 @@ const AddLeaves = () => {
                 </div>
               )
             }
-            if(UserLeaveData === 2){
+            if(UserLeaveData === 1){
               return (
                 <div className="flex mb-4">
                   <div className="text-white rounded-l bg-yellow-500 p-3">
