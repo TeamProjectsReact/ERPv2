@@ -33,7 +33,7 @@ const DashHome = () => {
     // dashdata
     const DashData = [
       {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={CountEmployee} />, style: "text-green-500"},
-      {id: 2, name: "Leaves", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-blue-500"},
+      {id: 2, name: "Leaves", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsBoxArrowDownRight />, value: <CountUp end={ReqLeaves} />, style: "text-blue-500"},
       {id: 3, name: "Reservation", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsTicketDetailedFill />, value: <CountUp end={20} />, style: "text-yellow-500"},
       {id: 4, name: "SRNs", bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', icon: <BsFileTextFill />, value: <CountUp end={20} />, style: "text-red-500"},
       {id: 5, name: "Work Requests", bgstyle: 'bg-purple-400/20', borderStyle: 'border-purple-500', icon: <BsHouseGearFill />, value: <CountUp end={20} />, style: "text-purple-500"},
