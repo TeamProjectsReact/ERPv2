@@ -88,6 +88,26 @@ const authController = {
                     email: Email,
                     password: CheckCurrentPass
                 })
+
+                if(CheckCurrentPass.length !== 0){
+                    const HashNewPass = await bcrypt.hash(newPass, 10)
+
+                    const UpdateNewPass = await User.findOneAndUpdate(
+                        { email: Email },
+                        { $set: { password: HashNewPass }},
+                        { new: true }
+                    )
+
+                    if(UpdateNewPass) {
+                        return res.json({ Status: "Success"})
+                    }
+                    else{
+                        return res.json({ Error: "Internal Server Error"})
+                    }
+                }   
+                else{
+                    return res.json({ Error: "Internal Server Error"})
+                }
             }
         }
         catch (err) {
