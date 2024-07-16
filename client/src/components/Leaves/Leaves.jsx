@@ -10,8 +10,8 @@ const Leaves = () => {
   const LeaveData = [
     {id: 1, link: 'RequestLeaves', bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', btnValue: 0, name: "Leaves", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-blue-500"},
     {id: 2, link: 'AcceptLeaves', bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', btnValue: "RequestLeaves", name: "Accepted", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-yellow-500"},
-    {id: 3, link: '', bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', btnValue: "RecommendLeaves", name: "Approved", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},   
-    {id: 4, link: '', bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', btnValue: "RejectLeaves", name: "Reject", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-red-500"},     
+    {id: 3, link: 'ApproveLeaves', bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', btnValue: "RecommendLeaves", name: "Approved", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-green-500"},   
+    {id: 4, link: 'RejectLeaves', bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', btnValue: "RejectLeaves", name: "Reject", icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-red-500"},     
   ]
 
   const navigate = useNavigate()

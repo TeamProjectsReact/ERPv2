@@ -13,8 +13,9 @@ const AcceptLeaves = () => {
         return (
             <div className=''>
                 <Leaves />
-                <div className="my-4">
+                <div className="my-4">                    
                     <div className="py-2 px-4 rounded shadow-md overflow-x-auto my-8 bg-white">
+                    <h1 className="pb-4">Accept Leaves</h1>
                         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead className="text-xs text-gray-700 uppercase bg-green-500/50 text-green-800 h-12 dark:bg-gray-700 dark:text-green-400">
                                 <th scope="col" className=" table-cell">

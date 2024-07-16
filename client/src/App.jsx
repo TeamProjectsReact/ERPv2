@@ -28,6 +28,7 @@ export default function App() {
           <Route path="RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves /> } /> } />
           <Route path="AcceptLeaves" element={<PrivateRoute ProtectRoute={<AcceptLeaves />} /> } />
           <Route path="ApproveLeaves" element={<PrivateRoute ProtectRoute={<ApproveLeaves /> } /> } />
+          <Route path="RejectLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
           <Route path="Reservation" element={<PrivateRoute ProtectRoute={<Reservation /> } /> } />
           <Route path="SiteAdmins" element={<PrivateRoute ProtectRoute={<SiteAdmins /> } /> } />
           <Route path="Leaves/RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
