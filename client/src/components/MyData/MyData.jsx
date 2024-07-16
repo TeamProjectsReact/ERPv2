@@ -171,10 +171,12 @@ const MyData = () => {
                         <form method="post" onSubmit={headleUpdatePassword}>
                             <div className="md:grid grid-cols-2 gap-4 mt-4 mb-2">
                                 <div className="">
-                                    <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='Current Password' required/>
+                                    <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='Current Password' required
+                                    onChange={(e) => SetUpdatePass({...UpdatePass, currentPass:e.target.value})}/>
                                 </div>
                                 <div className="">
-                                    <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='New Password' required/>
+                                    <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='New Password' required
+                                    onChange={(e) => SetUpdatePass({...UpdatePass, newPass:e.target.value})}/>
                                 </div>
                             </div>
 
