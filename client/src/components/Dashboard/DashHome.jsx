@@ -21,6 +21,15 @@ const DashHome = () => {
       .catch(err => console.log(err))
     }, [])
 
+    // count Request Leaves
+    const [ReqLeaves, SetReqLeaves] = useState(0)
+
+    useEffect(() => {
+      axios.get('http://localhost:5000/leave/CountreqLeavs')
+      .then(res => SetReqLeaves(res.data.Result))
+      .catch(err => console.log(err))
+    }, [])
+
     // dashdata
     const DashData = [
       {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={CountEmployee} />, style: "text-green-500"},
