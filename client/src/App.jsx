@@ -14,6 +14,7 @@ import Vehicles from "./components/Vehicles/Vehicles";
 import AcceptLeaves from "./components/Leaves/AcceptLeaves";
 import Leaves from "./components/Leaves/Leaves";
 import ApproveLeaves from "./components/Leaves/ApproveLeaves";
+import RejectLeaves from "./components/Leaves/RejectLeaves";
 
 export default function App() {
   return (
@@ -28,7 +29,7 @@ export default function App() {
           <Route path="RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves /> } /> } />
           <Route path="AcceptLeaves" element={<PrivateRoute ProtectRoute={<AcceptLeaves />} /> } />
           <Route path="ApproveLeaves" element={<PrivateRoute ProtectRoute={<ApproveLeaves /> } /> } />
-          <Route path="RejectLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
+          <Route path="RejectLeaves" element={<PrivateRoute ProtectRoute={<RejectLeaves />} /> } />
           <Route path="Reservation" element={<PrivateRoute ProtectRoute={<Reservation /> } /> } />
           <Route path="SiteAdmins" element={<PrivateRoute ProtectRoute={<SiteAdmins /> } /> } />
           <Route path="Leaves/RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
