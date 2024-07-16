@@ -71,7 +71,8 @@ const authController = {
 
     UpdateCurrentPass: async(req, res) => {
         try{
-
+            const Email = req.params.id
+            console.log(res.body)
         }
         catch (err) {
             console.log(err)

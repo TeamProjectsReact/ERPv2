@@ -35,6 +35,7 @@ const MyData = () => {
 
     const headleUpdatePassword = async (e) => {
         e.preventDefault();
+        console.log(UpdatePass)
 
         try{    
             const res = axios.post(`http://localhost:5000/auth/UpdateCurrentPass/${EmailUser}`, UpdatePass)
