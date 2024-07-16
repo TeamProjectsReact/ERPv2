@@ -37,7 +37,7 @@ const MyData = () => {
         e.preventDefault();
 
         try{    
-            const res = axios.post('http://localhost:5000/auth/UpdateCurrentPass', UpdatePass)
+            const res = axios.post(`http://localhost:5000/auth/UpdateCurrentPass/${EmailUser}`, UpdatePass)
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Password Updated Successfull")

@@ -5,6 +5,6 @@ const router = express.Router()
 
 router.post('/SignUp', authController.SignUp)
 router.post('/SignIn', authController.SigIn)
-router.post('/UpdateCurrentPass')
+router.post('/UpdateCurrentPass/:id', authController.UpdateCurrentPass)
 
 module.exports = router;
