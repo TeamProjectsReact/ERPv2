@@ -137,6 +137,23 @@ const MyData = () => {
                         </table>
                     </div>
                 </div>
+                <div className="">
+                    <h1 className="text-gray-500 text-xl font-semibold">Update Password</h1>
+                    <hr className='pb-4'/>
+
+                    <div className="">
+                        <form method="post">
+                            <div className="md:grid grid-cols-2 gap-4">
+                                <div className="">
+                                    <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='Current Password' required/>
+                                </div>
+                                <div className="">
+                                    <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='New Password' required/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         )
     }
