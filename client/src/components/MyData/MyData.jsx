@@ -27,6 +27,32 @@ const MyData = () => {
         fetchData();
       }, []);
 
+    //   Update Current Password
+    const [UpdatePass, SetUpdatePass] = useState({
+        currentPass: '',
+        newPass: ''
+    })
+
+    const headleUpdatePassword = async (e) => {
+        e.preventDefault();
+
+        try{    
+            const res = axios.post('http://localhost:5000/auth/UpdateCurrentPass', UpdatePass)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Password Updated Successfull")
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     if(EmailUser !== null && RoleUser !== null){
         return (
             <div className='md:mx-8 mx-2 my-4'>
@@ -142,7 +168,7 @@ const MyData = () => {
                     <hr className='pb-4'/>
 
                     <div className="">
-                        <form method="post">
+                        <form method="post" onSubmit={headleUpdatePassword}>
                             <div className="md:grid grid-cols-2 gap-4 mt-4 mb-2">
                                 <div className="">
                                     <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='Current Password' required/>
