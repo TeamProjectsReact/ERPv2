@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage";
 import Leaves from './Leaves';
 
-const AcceptLeaves = () => {
+const ApproveLeaves = () => {
     const navigate = useNavigate()
     //curent login user
     const EmailUser = secureLocalStorage.getItem("Login1");
@@ -56,4 +56,4 @@ const AcceptLeaves = () => {
     }
 }
 
-export default AcceptLeaves
+export default ApproveLeaves
