@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import  secureLocalStorage  from  "react-secure-storage"
 import axios from 'axios'
+import Leaves from './Leaves'
 
 const RequestLeaves = () => {
     const navigate = useNavigate()
@@ -101,7 +102,8 @@ const RequestLeaves = () => {
 
     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary" || RoleUser === "HOD"){
         return (
-            <div className='mx-4 my-8'>
+            <div className=''>
+                <Leaves />
                 <div className="my-4">
                     <div className="py-2 px-4 rounded shadow-md overflow-x-auto my-8 bg-white">
                         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
