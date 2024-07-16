@@ -143,7 +143,7 @@ const MyData = () => {
 
                     <div className="">
                         <form method="post">
-                            <div className="md:grid grid-cols-2 gap-4">
+                            <div className="md:grid grid-cols-2 gap-4 my-4">
                                 <div className="">
                                     <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='Current Password' required/>
                                 </div>
