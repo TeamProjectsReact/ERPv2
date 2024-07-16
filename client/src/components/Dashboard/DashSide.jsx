@@ -21,7 +21,7 @@ const DashSide = () => {
 
     const SideLink = [
         {style: 'text-orange-500', id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},    
-        {style: 'text-yellow-500', id: 2, name: "Leaves", link: "Leaves", icons: <BsBoxArrowDownRight />},  
+        {style: 'text-yellow-500', id: 2, name: "Leaves", link: "RequestLeaves", icons: <BsBoxArrowDownRight />},  
         {style: 'text-green-500', id: 3, name: "Reservation", link: "Reservation", icons: <BsTicketDetailedFill />},  
         {style: 'text-purple-500', id: 4, name: "SRNs", link: "SRNs", icons: <BsFileTextFill />},  
         {style: 'text-pink-500', id: 5, name: "Work Requests", link: "WorkRequests", icons: <BsHouseGearFill />},  

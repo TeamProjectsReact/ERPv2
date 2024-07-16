@@ -19,11 +19,6 @@ const Leaves = () => {
   const EmailUser = secureLocalStorage.getItem("Login1");
   const RoleUser = secureLocalStorage.getItem("Login2");
 
-  const [buttonValue, SetButtonValue] = useState(0)
-  const HeadleButtonClick = (clickValue) => {
-      SetButtonValue(clickValue)   
-      localStorage.setItem('BtnValue', buttonValue)
-  }
 
   if(EmailUser !== null && RoleUser !== null){
     return (
@@ -66,28 +61,6 @@ const Leaves = () => {
             }
               </div>
 
-            {
-              (() => {
-                if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                  return (
-                    <div className="">
-                        {
-                          (() => {
-                            if(buttonValue === 0){
-                              return(
-                                <div className="mt-4">
-                                  <h1 className="text-gray-500 text-xl font-semibold">Leave Requests</h1>
-                                  <RequestLeaves />
-                                </div>                                
-                              )
-                            }
-                          })()
-                        }
-                    </div>
-                  )
-                }
-              })()
-            }
 
           </div>
         </div>
