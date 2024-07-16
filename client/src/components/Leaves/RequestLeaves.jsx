@@ -307,6 +307,13 @@ const RequestLeaves = () => {
             </div>
         )
     }
+    else if(RoleUser !== "SuperAdmin" && RoleUser !== "Director" && RoleUser !== "Secretary" && RoleUser !== "HOD"){
+        return (
+            <div className="">
+                <Leaves />
+            </div>
+        )
+    }
     else{
         useEffect(() => {
             localStorage.clear()
