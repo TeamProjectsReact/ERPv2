@@ -143,13 +143,17 @@ const MyData = () => {
 
                     <div className="">
                         <form method="post">
-                            <div className="md:grid grid-cols-2 gap-4 my-4">
+                            <div className="md:grid grid-cols-2 gap-4 mt-4 mb-2">
                                 <div className="">
                                     <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='Current Password' required/>
                                 </div>
                                 <div className="">
                                     <input type="password" name="" id="" className="h-12 w-full rounded pl-2 bg-gray-200" placeholder='New Password' required/>
                                 </div>
+                            </div>
+
+                            <div className="">
+                                <button type="submit" className="bg-red-500 text-white rounded py-2 px-4">Change Password</button>
                             </div>
                         </form>
                     </div>
