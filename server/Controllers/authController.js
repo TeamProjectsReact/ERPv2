@@ -78,6 +78,17 @@ const authController = {
                 newPass
             } = req.body
 
+            if(currentPass === newPass){
+                return res.json({ Error: "Current Password and New Password Same"})
+            }
+            else{
+                const hashCurrentPass = await bcrypt.hash(currentPass, 10)
+
+                const CheckCurrentPass = await User.findOne({
+                    email: Email,
+                    password: CheckCurrentPass
+                })
+            }
         }
         catch (err) {
             console.log(err)
