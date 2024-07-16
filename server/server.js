@@ -23,6 +23,7 @@ app.use(express.json())
 app.use('/auth', authRoute)
 app.use('/leave', LeaveRoute)
 app.use('/Dept', DeptRoute)
+app.use('/employee')
 
 
 app.listen(PORT, () => {

@@ -12,9 +12,18 @@ const DashHome = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+    // count employess
+    const [CountEmployee, SetCountEmployee] = useState(0)
+
+    useEffect(() => {
+      axios.get('http://localhost:5000/employee/CountEmployee')
+      .then(res => SetCountEmployee(res.data.Result))
+      .catch(err => console.log(err))
+    }, [])
+
     // dashdata
     const DashData = [
-      {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={20} />, style: "text-green-500"},
+      {id: 1, name: "Employees", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsPeopleFill />, value: <CountUp end={CountEmployee} />, style: "text-green-500"},
       {id: 2, name: "Leaves", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsBoxArrowDownRight />, value: <CountUp end={20} />, style: "text-blue-500"},
       {id: 3, name: "Reservation", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsTicketDetailedFill />, value: <CountUp end={20} />, style: "text-yellow-500"},
       {id: 4, name: "SRNs", bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', icon: <BsFileTextFill />, value: <CountUp end={20} />, style: "text-red-500"},
