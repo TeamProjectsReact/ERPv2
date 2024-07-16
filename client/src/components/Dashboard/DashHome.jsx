@@ -22,7 +22,6 @@ const DashHome = () => {
       {id: 6, name: "GatePass", bgstyle: 'bg-blue-400/20', borderStyle: 'border-blue-500', icon: <BsPassFill />, value: <CountUp end={20} />, style: "text-blue-500"},
       {id: 7, name: "Increment", bgstyle: 'bg-green-400/20', borderStyle: 'border-green-500', icon: <BsCashStack />, value: <CountUp end={20} />, style: "text-green-500"},  
       {id: 8, name: "Vehicle", bgstyle: 'bg-yellow-400/20', borderStyle: 'border-yellow-500', icon: <BsCarFrontFill />, value: <CountUp end={20} />, style: "text-yellow-500"},   
-      {id: 9, name: "Departments", bgstyle: 'bg-red-400/20', borderStyle: 'border-red-500', icon: <BsBuildingFill />, value: <CountUp end={20} />, style: "text-red-500"},                         
     ]
 
     const [UserData, SetUserData] = useState([])
