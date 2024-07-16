@@ -120,7 +120,7 @@ const AddLeaves = () => {
         }
         <div className="bg-green-500/10 border-l-2 border-green-500 py-4 px-8 rounded shadow-md mr-4 ">        
           <h1 className="font-semibold text-gray-500 text-2xl">New Leave</h1>
-          {
+          {/* {
             (() => {
               if(RoleUser === "HOD"){
                 return (
@@ -132,7 +132,7 @@ const AddLeaves = () => {
                 )
               }
             })()
-          }
+          } */}
           <hr />
           <div className="my-4">            
             <form onSubmit={headleSubmit}>
