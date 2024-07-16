@@ -72,7 +72,7 @@ const authController = {
     UpdateCurrentPass: async(req, res) => {
         try{
             const Email = req.params.id
-            // console.log(req.body)
+            console.log(req.body, Email)
             const {
                 currentPass,
                 newPass
@@ -82,14 +82,13 @@ const authController = {
                 return res.json({ Error: "Current Password and New Password Same"})
             }
             else{
-                const hashCurrentPass = await bcrypt.hash(currentPass, 10)
-
                 const CheckCurrentPass = await User.findOne({
-                    email: Email,
-                    password: CheckCurrentPass
+                    email: Email
                 })
 
-                if(CheckCurrentPass.length !== 0){
+                const PassCheck = await bcrypt.compare(currentPass, CheckCurrentPass.password)
+
+                if(PassCheck){
                     const HashNewPass = await bcrypt.hash(newPass, 10)
 
                     const UpdateNewPass = await User.findOneAndUpdate(
@@ -106,7 +105,7 @@ const authController = {
                     }
                 }   
                 else{
-                    return res.json({ Error: "Internal Server Error"})
+                    return res.json({ Error: "Current Password not Match"})
                 }
             }
         }
