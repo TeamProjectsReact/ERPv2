@@ -22,9 +22,10 @@ const DashSide = () => {
     const SideLink = [
         {style: 'text-orange-500', id: 1, name: "Dashboard", link: "Home", icons: <BsSpeedometer2 />},    
         {style: 'text-yellow-500', id: 2, name: "Leaves", link: "RequestLeaves", icons: <BsBoxArrowDownRight />},  
-        {style: 'text-green-500', id: 3, name: "Reservation", link: "Reservation", icons: <BsTicketDetailedFill />},  
-        {style: 'text-purple-500', id: 4, name: "SRNs", link: "SRNs", icons: <BsFileTextFill />},  
-        {style: 'text-pink-500', id: 5, name: "Work Requests", link: "WorkRequests", icons: <BsHouseGearFill />},  
+        {style: 'text-yellow-500', id: 3, name: "Leaves", link: "RequestLeaves", icons: <BsBoxArrowDownRight />},  
+        {style: 'text-green-500', id: 4, name: "Reservation", link: "Reservation", icons: <BsTicketDetailedFill />},  
+        {style: 'text-purple-500', id: 5, name: "SRNs", link: "SRNs", icons: <BsFileTextFill />},  
+        {style: 'text-pink-500', id: 6, name: "Work Requests", link: "WorkRequests", icons: <BsHouseGearFill />},  
         {style: 'text-red-500', id: 7, name: "GatePass", link: "GatePass", icons: <BsPassFill />},  
         {style: 'text-blue-500', id: 8, name: "Increment", link: "Increment", icons: <BsCashStack />},  
         {style: 'text-green-500', id: 9, name: "Vehicle", link: "Vehicle", icons: <BsCarFrontFill />},  
@@ -91,18 +92,20 @@ const DashSide = () => {
                             {
                                 SideLink.map((side) => {
                                     if(RoleUser === "SuperAdmin" || RoleUser === "Director" || RoleUser === "Secretary"){
-                                        return (
-                                            <a href={side.link}>
-                                                <div className="">
-                                                    <div className={`w-full my-2 py-3 px-2 rounded cursor-pointer duration-500 hover:backdrop-blur-sm hover:bg-white/10`}>
-                                                        <div className="flex">
-                                                            <p className={`text-2xl ${side.style}`}>{side.icons}</p>
-                                                            <p className="pl-2">{side.name}</p>
+                                        if(side.id !== 3){
+                                            return (
+                                                <a href={side.link}>
+                                                    <div className="">
+                                                        <div className={`w-full my-2 py-3 px-2 rounded cursor-pointer duration-500 hover:backdrop-blur-sm hover:bg-white/10`}>
+                                                            <div className="flex">
+                                                                <p className={`text-2xl ${side.style}`}>{side.icons}</p>
+                                                                <p className="pl-2">{side.name}</p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        )
+                                                </a>
+                                            )
+                                        }
                                     }
                                     if(RoleUser === "HOD"){
                                         if(side.id !== 10){
