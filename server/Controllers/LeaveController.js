@@ -188,6 +188,24 @@ const LeaveController = {
         else{
             res.json({ Error: "Internal Server Error"})
         }
+    },
+
+    CountReqLeaves: async (req, res) => {
+        try{
+            const reqLeaves = await Leave.countDocuments({
+                Status: "Requested"
+            })
+
+            if(reqLeaves){
+                return res.json({ Result: reqLeaves })
+            }
+            else{
+                return res.json({ Error: "Internal Server Error"})
+            }
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 }
 
