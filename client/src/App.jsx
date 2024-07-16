@@ -13,6 +13,7 @@ import AdminDeptadd from "./components/Employees/AdminDeptadd";
 import Vehicles from "./components/Vehicles/Vehicles";
 import AcceptLeaves from "./components/Leaves/AcceptLeaves";
 import Leaves from "./components/Leaves/Leaves";
+import ApproveLeaves from "./components/Leaves/ApproveLeaves";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="Leaves" element={<PrivateRoute ProtectRoute={<Leaves /> } /> } />
           <Route path="RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves /> } /> } />
           <Route path="AcceptLeaves" element={<PrivateRoute ProtectRoute={<AcceptLeaves />} /> } />
+          <Route path="ApproveLeaves" element={<PrivateRoute ProtectRoute={<ApproveLeaves /> } /> } />
           <Route path="Reservation" element={<PrivateRoute ProtectRoute={<Reservation /> } /> } />
           <Route path="SiteAdmins" element={<PrivateRoute ProtectRoute={<SiteAdmins /> } /> } />
           <Route path="Leaves/RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
