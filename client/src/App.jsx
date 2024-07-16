@@ -11,6 +11,7 @@ import MyData from "./components/MyData/MyData";
 import Employee from "./components/Employees/Employee";
 import AdminDeptadd from "./components/Employees/AdminDeptadd";
 import Vehicles from "./components/Vehicles/Vehicles";
+import AcceptLeaves from "./components/Leaves/AcceptLeaves";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard /> }/> } >
           <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> } />
           <Route path="RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves /> } /> } />
+          <Route path="AcceptLeaves" element={<PrivateRoute ProtectRoute={<AcceptLeaves />} /> } />
           <Route path="Reservation" element={<PrivateRoute ProtectRoute={<Reservation /> } /> } />
           <Route path="SiteAdmins" element={<PrivateRoute ProtectRoute={<SiteAdmins /> } /> } />
           <Route path="Leaves/RequestLeaves" element={<PrivateRoute ProtectRoute={<RequestLeaves />} /> } />
